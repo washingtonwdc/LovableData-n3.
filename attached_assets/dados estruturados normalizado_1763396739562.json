@@ -1,0 +1,7005 @@
+[
+  {
+    "id": 1,
+    "setor": {
+      "sigla": "AIGGPE",
+      "nome": "APOIO JURIDICO DA GERENCIA GERAL DE GESTÃO DE PESSOAS",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "aiggpe@adm.educacao.pe.gov.br",
+      "slug": "aiggpe",
+      "ramal_principal": "839962",
+      "ramais": [
+        "839962"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9962",
+          "link": "tel:+558131839962",
+          "ramal_original": "839962"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "PATRICK DE SÁ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 2,
+    "setor": {
+      "sigla": "ARH + GAB",
+      "nome": "ARH + GAB",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "arhgab@adm.educacao.pe.gov.br",
+      "slug": "arh-gab",
+      "ramal_principal": "839860",
+      "ramais": [
+        "839860",
+        "839483"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9860",
+          "link": "tel:+558131839860",
+          "ramal_original": "839860"
+        },
+        {
+          "numero": "(81) 3183-9483",
+          "link": "tel:+558131839483",
+          "ramal_original": "839483"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "IVETTY"
+      },
+      {
+        "nome": "VERÔNICA"
+      },
+      {
+        "nome": "DANIELE"
+      },
+      {
+        "nome": "ANA CARLA"
+      },
+      {
+        "nome": "LIDIANE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 3,
+    "setor": {
+      "sigla": "ASTEC",
+      "nome": "ASSESSORIA TECNICA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "astec@adm.educacao.pe.gov.br",
+      "slug": "astec",
+      "ramal_principal": "838724",
+      "ramais": [
+        "838724"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8724",
+          "link": "tel:+558131838724",
+          "ramal_original": "838724"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RAYANE VANESSA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 4,
+    "setor": {
+      "sigla": "CACS-FUNDEB / PE",
+      "nome": "CONSELHO ESTADUAL DE ACOMPANHAMENTO E CONTROLE SOCIAL DO FUNDO...",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "1ª ENTRADA",
+      "email": "cacsfundebpe@adm.educacao.pe.gov.br",
+      "slug": "cacs-fundeb-pe",
+      "ramal_principal": "838409",
+      "ramais": [
+        "838409"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8409",
+          "link": "tel:+558131838409",
+          "ramal_original": "838409"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MAR"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 5,
+    "setor": {
+      "sigla": "CAE",
+      "nome": "CONSELHO DE ALIMENTAÇÃO ESCOLAR DE PERNAMBUCO",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "1ª ENTRADA",
+      "email": "cae@adm.educacao.pe.gov.br",
+      "slug": "cae",
+      "ramal_principal": "839035",
+      "ramais": [
+        "839035"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9035",
+          "link": "tel:+558131839035",
+          "ramal_original": "839035"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANDREA PINHEIRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 6,
+    "setor": {
+      "sigla": "CAGP",
+      "nome": "COORDENAÇÃO ADMINISTRATIVADE GESTÃO DE PESSOAS",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "cagp@adm.educacao.pe.gov.br",
+      "slug": "cagp",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FERNANDA LOCIO"
+      }
+    ],
+    "contatos": {
+      "celular": "9 9996-7534",
+      "whatsapp": "https://api.whatsapp.com/send?phone=5581999967534",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 7,
+    "setor": {
+      "sigla": "CCEFP",
+      "nome": "COORDENAÇÃO DE CADASTRO E ELABORAÇÃO DE FOHA DE PAGAMENTO",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "ccefp@adm.educacao.pe.gov.br",
+      "slug": "ccefp",
+      "ramal_principal": "838872",
+      "ramais": [
+        "838872"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8872",
+          "link": "tel:+558131838872",
+          "ramal_original": "838872"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VILMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 8,
+    "setor": {
+      "sigla": "CECF",
+      "nome": "COORDENAÇÃO DE CORREÇÃO DE FLUXO ESCOLAR",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "cecf@adm.educacao.pe.gov.br",
+      "slug": "cecf",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SERGINA"
+      },
+      {
+        "nome": "JOSUÉ FRAGOSO"
+      },
+      {
+        "nome": "MANU"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 9,
+    "setor": {
+      "sigla": "CGPP",
+      "nome": "CORDENAÇÃO GERAL DE PROGRAMAS E PROJETOS",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "cgpp@adm.educacao.pe.gov.br",
+      "slug": "cgpp",
+      "ramal_principal": "839762",
+      "ramais": [
+        "839762",
+        "839764",
+        "839771"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9762",
+          "link": "tel:+558131839762",
+          "ramal_original": "839762"
+        },
+        {
+          "numero": "(81) 3183-9764",
+          "link": "tel:+558131839764",
+          "ramal_original": "839764"
+        },
+        {
+          "numero": "(81) 3183-9771",
+          "link": "tel:+558131839771",
+          "ramal_original": "839771"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JANAINA SIQUEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 10,
+    "setor": {
+      "sigla": "COEFP",
+      "nome": "COORDENAÇÃO DE OBRIGAÇÕES E ENCARGOS DE FOLHA DE PAGAMENTO",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "coefp@adm.educacao.pe.gov.br",
+      "slug": "coefp",
+      "ramal_principal": "838872",
+      "ramais": [
+        "838872"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8872",
+          "link": "tel:+558131838872",
+          "ramal_original": "838872"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "PEDRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 11,
+    "setor": {
+      "sigla": "CORREGEDORIA",
+      "nome": "CORREGEDORIA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "corregedoria@adm.educacao.pe.gov.br",
+      "slug": "corregedoria",
+      "ramal_principal": "839854",
+      "ramais": [
+        "839854"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9854",
+          "link": "tel:+558131839854",
+          "ramal_original": "839854"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SHIRLEIDE DE MENDONÇA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 12,
+    "setor": {
+      "sigla": "CPAAP",
+      "nome": "COMISSÃO PERMANENTE DE APLICAÇÃO E PENALIDADE",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "cpaap@adm.educacao.pe.gov.br",
+      "slug": "cpaap",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SHIRLEYDE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 13,
+    "setor": {
+      "sigla": "CPPU",
+      "nome": "CPPU (PROJOVEM)",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "cppu@adm.educacao.pe.gov.br",
+      "slug": "cppu",
+      "ramal_principal": "839434",
+      "ramais": [
+        "839434",
+        "839435"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9434",
+          "link": "tel:+558131839434",
+          "ramal_original": "839434"
+        },
+        {
+          "numero": "(81) 3183-9435",
+          "link": "tel:+558131839435",
+          "ramal_original": "839435"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "IVALDO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 14,
+    "setor": {
+      "sigla": "CTGR",
+      "nome": "CORDENAÇÃO TECNICA DE GESTÃO DA REDE",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "ctgr@adm.educacao.pe.gov.br",
+      "slug": "ctgr",
+      "ramal_principal": "839777",
+      "ramais": [
+        "839777",
+        "839684"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9777",
+          "link": "tel:+558131839777",
+          "ramal_original": "839777"
+        },
+        {
+          "numero": "(81) 3183-9684",
+          "link": "tel:+558131839684",
+          "ramal_original": "839684"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "NORMA BANDEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 15,
+    "setor": {
+      "sigla": "FUNDEF",
+      "nome": "FUNDEF",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "fundef@adm.educacao.pe.gov.br",
+      "slug": "fundef",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GABRIELA CARVALHO"
+      },
+      {
+        "nome": "JEFFERSON ANNE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 16,
+    "setor": {
+      "sigla": "GAB",
+      "nome": "GABINETE DA SECRETARIA DE EDUCAÇÃO",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: PRISCILA / JULIANA FERNANDES - ENTRADA PRINCIPAL",
+      "email": "gab@adm.educacao.pe.gov.br",
+      "slug": "gab",
+      "ramal_principal": "839273",
+      "ramais": [
+        "839273",
+        "839275",
+        "839272"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9273",
+          "link": "tel:+558131839273",
+          "ramal_original": "839273"
+        },
+        {
+          "numero": "(81) 3183-9275",
+          "link": "tel:+558131839275",
+          "ramal_original": "839275"
+        },
+        {
+          "numero": "(81) 3183-9272",
+          "link": "tel:+558131839272",
+          "ramal_original": "839272"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GILSON JOSÉ MONTEIRO FILHO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 17,
+    "setor": {
+      "sigla": "GAC",
+      "nome": "GERENCIA DE AÇÕES CULTURAIS",
+      "bloco": "BLOCO A",
+      "andar": "4º ANDAR",
+      "observacoes": "SIMONE",
+      "email": "gac@adm.educacao.pe.gov.br",
+      "slug": "gac",
+      "ramal_principal": "839579",
+      "ramais": [
+        "839579"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9579",
+          "link": "tel:+558131839579",
+          "ramal_original": "839579"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LÊDA DIAS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 18,
+    "setor": {
+      "sigla": "GAMPE",
+      "nome": "GERÊNCIA DE AVALIAÇÃO E MONITORAMENTO DAS POLITICAS EDUCACIONAIS",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "CONTATO: RODRIGO",
+      "email": "gampe@adm.educacao.pe.gov.br",
+      "slug": "gampe",
+      "ramal_principal": "838392",
+      "ramais": [
+        "838392",
+        "838382",
+        "838375"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8392",
+          "link": "tel:+558131838392",
+          "ramal_original": "838392"
+        },
+        {
+          "numero": "(81) 3183-8382",
+          "link": "tel:+558131838382",
+          "ramal_original": "838382"
+        },
+        {
+          "numero": "(81) 3183-8375",
+          "link": "tel:+558131838375",
+          "ramal_original": "838375"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GISLAINE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 19,
+    "setor": {
+      "sigla": "GAPRO",
+      "nome": "GERENCIA DE ACOMPANHAMENTO PROGRAMATICO",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gapro@adm.educacao.pe.gov.br",
+      "slug": "gapro",
+      "ramal_principal": "838432",
+      "ramais": [
+        "838432",
+        "838433",
+        "839882"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8432",
+          "link": "tel:+558131838432",
+          "ramal_original": "838432"
+        },
+        {
+          "numero": "(81) 3183-8433",
+          "link": "tel:+558131838433",
+          "ramal_original": "838433"
+        },
+        {
+          "numero": "(81) 3183-9882",
+          "link": "tel:+558131839882",
+          "ramal_original": "839882"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EDVALDO JOSÉ"
+      },
+      {
+        "nome": "RAFAEL GUEDES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 20,
+    "setor": {
+      "sigla": "GCINC",
+      "nome": "GERENCIA DE CONTROLE INTERNO E CORREIÇÃO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gcinc@adm.educacao.pe.gov.br",
+      "slug": "gcinc",
+      "ramal_principal": "839023",
+      "ramais": [
+        "839023"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9023",
+          "link": "tel:+558131839023",
+          "ramal_original": "839023"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ROBERTA TOLENTINO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 21,
+    "setor": {
+      "sigla": "GCOMP",
+      "nome": "GERÊNCIA DE COMPRAS",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gcomp@adm.educacao.pe.gov.br",
+      "slug": "gcomp",
+      "ramal_principal": "839460",
+      "ramais": [
+        "839460"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9460",
+          "link": "tel:+558131839460",
+          "ramal_original": "839460"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ERICO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 22,
+    "setor": {
+      "sigla": "GEAFA",
+      "nome": "GERENCIA ADMINISTRATIVA E FINANCEIRA DE ALIMENTAÇÃO ESCOLAR",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "geafa@adm.educacao.pe.gov.br",
+      "slug": "geafa",
+      "ramal_principal": "839026",
+      "ramais": [
+        "839026"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9026",
+          "link": "tel:+558131839026",
+          "ramal_original": "839026"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MIKAELLI CURITI"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 23,
+    "setor": {
+      "sigla": "GEAME",
+      "nome": "GERÊNCIA DE ANALISE DE MERCADO",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "geame@adm.educacao.pe.gov.br",
+      "slug": "geame",
+      "ramal_principal": "839223",
+      "ramais": [
+        "839223",
+        "839217",
+        "839213"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9223",
+          "link": "tel:+558131839223",
+          "ramal_original": "839223"
+        },
+        {
+          "numero": "(81) 3183-9217",
+          "link": "tel:+558131839217",
+          "ramal_original": "839217"
+        },
+        {
+          "numero": "(81) 3183-9213",
+          "link": "tel:+558131839213",
+          "ramal_original": "839213"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "HEBERT CAVALCANTE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 24,
+    "setor": {
+      "sigla": "GECAP",
+      "nome": "GERENCIA DE CAPACITAÇÃO DE RECURSOS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "3° ENTRADA",
+      "email": "gecap@adm.educacao.pe.gov.br",
+      "slug": "gecap",
+      "ramal_principal": "838454",
+      "ramais": [
+        "838454"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8454",
+          "link": "tel:+558131838454",
+          "ramal_original": "838454"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EDUARDA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 25,
+    "setor": {
+      "sigla": "GECON",
+      "nome": "GERENCIA DE CONTABILIDADE",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "3° ENTRADA",
+      "email": "gecon@adm.educacao.pe.gov.br",
+      "slug": "gecon",
+      "ramal_principal": "838301",
+      "ramais": [
+        "838301",
+        "838299",
+        "838298"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8301",
+          "link": "tel:+558131838301",
+          "ramal_original": "838301"
+        },
+        {
+          "numero": "(81) 3183-8299",
+          "link": "tel:+558131838299",
+          "ramal_original": "838299"
+        },
+        {
+          "numero": "(81) 3183-8298",
+          "link": "tel:+558131838298",
+          "ramal_original": "838298"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MANFRED"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 26,
+    "setor": {
+      "sigla": "GEDES",
+      "nome": "GERENCIA DE EXECUÇÃO DE DESPESAS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "gedes@adm.educacao.pe.gov.br",
+      "slug": "gedes",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ALICE OLIVEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 27,
+    "setor": {
+      "sigla": "GEDHC",
+      "nome": "GERÊNCIA DE POLITICAS EDUCACIONAIS DE DIREITOS HUMANOS E CIDADANIA",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gedhc@adm.educacao.pe.gov.br",
+      "slug": "gedhc",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CLEDSON SEVERINO DE LIMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 28,
+    "setor": {
+      "sigla": "GEEIN",
+      "nome": "GERENCIA DE EDUCAÇÃO ESCOLAR INDIGENA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "geein@adm.educacao.pe.gov.br",
+      "slug": "geein",
+      "ramal_principal": "838690",
+      "ramais": [
+        "838690"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8690",
+          "link": "tel:+558131838690",
+          "ramal_original": "838690"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VALDEMIR"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 29,
+    "setor": {
+      "sigla": "GEEQ",
+      "nome": "GERENCIA DE EDUCAÇÃO ESCOLAR QUILOMBOLA",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "geeq@adm.educacao.pe.gov.br",
+      "slug": "geeq",
+      "ramal_principal": "838670",
+      "ramais": [
+        "838670",
+        "838758"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8670",
+          "link": "tel:+558131838670",
+          "ramal_original": "838670"
+        },
+        {
+          "numero": "(81) 3183-8758",
+          "link": "tel:+558131838758",
+          "ramal_original": "838758"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ROMERO ALMEIDA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 30,
+    "setor": {
+      "sigla": "GEFP",
+      "nome": "GERENCIA DE GESTÃO FINANCEIRA PESSOAL",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "gefp@adm.educacao.pe.gov.br",
+      "slug": "gefp",
+      "ramal_principal": "838809",
+      "ramais": [
+        "838809",
+        "838810"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8809",
+          "link": "tel:+558131838809",
+          "ramal_original": "838809"
+        },
+        {
+          "numero": "(81) 3183-8810",
+          "link": "tel:+558131838810",
+          "ramal_original": "838810"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FRANCISCO FIRMINO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 31,
+    "setor": {
+      "sigla": "GEI",
+      "nome": "GERÊNCIA DE EDUCAÇÃO INCLUSIVA",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gei@adm.educacao.pe.gov.br",
+      "slug": "gei",
+      "ramal_principal": "838545",
+      "ramais": [
+        "838545",
+        "838556"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8545",
+          "link": "tel:+558131838545",
+          "ramal_original": "838545"
+        },
+        {
+          "numero": "(81) 3183-8556",
+          "link": "tel:+558131838556",
+          "ramal_original": "838556"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SUNNYE - CHEFE DE UNIDADE GIRLANIA ARRUDA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 32,
+    "setor": {
+      "sigla": "GEJAI",
+      "nome": "GERÊNCIA DE POLITICAS EDUCACIONAIS DE JOVENS, ADULTOS E IDOSOS",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: IARA",
+      "email": "gejai@adm.educacao.pe.gov.br",
+      "slug": "gejai",
+      "ramal_principal": "838756",
+      "ramais": [
+        "838756",
+        "838762"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8756",
+          "link": "tel:+558131838756",
+          "ramal_original": "838756"
+        },
+        {
+          "numero": "(81) 3183-8762",
+          "link": "tel:+558131838762",
+          "ramal_original": "838762"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JEANE LIMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 33,
+    "setor": {
+      "sigla": "GEMAP",
+      "nome": "GERENCIA DE MOVIMENTAÇÃO DE PESSOAS E ACOMPANHAMENTO DE ATOS",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "gemap@adm.educacao.pe.gov.br",
+      "slug": "gemap",
+      "ramal_principal": "839017",
+      "ramais": [
+        "839017",
+        "839019"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9017",
+          "link": "tel:+558131839017",
+          "ramal_original": "839017"
+        },
+        {
+          "numero": "(81) 3183-9019",
+          "link": "tel:+558131839019",
+          "ramal_original": "839019"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "NATHALY ALVES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 34,
+    "setor": {
+      "sigla": "GENSE",
+      "nome": "GERENCIA DE NORMATIZAÇÃO DO SISTEMA EDUCACIONAL",
+      "bloco": "BLOCO C",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gense@adm.educacao.pe.gov.br",
+      "slug": "gense",
+      "ramal_principal": "838531",
+      "ramais": [
+        "838531",
+        "838477",
+        "838472"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8531",
+          "link": "tel:+558131838531",
+          "ramal_original": "838531"
+        },
+        {
+          "numero": "(81) 3183-8477",
+          "link": "tel:+558131838477",
+          "ramal_original": "838477"
+        },
+        {
+          "numero": "(81) 3183-8472",
+          "link": "tel:+558131838472",
+          "ramal_original": "838472"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA LAUDEMIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 35,
+    "setor": {
+      "sigla": "GEPAC",
+      "nome": "GERENCIA DE PAGAMENTO",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "gepac@adm.educacao.pe.gov.br",
+      "slug": "gepac",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LETICIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 36,
+    "setor": {
+      "sigla": "GEPAF",
+      "nome": "GERÊNCIA DE POLITICAS EDUCACIONAIS DOS ANOS FINAIS DO ENSINO MÉDIO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gepaf@adm.educacao.pe.gov.br",
+      "slug": "gepaf",
+      "ramal_principal": "838748",
+      "ramais": [
+        "838748",
+        "838752",
+        "838717"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8748",
+          "link": "tel:+558131838748",
+          "ramal_original": "838748"
+        },
+        {
+          "numero": "(81) 3183-8752",
+          "link": "tel:+558131838752",
+          "ramal_original": "838752"
+        },
+        {
+          "numero": "(81) 3183-8717",
+          "link": "tel:+558131838717",
+          "ramal_original": "838717"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EDUARDO SANTΑΝΑ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 37,
+    "setor": {
+      "sigla": "GEPCC",
+      "nome": "GERENCIA DE PRESTAÇÃO DE CONTAS E CONVÊNIOS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "3° ENTRADA",
+      "email": "gepcc@adm.educacao.pe.gov.br",
+      "slug": "gepcc",
+      "ramal_principal": "839091",
+      "ramais": [
+        "839091",
+        "838416"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9091",
+          "link": "tel:+558131839091",
+          "ramal_original": "839091"
+        },
+        {
+          "numero": "(81) 3183-8416",
+          "link": "tel:+558131838416",
+          "ramal_original": "838416"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "TIAGO LINS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 38,
+    "setor": {
+      "sigla": "GEPEC",
+      "nome": "GERENCIA DE POLITICAS EDUCACIONAIS DO CAMPO",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "GERLANIA DE ARRUDA / PRISCILA BELLO",
+      "email": "gepec@adm.educacao.pe.gov.br",
+      "slug": "gepec",
+      "ramal_principal": "838741",
+      "ramais": [
+        "838741",
+        "838742",
+        "838743"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8741",
+          "link": "tel:+558131838741",
+          "ramal_original": "838741"
+        },
+        {
+          "numero": "(81) 3183-8742",
+          "link": "tel:+558131838742",
+          "ramal_original": "838742"
+        },
+        {
+          "numero": "(81) 3183-8743",
+          "link": "tel:+558131838743",
+          "ramal_original": "838743"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "WALDENIA LEAL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 39,
+    "setor": {
+      "sigla": "GEPFI",
+      "nome": "GERENCIA DE PROGRAMA FINANCEIRA",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gepfi@adm.educacao.pe.gov.br",
+      "slug": "gepfi",
+      "ramal_principal": "838455",
+      "ramais": [
+        "838455",
+        "838467",
+        "838469",
+        "838463"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8455",
+          "link": "tel:+558131838455",
+          "ramal_original": "838455"
+        },
+        {
+          "numero": "(81) 3183-8467",
+          "link": "tel:+558131838467",
+          "ramal_original": "838467"
+        },
+        {
+          "numero": "(81) 3183-8469",
+          "link": "tel:+558131838469",
+          "ramal_original": "838469"
+        },
+        {
+          "numero": "(81) 3183-8463",
+          "link": "tel:+558131838463",
+          "ramal_original": "838463"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LORENA RABELO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 40,
+    "setor": {
+      "sigla": "GEPFR",
+      "nome": "GESTÃO DE PLANEJAMENTO E FINANCEIRO DE REDE",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gepfr@adm.educacao.pe.gov.br",
+      "slug": "gepfr",
+      "ramal_principal": "839712",
+      "ramais": [
+        "839712"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9712",
+          "link": "tel:+558131839712",
+          "ramal_original": "839712"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ADRIANO NISHUMURA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 41,
+    "setor": {
+      "sigla": "GEPLO",
+      "nome": "GERENCIA DE PLANEJAMENTO ORÇAMENTARIOO",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "geplo@adm.educacao.pe.gov.br",
+      "slug": "geplo",
+      "ramal_principal": "838435",
+      "ramais": [
+        "838435",
+        "838451"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8435",
+          "link": "tel:+558131838435",
+          "ramal_original": "838435"
+        },
+        {
+          "numero": "(81) 3183-8451",
+          "link": "tel:+558131838451",
+          "ramal_original": "838451"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GABRIELA RAMOS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 42,
+    "setor": {
+      "sigla": "GERPE",
+      "nome": "GERENCIA DE PROJETOS ESPECIAIS",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "1ª ENTRADA",
+      "email": "gerpe@adm.educacao.pe.gov.br",
+      "slug": "gerpe",
+      "ramal_principal": "839292",
+      "ramais": [
+        "839292",
+        "838504"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9292",
+          "link": "tel:+558131839292",
+          "ramal_original": "839292"
+        },
+        {
+          "numero": "(81) 3183-8504",
+          "link": "tel:+558131838504",
+          "ramal_original": "838504"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA PAULA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 43,
+    "setor": {
+      "sigla": "GESAD",
+      "nome": "GERÊNCIA DE SERVIÇOS ADMINISTRATIVOS",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gesad@adm.educacao.pe.gov.br",
+      "slug": "gesad",
+      "ramal_principal": "839234",
+      "ramais": [
+        "839234",
+        "839228"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9234",
+          "link": "tel:+558131839234",
+          "ramal_original": "839234"
+        },
+        {
+          "numero": "(81) 3183-9228",
+          "link": "tel:+558131839228",
+          "ramal_original": "839228"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FRANCISCO DE SÁ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 44,
+    "setor": {
+      "sigla": "GESADISULOG",
+      "nome": "GESADISULOG Bibeo Eandar",
+      "bloco": "BLOCO E",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "gesadisulog@adm.educacao.pe.gov.br",
+      "slug": "gesadisulog",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 45,
+    "setor": {
+      "sigla": "GETAC",
+      "nome": "GERENCIA TECNICA DE ALIMENTAÇÃO E NUTRIÇÃO",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "getac@adm.educacao.pe.gov.br",
+      "slug": "getac",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ELBA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 46,
+    "setor": {
+      "sigla": "GETE",
+      "nome": "GERÊNCIA DE TECNOLOGIA EDUCACIONAL",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gete@adm.educacao.pe.gov.br",
+      "slug": "gete",
+      "ramal_principal": "839906",
+      "ramais": [
+        "839906",
+        "839985"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9906",
+          "link": "tel:+558131839906",
+          "ramal_original": "839906"
+        },
+        {
+          "numero": "(81) 3183-9985",
+          "link": "tel:+558131839985",
+          "ramal_original": "839985"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SIL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 47,
+    "setor": {
+      "sigla": "GETRA",
+      "nome": "GERÊNCIA TECNICA DE TRANSPORTES",
+      "bloco": "BLOCO L",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "getra@adm.educacao.pe.gov.br",
+      "slug": "getra",
+      "ramal_principal": "839241",
+      "ramais": [
+        "839241",
+        "839235"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9241",
+          "link": "tel:+558131839241",
+          "ramal_original": "839241"
+        },
+        {
+          "numero": "(81) 3183-9235",
+          "link": "tel:+558131839235",
+          "ramal_original": "839235"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DIONISIO NETO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 48,
+    "setor": {
+      "sigla": "GGADM",
+      "nome": "GERÊNCIA GERAL DE ADMINISTRAÇÃO",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: JANAINA",
+      "email": "ggadm@adm.educacao.pe.gov.br",
+      "slug": "ggadm",
+      "ramal_principal": "839206",
+      "ramais": [
+        "839206"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9206",
+          "link": "tel:+558131839206",
+          "ramal_original": "839206"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CARLA CARNEIRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 49,
+    "setor": {
+      "sigla": "GGAJ",
+      "nome": "GERENCIA GERAL DE ASSUSTOS JURIDICOS",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "2° ENTRADA",
+      "email": "ggaj@adm.educacao.pe.gov.br",
+      "slug": "ggaj",
+      "ramal_principal": "839309",
+      "ramais": [
+        "839309",
+        "839312"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9309",
+          "link": "tel:+558131839309",
+          "ramal_original": "839309"
+        },
+        {
+          "numero": "(81) 3183-9312",
+          "link": "tel:+558131839312",
+          "ramal_original": "839312"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VIRGINIA XAVIER CAVALCANTI BATISTA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 50,
+    "setor": {
+      "sigla": "GGAO",
+      "nome": "GERÊNCIA GERAL ADMINISTRATIVA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "ggao@adm.educacao.pe.gov.br",
+      "slug": "ggao",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DAVID VILELA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 51,
+    "setor": {
+      "sigla": "GGEI",
+      "nome": "GERÊNCIA GERAL DE EDUCAÇÃO INTEGRAL",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "ggei@adm.educacao.pe.gov.br",
+      "slug": "ggei",
+      "ramal_principal": "839842",
+      "ramais": [
+        "839842",
+        "839843"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9842",
+          "link": "tel:+558131839842",
+          "ramal_original": "839842"
+        },
+        {
+          "numero": "(81) 3183-9843",
+          "link": "tel:+558131839843",
+          "ramal_original": "839843"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GILSON ALVES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 52,
+    "setor": {
+      "sigla": "GGEP",
+      "nome": "GERÊNCIA GERAL DE DUCAÇÃO PROFISSIONAL",
+      "bloco": "BLOCO F",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "ggep@adm.educacao.pe.gov.br",
+      "slug": "ggep",
+      "ramal_principal": "839863",
+      "ramais": [
+        "839863"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9863",
+          "link": "tel:+558131839863",
+          "ramal_original": "839863"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SOCORRO RODRIGUES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 53,
+    "setor": {
+      "sigla": "GGFIC",
+      "nome": "GERENCIA GERAL DO FINANCEIRO",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "ggfic@adm.educacao.pe.gov.br",
+      "slug": "ggfic",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "HELENA BATISTA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 54,
+    "setor": {
+      "sigla": "GGGR",
+      "nome": "GERÊNCIA GERAL DE GESTÃO DE REDE",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gggr@adm.educacao.pe.gov.br",
+      "slug": "gggr",
+      "ramal_principal": "839716",
+      "ramais": [
+        "839716"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9716",
+          "link": "tel:+558131839716",
+          "ramal_original": "839716"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LIANE MARIA DE ARRUDA LEAL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 55,
+    "setor": {
+      "sigla": "GGLOG",
+      "nome": "GERÊNCIA GERAL DE LOGISTICA",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gglog@adm.educacao.pe.gov.br",
+      "slug": "gglog",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "AUGUSTO CEZAR BATISTA CANDIDO"
+      },
+      {
+        "nome": "RAFAELA SANDY"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 56,
+    "setor": {
+      "sigla": "GGO",
+      "nome": "GERENCIA GERAL DE PLANEJAMENTO ORÇAMENTARIO E FINANCEIRO",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "ggo@adm.educacao.pe.gov.br",
+      "slug": "ggo",
+      "ramal_principal": "838436",
+      "ramais": [
+        "838436"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8436",
+          "link": "tel:+558131838436",
+          "ramal_original": "838436"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ALESSANDRA PINHEIRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 57,
+    "setor": {
+      "sigla": "GGOP",
+      "nome": "GERENCIA GERAL DE OBRAS E PROJETOS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "ggop@adm.educacao.pe.gov.br",
+      "slug": "ggop",
+      "ramal_principal": "838207",
+      "ramais": [
+        "838207"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8207",
+          "link": "tel:+558131838207",
+          "ramal_original": "838207"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RAFAEL VIAΝΑ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 58,
+    "setor": {
+      "sigla": "GGPE",
+      "nome": "GERÊNCIA GERAL DE Políticas Educacionais",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "CONTATO: ALINE / KARLA",
+      "email": "ggpe@adm.educacao.pe.gov.br",
+      "slug": "ggpe",
+      "ramal_principal": "838768",
+      "ramais": [
+        "838768",
+        "838765"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8768",
+          "link": "tel:+558131838768",
+          "ramal_original": "838768"
+        },
+        {
+          "numero": "(81) 3183-8765",
+          "link": "tel:+558131838765",
+          "ramal_original": "838765"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JOSÉ ALLISSON"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 59,
+    "setor": {
+      "sigla": "GGPEM",
+      "nome": "GERÊNCIA GERAL DE POLITICAS EDUCACIONAIS DO ENSINO MÉDIO",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "ggpem@adm.educacao.pe.gov.br",
+      "slug": "ggpem",
+      "ramal_principal": "838620",
+      "ramais": [
+        "838620",
+        "839586"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8620",
+          "link": "tel:+558131838620",
+          "ramal_original": "838620"
+        },
+        {
+          "numero": "(81) 3183-9586",
+          "link": "tel:+558131839586",
+          "ramal_original": "839586"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA LAUDEMIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 60,
+    "setor": {
+      "sigla": "GGTIC",
+      "nome": "GERÊNCIA GERAL DE TECNOLOGIA DA INFORMAÇÃO E COMUNICAÇÃO",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "CONTATO: ΑΝΑ",
+      "email": "ggtic@adm.educacao.pe.gov.br",
+      "slug": "ggtic",
+      "ramal_principal": "839336",
+      "ramais": [
+        "839336",
+        "839349"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9336",
+          "link": "tel:+558131839336",
+          "ramal_original": "839336"
+        },
+        {
+          "numero": "(81) 3183-9349",
+          "link": "tel:+558131839349",
+          "ramal_original": "839349"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CARMEM RAQUEL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 61,
+    "setor": {
+      "sigla": "GIP",
+      "nome": "GESTÃO DE INOVAÇÃO PEDAGOGICA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO:HUGO",
+      "email": "gip@adm.educacao.pe.gov.br",
+      "slug": "gip",
+      "ramal_principal": "838750",
+      "ramais": [
+        "838750",
+        "838699"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8750",
+          "link": "tel:+558131838750",
+          "ramal_original": "838750"
+        },
+        {
+          "numero": "(81) 3183-8699",
+          "link": "tel:+558131838699",
+          "ramal_original": "838699"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 62,
+    "setor": {
+      "sigla": "GISA",
+      "nome": "GERÊNCIA DE INFORMAÇÕES E SISTEMAS APLICATIVOS",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gisa@adm.educacao.pe.gov.br",
+      "slug": "gisa",
+      "ramal_principal": "839353",
+      "ramais": [
+        "839353"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9353",
+          "link": "tel:+558131839353",
+          "ramal_original": "839353"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 63,
+    "setor": {
+      "sigla": "GITI",
+      "nome": "GERÊNCIA DE INFRAESTRUTURA E TECNOLOGIA DA INFORMAÇÃO",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "giti@adm.educacao.pe.gov.br",
+      "slug": "giti",
+      "ramal_principal": "839356",
+      "ramais": [
+        "839356"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9356",
+          "link": "tel:+558131839356",
+          "ramal_original": "839356"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LUIZ FELIPE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 64,
+    "setor": {
+      "sigla": "GMAT",
+      "nome": "GERENCIA DE MATERIAL E REORDENAMENTO ESCOLAR",
+      "bloco": "BLOCO C",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gmat@adm.educacao.pe.gov.br",
+      "slug": "gmat",
+      "ramal_principal": "839902",
+      "ramais": [
+        "839902"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9902",
+          "link": "tel:+558131839902",
+          "ramal_original": "839902"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "HELENA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 65,
+    "setor": {
+      "sigla": "GMAT",
+      "nome": "GESTÃO DE MATRICULA E REORDENAMENTO DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gmat@adm.educacao.pe.gov.br",
+      "slug": "gmat",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "HELENA MOREIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 66,
+    "setor": {
+      "sigla": "GMRE",
+      "nome": "GERÊNCIA DE MONITORAMENTO DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gmre@adm.educacao.pe.gov.br",
+      "slug": "gmre",
+      "ramal_principal": "839723",
+      "ramais": [
+        "839723",
+        "839727",
+        "839728"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9723",
+          "link": "tel:+558131839723",
+          "ramal_original": "839723"
+        },
+        {
+          "numero": "(81) 3183-9727",
+          "link": "tel:+558131839727",
+          "ramal_original": "839727"
+        },
+        {
+          "numero": "(81) 3183-9728",
+          "link": "tel:+558131839728",
+          "ramal_original": "839728"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JOSELMA PEREIRA CANEJO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 67,
+    "setor": {
+      "sigla": "GPLAN",
+      "nome": "Genencia de planejaments",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "gplan@adm.educacao.pe.gov.br",
+      "slug": "gplan",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "Bruna"
+      },
+      {
+        "nome": "Erica (chefe)"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 68,
+    "setor": {
+      "sigla": "GPPP",
+      "nome": "GERÊNCIA DE PROGRAMAS E PROJETOS PRIORITARIOS",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gppp@adm.educacao.pe.gov.br",
+      "slug": "gppp",
+      "ramal_principal": "839719",
+      "ramais": [
+        "839719"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9719",
+          "link": "tel:+558131839719",
+          "ramal_original": "839719"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EVELLIN"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 69,
+    "setor": {
+      "sigla": "GRE RECIFE NORTE",
+      "nome": "GRE RECIFE NORTE",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "grerecifenorte@adm.educacao.pe.gov.br",
+      "slug": "gre-recife-norte",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": [
+        {
+          "numero": "(81) 3181-2601",
+          "link": "tel:+558131812601",
+          "numero_original": "3181-2601"
+        },
+        {
+          "numero": "(81) 3181-2622",
+          "link": "tel:+558131812622",
+          "numero_original": "3181-2622"
+        },
+        {
+          "numero": "(81) 3181-2616",
+          "link": "tel:+558131812616",
+          "numero_original": "3181-2616"
+        },
+        {
+          "numero": "(81) 3181-2623",
+          "link": "tel:+558131812623",
+          "numero_original": "3181-2623"
+        },
+        {
+          "numero": "(81) 3181-2626",
+          "link": "tel:+558131812626",
+          "numero_original": "3181-2626"
+        }
+      ]
+    },
+    "responsaveis": [
+      {
+        "nome": "RUA: COELHO LEITE"
+      },
+      {
+        "nome": "80 - SANTO AMARO - RECIFE-PE 50100-140"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 70,
+    "setor": {
+      "sigla": "GRE RECIFE SUL / METROPOLITANA NORTE / METROPOLITANA SUL",
+      "nome": "GRE RECIFE SUL / METROPOLITANA NORTE / METROPOLITANA SUL",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "grerecifesulmetropolitananortemetropolitanasul@adm.educacao.pe.gov.br",
+      "slug": "gre-recife-sul-metropolitana-norte-metropolitana-sul",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RUA ACADÊMICO HÉLIO RAMOS"
+      },
+      {
+        "nome": "500"
+      },
+      {
+        "nome": "CIDADE UNIVERSITÁRIA - RECIFE-PE 50740-530"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 71,
+    "setor": {
+      "sigla": "GSTE",
+      "nome": "GERÊNCIA DE SUPORTE E TECNOLOGIA EDUCACIONAL",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gste@adm.educacao.pe.gov.br",
+      "slug": "gste",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RODRIGO SIMÕES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 72,
+    "setor": {
+      "sigla": "GTCON",
+      "nome": "GERÊNCIA TECNICAS DE CONTRATOS",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gtcon@adm.educacao.pe.gov.br",
+      "slug": "gtcon",
+      "ramal_principal": "838410",
+      "ramais": [
+        "838410",
+        "838383"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8410",
+          "link": "tel:+558131838410",
+          "ramal_original": "838410"
+        },
+        {
+          "numero": "(81) 3183-8383",
+          "link": "tel:+558131838383",
+          "ramal_original": "838383"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ΝΙΧΟΝ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 73,
+    "setor": {
+      "sigla": "GTLIC",
+      "nome": "GERÊNCIA DE LICITAÇÃO",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "gtlic@adm.educacao.pe.gov.br",
+      "slug": "gtlic",
+      "ramal_principal": "839230",
+      "ramais": [
+        "839230"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9230",
+          "link": "tel:+558131839230",
+          "ramal_original": "839230"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MAYSA MARINHO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 74,
+    "setor": {
+      "sigla": "GTPAT",
+      "nome": "GERÊNCIA TECNICA DE PATRIMÔNIO",
+      "bloco": "BLOCO G",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gtpat@adm.educacao.pe.gov.br",
+      "slug": "gtpat",
+      "ramal_principal": "839225",
+      "ramais": [
+        "839225",
+        "839231",
+        "839209"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9225",
+          "link": "tel:+558131839225",
+          "ramal_original": "839225"
+        },
+        {
+          "numero": "(81) 3183-9231",
+          "link": "tel:+558131839231",
+          "ramal_original": "839231"
+        },
+        {
+          "numero": "(81) 3183-9209",
+          "link": "tel:+558131839209",
+          "ramal_original": "839209"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JAQUELINE FERRAZ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 75,
+    "setor": {
+      "sigla": "GTRAE",
+      "nome": "GERENCIA DE TRANSPORTE ESCOLAR",
+      "bloco": "BLOCO C",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gtrae@adm.educacao.pe.gov.br",
+      "slug": "gtrae",
+      "ramal_principal": "839263",
+      "ramais": [
+        "839263"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9263",
+          "link": "tel:+558131839263",
+          "ramal_original": "839263"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FELIPE DE LUNA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 76,
+    "setor": {
+      "sigla": "GTRES",
+      "nome": "CORDENAÇÃO TECNICA DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "gtres@adm.educacao.pe.gov.br",
+      "slug": "gtres",
+      "ramal_principal": "839719",
+      "ramais": [
+        "839719"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9719",
+          "link": "tel:+558131839719",
+          "ramal_original": "839719"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EVELLIN"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 77,
+    "setor": {
+      "sigla": "ICPAD",
+      "nome": "1° COMISSÃO DE PROCESSO ADMINISTRATIVO DISCIPLINAR",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "icpad@adm.educacao.pe.gov.br",
+      "slug": "icpad",
+      "ramal_principal": "838806",
+      "ramais": [
+        "838806"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8806",
+          "link": "tel:+558131838806",
+          "ramal_original": "838806"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VERONICA PADILHA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 78,
+    "setor": {
+      "sigla": "IICPAD",
+      "nome": "2° COMISSÃO DE PROCESSO ADMINISTRATIVO DISCIPLINAR",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "iicpad@adm.educacao.pe.gov.br",
+      "slug": "iicpad",
+      "ramal_principal": "838797",
+      "ramais": [
+        "838797"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8797",
+          "link": "tel:+558131838797",
+          "ramal_original": "838797"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CAROLINA QUINTAS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 79,
+    "setor": {
+      "sigla": "IIICPAD",
+      "nome": "3° COMISSÃO DE PROCESSO ADMINISTRATIVO DISCIPLINAR",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "iiicpad@adm.educacao.pe.gov.br",
+      "slug": "iiicpad",
+      "ramal_principal": "838791",
+      "ramais": [
+        "838791"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8791",
+          "link": "tel:+558131838791",
+          "ramal_original": "838791"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MARCELA ASFORA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 80,
+    "setor": {
+      "sigla": "IVCPAD",
+      "nome": "4° COMISSÃO DE PROCESSO ADMINISTRATIVO DISCIPLINAR",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "ivcpad@adm.educacao.pe.gov.br",
+      "slug": "ivcpad",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FLAVIA XAVIER"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 81,
+    "setor": {
+      "sigla": "JEST",
+      "nome": "UNIDADE DE ESTAGIO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: ANDRESA",
+      "email": "jest@adm.educacao.pe.gov.br",
+      "slug": "jest",
+      "ramal_principal": "838965",
+      "ramais": [
+        "838965"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8965",
+          "link": "tel:+558131838965",
+          "ramal_original": "838965"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FERNANDA SOUTO MAIOR"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 82,
+    "setor": {
+      "sigla": "JSOP",
+      "nome": "UNIDADE DE SERVIÇOS OPERACIONAIS",
+      "bloco": "BLOCO J",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "jsop@adm.educacao.pe.gov.br",
+      "slug": "jsop",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 83,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "ALMOXERIFADO",
+      "bloco": "BLOCO J",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839233",
+      "ramais": [
+        "839233"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9233",
+          "link": "tel:+558131839233",
+          "ramal_original": "839233"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DANIEL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 84,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "APOIO CORREGEDORIA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JOÃO ATAIDE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 85,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "ASSESSORIA DA GERENCIA DE CONTROLE INTERNO E CORREIÇÃO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839023",
+      "ramais": [
+        "839023"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9023",
+          "link": "tel:+558131839023",
+          "ramal_original": "839023"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "KAROLINE MΑΙΑ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 86,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "ASSESSORIA DO GABINETE",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: BARBARA - ENTRADA PRINCIPAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839286",
+      "ramais": [
+        "839286",
+        "839285"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9286",
+          "link": "tel:+558131839286",
+          "ramal_original": "839286"
+        },
+        {
+          "numero": "(81) 3183-9285",
+          "link": "tel:+558131839285",
+          "ramal_original": "839285"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MARIANA INOJOSA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 87,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "ATUALIZAÇÃO",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ELIDIANE SILVA SANTOS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 88,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "BANCO BRADESCO",
+      "bloco": "BLOCO G",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 89,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "CHEFE DE GABINETE",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CÁSSIO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 90,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "CORDENAÇÃO DO CENSO ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839378",
+      "ramais": [
+        "839378",
+        "839377",
+        "839380",
+        "839374"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9378",
+          "link": "tel:+558131839378",
+          "ramal_original": "839378"
+        },
+        {
+          "numero": "(81) 3183-9377",
+          "link": "tel:+558131839377",
+          "ramal_original": "839377"
+        },
+        {
+          "numero": "(81) 3183-9380",
+          "link": "tel:+558131839380",
+          "ramal_original": "839380"
+        },
+        {
+          "numero": "(81) 3183-9374",
+          "link": "tel:+558131839374",
+          "ramal_original": "839374"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LIGIA HOLANDA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 91,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "EDUCAÇÃO AMBIENTAL",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "ESCOLA LEGAL - SOCIO EDUCATIVO (CAZE) - SEMI ABERTO - ETNICO RACIAL + EDUCAÇÃO FISCAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 92,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "ENDEREÇO SEDE",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "AVENIDA AFONSO OLINDENSE"
+      },
+      {
+        "nome": "N° 1513-VÁRZEA"
+      },
+      {
+        "nome": "RECFE-PE 50.810-000"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 93,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "GALPÃO",
+      "bloco": "BLOCO J",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839066",
+      "ramais": [
+        "839066"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9066",
+          "link": "tel:+558131839066",
+          "ramal_original": "839066"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ALEXANDE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 94,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "MANUTENÇÃO",
+      "bloco": "BLOCO J",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839252",
+      "ramais": [
+        "839252"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9252",
+          "link": "tel:+558131839252",
+          "ramal_original": "839252"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MARCOS"
+      },
+      {
+        "nome": "JAILSON"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 95,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "NUCLEO DE CONTRATOS",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EFRAIN JOSÉ DE BRITO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 96,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PASSAGENS AEREAS",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839276",
+      "ramais": [
+        "839276"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9276",
+          "link": "tel:+558131839276",
+          "ramal_original": "839276"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "TIÃO"
+      },
+      {
+        "nome": "TATIANE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 97,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PÉ DE MEIA",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "838645",
+      "ramais": [
+        "838645"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8645",
+          "link": "tel:+558131838645",
+          "ramal_original": "838645"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 98,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PE+ALFABETIZADO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "838999",
+      "ramais": [
+        "838999",
+        "839435"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8999",
+          "link": "tel:+558131838999",
+          "ramal_original": "838999"
+        },
+        {
+          "numero": "(81) 3183-9435",
+          "link": "tel:+558131839435",
+          "ramal_original": "839435"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ALEXANDRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 99,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PORTARIA 1",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839555",
+      "ramais": [
+        "839555"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9555",
+          "link": "tel:+558131839555",
+          "ramal_original": "839555"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 100,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PORTARIA 2",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839893",
+      "ramais": [
+        "839893"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9893",
+          "link": "tel:+558131839893",
+          "ramal_original": "839893"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 101,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PORTARIA ΜΕΙΟ",
+      "bloco": "N / A",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839251",
+      "ramais": [
+        "839251"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9251",
+          "link": "tel:+558131839251",
+          "ramal_original": "839251"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 102,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PRATICAS LABORAIS",
+      "bloco": "BLOCO R",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839593",
+      "ramais": [
+        "839593"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9593",
+          "link": "tel:+558131839593",
+          "ramal_original": "839593"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 103,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "PSICO SOCIAL",
+      "bloco": "BLOCO R",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839597",
+      "ramais": [
+        "839597"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9597",
+          "link": "tel:+558131839597",
+          "ramal_original": "839597"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 104,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "QUADRA - CORDENAÇÃO DE MUSICA BANDAS E FANFARRAS",
+      "bloco": "BLOCO K",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839574",
+      "ramais": [
+        "839574"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9574",
+          "link": "tel:+558131839574",
+          "ramal_original": "839574"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RUSSO"
+      },
+      {
+        "nome": "GUSTAVO"
+      },
+      {
+        "nome": "FLAVIO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 105,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839100",
+      "ramais": [
+        "839100"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9100",
+          "link": "tel:+558131839100",
+          "ramal_original": "839100"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DANIELLE VASCONCELOS"
+      },
+      {
+        "nome": "ELIDIANE SANTOS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 106,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "838586",
+      "ramais": [
+        "838586"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8586",
+          "link": "tel:+558131838586",
+          "ramal_original": "838586"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DANIELA VELOSO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 107,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "838436",
+      "ramais": [
+        "838436"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8436",
+          "link": "tel:+558131838436",
+          "ramal_original": "838436"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VANESSA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 108,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839277",
+      "ramais": [
+        "839277"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9277",
+          "link": "tel:+558131839277",
+          "ramal_original": "839277"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "HELENA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 109,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839600",
+      "ramais": [
+        "839600"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9600",
+          "link": "tel:+558131839600",
+          "ramal_original": "839600"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SARAH"
+      },
+      {
+        "nome": "GABRIEL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 110,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839781",
+      "ramais": [
+        "839781"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9781",
+          "link": "tel:+558131839781",
+          "ramal_original": "839781"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANGELA"
+      },
+      {
+        "nome": "CRIS"
+      },
+      {
+        "nome": "THAIS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 111,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO",
+      "bloco": "BLOCO R",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839420",
+      "ramais": [
+        "839420"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9420",
+          "link": "tel:+558131839420",
+          "ramal_original": "839420"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 112,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "RECEPÇÃO / PROTOCOLO",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839285",
+      "ramais": [
+        "839285"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9285",
+          "link": "tel:+558131839285",
+          "ramal_original": "839285"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RAYSSA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 113,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "SALA DOS MORISTAS",
+      "bloco": "BLOCO L",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839244",
+      "ramais": [
+        "839244"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9244",
+          "link": "tel:+558131839244",
+          "ramal_original": "839244"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 114,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "SUPERINTENDENTE",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "REGINALDO Lim"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 115,
+    "setor": {
+      "sigla": "N / A",
+      "nome": "SUPORTE TECNICO",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "",
+      "slug": "n-a",
+      "ramal_principal": "839559",
+      "ramais": [
+        "839559"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9559",
+          "link": "tel:+558131839559",
+          "ramal_original": "839559"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 116,
+    "setor": {
+      "sigla": "NAS",
+      "nome": "NÚCLEO DE ATENÇÃO AO SERVIDOR",
+      "bloco": "BLOCO R",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "nas@adm.educacao.pe.gov.br",
+      "slug": "nas",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JAIRON"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 117,
+    "setor": {
+      "sigla": "NOC",
+      "nome": "CENTRAL DE SRVIÇOS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "1ª ENTRADA",
+      "email": "noc@adm.educacao.pe.gov.br",
+      "slug": "noc",
+      "ramal_principal": "839079",
+      "ramais": [
+        "839079",
+        "839058",
+        "839451"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9079",
+          "link": "tel:+558131839079",
+          "ramal_original": "839079"
+        },
+        {
+          "numero": "(81) 3183-9058",
+          "link": "tel:+558131839058",
+          "ramal_original": "839058"
+        },
+        {
+          "numero": "(81) 3183-9451",
+          "link": "tel:+558131839451",
+          "ramal_original": "839451"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LILIAN"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 118,
+    "setor": {
+      "sigla": "OUVIDORIA",
+      "nome": "OUVIDORIA",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "ouvidoria@adm.educacao.pe.gov.br",
+      "slug": "ouvidoria",
+      "ramal_principal": "838238",
+      "ramais": [
+        "838238",
+        "838224"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8238",
+          "link": "tel:+558131838238",
+          "ramal_original": "838238"
+        },
+        {
+          "numero": "(81) 3183-8224",
+          "link": "tel:+558131838224",
+          "ramal_original": "838224"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GEOVANNA CARLA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 119,
+    "setor": {
+      "sigla": "OUVIDORIA",
+      "nome": "OUVIDORIA",
+      "bloco": "BLOCO F",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "ouvidoria@adm.educacao.pe.gov.br",
+      "slug": "ouvidoria",
+      "ramal_principal": "839929",
+      "ramais": [
+        "839929"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9929",
+          "link": "tel:+558131839929",
+          "ramal_original": "839929"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GRAÇA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 120,
+    "setor": {
+      "sigla": "PSEOB",
+      "nome": "PROTOCOLO DA SECRETARIA EXECUTIVA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "pseob@adm.educacao.pe.gov.br",
+      "slug": "pseob",
+      "ramal_principal": "838367",
+      "ramais": [
+        "838367"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8367",
+          "link": "tel:+558131838367",
+          "ramal_original": "838367"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DOLORES DUARTE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 121,
+    "setor": {
+      "sigla": "SCOMP",
+      "nome": "SUPERINTENDÊNCIA DE COMPRAS",
+      "bloco": "BLOCO E",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "scomp@adm.educacao.pe.gov.br",
+      "slug": "scomp",
+      "ramal_principal": "839210",
+      "ramais": [
+        "839210"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9210",
+          "link": "tel:+558131839210",
+          "ramal_original": "839210"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "PATRICIA CASTRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 122,
+    "setor": {
+      "sigla": "SEAF",
+      "nome": "SECRETARIA EXECUTIVA DE ADMINISTRAÇÃO E FINANÇAS",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: FERNANDA - ENTRADA PRINCIPAL",
+      "email": "seaf@adm.educacao.pe.gov.br",
+      "slug": "seaf",
+      "ramal_principal": "839282",
+      "ramais": [
+        "839282"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9282",
+          "link": "tel:+558131839282",
+          "ramal_original": "839282"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DILERMANO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 123,
+    "setor": {
+      "sigla": "SEAM",
+      "nome": "SECRETARIA EXECUTIVA DE ARTICULAÇÃO MUNICIPAL",
+      "bloco": "BLOCO C",
+      "andar": "1º ANDAR",
+      "observacoes": "ROSA",
+      "email": "seam@adm.educacao.pe.gov.br",
+      "slug": "seam",
+      "ramal_principal": "839583",
+      "ramais": [
+        "839583",
+        "839076"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9583",
+          "link": "tel:+558131839583",
+          "ramal_original": "839583"
+        },
+        {
+          "numero": "(81) 3183-9076",
+          "link": "tel:+558131839076",
+          "ramal_original": "839076"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "NATANAEL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 124,
+    "setor": {
+      "sigla": "SEDE",
+      "nome": "SECRETARIA EXECUTIVA DE DESENVOLVIMENTO DA EXECUÇÃO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: WELSON / DANIELA / ISABELA -",
+      "email": "sede@adm.educacao.pe.gov.br",
+      "slug": "sede",
+      "ramal_principal": "838722",
+      "ramais": [
+        "838722",
+        "838724"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8722",
+          "link": "tel:+558131838722",
+          "ramal_original": "838722"
+        },
+        {
+          "numero": "(81) 3183-8724",
+          "link": "tel:+558131838724",
+          "ramal_original": "838724"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA LUCIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 125,
+    "setor": {
+      "sigla": "SEGE",
+      "nome": "SECRETARIA EXECUTIVA DE GESTÃO DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: WALQUIRIA / KASSIA",
+      "email": "sege@adm.educacao.pe.gov.br",
+      "slug": "sege",
+      "ramal_principal": "839702",
+      "ramais": [
+        "839702",
+        "839671",
+        "839705"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9702",
+          "link": "tel:+558131839702",
+          "ramal_original": "839702"
+        },
+        {
+          "numero": "(81) 3183-9671",
+          "link": "tel:+558131839671",
+          "ramal_original": "839671"
+        },
+        {
+          "numero": "(81) 3183-9705",
+          "link": "tel:+558131839705",
+          "ramal_original": "839705"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CASSIANA IRANI DOS SANTOS LIMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 126,
+    "setor": {
+      "sigla": "SEGP",
+      "nome": "SECRETARIA EXECUTIVADE GESTÃO DE PESSOAS",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "segp@adm.educacao.pe.gov.br",
+      "slug": "segp",
+      "ramal_principal": "838771",
+      "ramais": [
+        "838771"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8771",
+          "link": "tel:+558131838771",
+          "ramal_original": "838771"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RAFAELA RAMOS PINTO RIBEIRO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 127,
+    "setor": {
+      "sigla": "SEMP",
+      "nome": "SECRETARIA EXECUTIVA DE ENSINO MÉDIO E PROFISSIONAL",
+      "bloco": "BLOCO F",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "semp@adm.educacao.pe.gov.br",
+      "slug": "semp",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SOCORRO RODRIGUES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 128,
+    "setor": {
+      "sigla": "SEMP",
+      "nome": "SECRETARIA EXECUTIVA DE ENSINO MÉDIO E PROFISSIONAL",
+      "bloco": "BLOCO I",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "semp@adm.educacao.pe.gov.br",
+      "slug": "semp",
+      "ramal_principal": "839791",
+      "ramais": [
+        "839791",
+        "839859"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9791",
+          "link": "tel:+558131839791",
+          "ramal_original": "839791"
+        },
+        {
+          "numero": "(81) 3183-9859",
+          "link": "tel:+558131839859",
+          "ramal_original": "839859"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "PAULO DUTRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 129,
+    "setor": {
+      "sigla": "SEOB",
+      "nome": "SECRETARIA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "seob@adm.educacao.pe.gov.br",
+      "slug": "seob",
+      "ramal_principal": "838207",
+      "ramais": [
+        "838207"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8207",
+          "link": "tel:+558131838207",
+          "ramal_original": "838207"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ROBERTO FERREIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 130,
+    "setor": {
+      "sigla": "Sigla",
+      "nome": "Nome_Setor_Unidade",
+      "bloco": "Bloco",
+      "andar": "Andar",
+      "observacoes": "Observacoes_Detalhes",
+      "email": "sigla@adm.educacao.pe.gov.br",
+      "slug": "sigla",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "Responsavel_Principal"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 131,
+    "setor": {
+      "sigla": "SUASE",
+      "nome": "SUPERINTENDÊNCIA DE ATENÇÃO AO SERVIDOR E RELAÇÃO DE TRABALHO",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "CONTATO: CARMINHA",
+      "email": "suase@adm.educacao.pe.gov.br",
+      "slug": "suase",
+      "ramal_principal": "838974",
+      "ramais": [
+        "838974",
+        "838967"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8974",
+          "link": "tel:+558131838974",
+          "ramal_original": "838974"
+        },
+        {
+          "numero": "(81) 3183-8967",
+          "link": "tel:+558131838967",
+          "ramal_original": "838967"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "NILDILANE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 132,
+    "setor": {
+      "sigla": "SUCOM",
+      "nome": "SUPERINTENDÊNCIA DE COMUNICAÇÃO",
+      "bloco": "BLOCO D",
+      "andar": "1º ANDAR",
+      "observacoes": "1ª ENTRADA",
+      "email": "sucom@adm.educacao.pe.gov.br",
+      "slug": "sucom",
+      "ramal_principal": "839294",
+      "ramais": [
+        "839294",
+        "839299",
+        "839293"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9294",
+          "link": "tel:+558131839294",
+          "ramal_original": "839294"
+        },
+        {
+          "numero": "(81) 3183-9299",
+          "link": "tel:+558131839299",
+          "ramal_original": "839299"
+        },
+        {
+          "numero": "(81) 3183-9293",
+          "link": "tel:+558131839293",
+          "ramal_original": "839293"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "AMANDA TAVARES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 133,
+    "setor": {
+      "sigla": "SUCOP",
+      "nome": "SUPERINTENDÊNCIA DE CONVÊNIOS E CAPTAÇÃOI DE RECURSOS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "3° ENTRADA",
+      "email": "sucop@adm.educacao.pe.gov.br",
+      "slug": "sucop",
+      "ramal_principal": "838416",
+      "ramais": [
+        "838416"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8416",
+          "link": "tel:+558131838416",
+          "ramal_original": "838416"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ADRIANA MANZI"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 134,
+    "setor": {
+      "sigla": "SUCOSP",
+      "nome": "SUPERINTENDÊNCIA DE CONCURSO, SELEÇÃO E PRESTAÇÃO DE CONTAS DE PESSOAL",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "GLEICE / ALBERTO",
+      "email": "sucosp@adm.educacao.pe.gov.br",
+      "slug": "sucosp",
+      "ramal_principal": "838972",
+      "ramais": [
+        "838972",
+        "838968"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8972",
+          "link": "tel:+558131838972",
+          "ramal_original": "838972"
+        },
+        {
+          "numero": "(81) 3183-8968",
+          "link": "tel:+558131838968",
+          "ramal_original": "838968"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VANIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 135,
+    "setor": {
+      "sigla": "SUEIAI",
+      "nome": "SUPERINTENDÊNCIA DE EDUCAÇÃO INFANTIL E ANOS INICIAIS DO ENSINO FUNDAMENTAL",
+      "bloco": "BLOCO E",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "sueiai@adm.educacao.pe.gov.br",
+      "slug": "sueiai",
+      "ramal_principal": "839477",
+      "ramais": [
+        "839477",
+        "839500"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9477",
+          "link": "tel:+558131839477",
+          "ramal_original": "839477"
+        },
+        {
+          "numero": "(81) 3183-9500",
+          "link": "tel:+558131839500",
+          "ramal_original": "839500"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JULIANA OLIVEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 136,
+    "setor": {
+      "sigla": "SUEOF",
+      "nome": "SUPERINTENDENCIA DE EXECUÇÃO ORÇAMENTARIA E FINANCEIRA",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "sueof@adm.educacao.pe.gov.br",
+      "slug": "sueof",
+      "ramal_principal": "839089",
+      "ramais": [
+        "839089",
+        "839093"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9089",
+          "link": "tel:+558131839089",
+          "ramal_original": "839089"
+        },
+        {
+          "numero": "(81) 3183-9093",
+          "link": "tel:+558131839093",
+          "ramal_original": "839093"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JULIANA LEMOS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 137,
+    "setor": {
+      "sigla": "SUFRE",
+      "nome": "SUPERINTENDÊNCIA FINANCEIRA DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "sufre@adm.educacao.pe.gov.br",
+      "slug": "sufre",
+      "ramal_principal": "839663",
+      "ramais": [
+        "839663"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9663",
+          "link": "tel:+558131839663",
+          "ramal_original": "839663"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ILMER JUNIOR"
+      },
+      {
+        "nome": "LOURIVAL PONTES (GERENTE)"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 138,
+    "setor": {
+      "sigla": "SUGTI",
+      "nome": "SUPERINTENDÊNCIA DE GOVERNANÇA E GESTÃO DE TIC",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "sugti@adm.educacao.pe.gov.br",
+      "slug": "sugti",
+      "ramal_principal": "839336",
+      "ramais": [
+        "839336"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9336",
+          "link": "tel:+558131839336",
+          "ramal_original": "839336"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ZAZARIAS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 139,
+    "setor": {
+      "sigla": "SULOG",
+      "nome": "SUPERINTENDÊNCIA DE LOGISTICA E SERVIÇOS ADMINISTRATIVOS",
+      "bloco": "BLOCO E",
+      "andar": "TÉRREO",
+      "observacoes": "CONTATO: ELAYNE",
+      "email": "sulog@adm.educacao.pe.gov.br",
+      "slug": "sulog",
+      "ramal_principal": "839056",
+      "ramais": [
+        "839056",
+        "839224"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9056",
+          "link": "tel:+558131839056",
+          "ramal_original": "839056"
+        },
+        {
+          "numero": "(81) 3183-9224",
+          "link": "tel:+558131839224",
+          "ramal_original": "839224"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RICARDO GOMES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 140,
+    "setor": {
+      "sigla": "SUOBR",
+      "nome": "SUPERINTENDÊNCIA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "suobr@adm.educacao.pe.gov.br",
+      "slug": "suobr",
+      "ramal_principal": "838382",
+      "ramais": [
+        "838382",
+        "838347"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8382",
+          "link": "tel:+558131838382",
+          "ramal_original": "838382"
+        },
+        {
+          "numero": "(81) 3183-8347",
+          "link": "tel:+558131838347",
+          "ramal_original": "838347"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JÉSSICA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 141,
+    "setor": {
+      "sigla": "SUORG",
+      "nome": "SUPERINTENDÊNCIA DE ORGANIZAÇÃO DA REDE ESCOLAR",
+      "bloco": "BLOCO C",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "suorg@adm.educacao.pe.gov.br",
+      "slug": "suorg",
+      "ramal_principal": "839262",
+      "ramais": [
+        "839262"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9262",
+          "link": "tel:+558131839262",
+          "ramal_original": "839262"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JULIANA LINS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 142,
+    "setor": {
+      "sigla": "SUORG",
+      "nome": "SUPERINTENDÊNCIA DE ORGANIZAÇÃO DA REDE ESCOLAR",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "suorg@adm.educacao.pe.gov.br",
+      "slug": "suorg",
+      "ramal_principal": "839613",
+      "ramais": [
+        "839613",
+        "839618",
+        "839601"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9613",
+          "link": "tel:+558131839613",
+          "ramal_original": "839613"
+        },
+        {
+          "numero": "(81) 3183-9618",
+          "link": "tel:+558131839618",
+          "ramal_original": "839618"
+        },
+        {
+          "numero": "(81) 3183-9601",
+          "link": "tel:+558131839601",
+          "ramal_original": "839601"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JULIANA LINS"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 143,
+    "setor": {
+      "sigla": "SUPAE",
+      "nome": "SUPERINTENDÊNCIA DE PROGRAMA DE ALIMENTAÇÃO ESCOLAR",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "CRIS",
+      "email": "supae@adm.educacao.pe.gov.br",
+      "slug": "supae",
+      "ramal_principal": "839022",
+      "ramais": [
+        "839022",
+        "839034",
+        "839036",
+        "839038",
+        "839028"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9022",
+          "link": "tel:+558131839022",
+          "ramal_original": "839022"
+        },
+        {
+          "numero": "(81) 3183-9034",
+          "link": "tel:+558131839034",
+          "ramal_original": "839034"
+        },
+        {
+          "numero": "(81) 3183-9036",
+          "link": "tel:+558131839036",
+          "ramal_original": "839036"
+        },
+        {
+          "numero": "(81) 3183-9038",
+          "link": "tel:+558131839038",
+          "ramal_original": "839038"
+        },
+        {
+          "numero": "(81) 3183-9028",
+          "link": "tel:+558131839028",
+          "ramal_original": "839028"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "PAULA DARLIN"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 144,
+    "setor": {
+      "sigla": "SUPEFI",
+      "nome": "SUPERINTENDÊNCIA DE POLITICAS EDUCACIONAIS DE FORMAÇÃO E INOVAÇÃO PEDAGOGICA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "supefi@adm.educacao.pe.gov.br",
+      "slug": "supefi",
+      "ramal_principal": "838984",
+      "ramais": [
+        "838984",
+        "838750"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8984",
+          "link": "tel:+558131838984",
+          "ramal_original": "838984"
+        },
+        {
+          "numero": "(81) 3183-8750",
+          "link": "tel:+558131838750",
+          "ramal_original": "838750"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LUCAS FIALHO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 145,
+    "setor": {
+      "sigla": "SUPGM",
+      "nome": "SUPERINTENDÊNCIA DO PROGRAMA GANHE O MUNDO",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "supgm@adm.educacao.pe.gov.br",
+      "slug": "supgm",
+      "ramal_principal": "839021",
+      "ramais": [
+        "839021",
+        "839032",
+        "839033"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9021",
+          "link": "tel:+558131839021",
+          "ramal_original": "839021"
+        },
+        {
+          "numero": "(81) 3183-9032",
+          "link": "tel:+558131839032",
+          "ramal_original": "839032"
+        },
+        {
+          "numero": "(81) 3183-9033",
+          "link": "tel:+558131839033",
+          "ramal_original": "839033"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANARRUTH CORRÊA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 146,
+    "setor": {
+      "sigla": "SUPIM",
+      "nome": "SUPERINTENDÊNCIA DE POLITICA EDUCACIONAL INDIGENA",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "supim@adm.educacao.pe.gov.br",
+      "slug": "supim",
+      "ramal_principal": "838674",
+      "ramais": [
+        "838674",
+        "838690"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8674",
+          "link": "tel:+558131838674",
+          "ramal_original": "838674"
+        },
+        {
+          "numero": "(81) 3183-8690",
+          "link": "tel:+558131838690",
+          "ramal_original": "838690"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "CAETANO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 147,
+    "setor": {
+      "sigla": "TenID",
+      "nome": "TenID",
+      "bloco": "BLOCO H",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "tenid@adm.educacao.pe.gov.br",
+      "slug": "tenid",
+      "ramal_principal": "839665",
+      "ramais": [
+        "839665",
+        "839657",
+        "839706"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9665",
+          "link": "tel:+558131839665",
+          "ramal_original": "839665"
+        },
+        {
+          "numero": "(81) 3183-9657",
+          "link": "tel:+558131839657",
+          "ramal_original": "839657"
+        },
+        {
+          "numero": "(81) 3183-9706",
+          "link": "tel:+558131839706",
+          "ramal_original": "839706"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SUELANE RODRIGUES"
+      },
+      {
+        "nome": "FERNANDA ANDRADE"
+      },
+      {
+        "nome": "PATRICIA MOURA"
+      },
+      {
+        "nome": "PATRICIA CAMPOS"
+      },
+      {
+        "nome": "RICARDO ARANTES"
+      },
+      {
+        "nome": "ALEX SOARES"
+      },
+      {
+        "nome": "HIGO ALCOFORADO"
+      },
+      {
+        "nome": "SHARLENNE SIQUEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 148,
+    "setor": {
+      "sigla": "UAB",
+      "nome": "COORDENAÇÃO EXECUTIVA DOS PLANOS UAB",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uab@adm.educacao.pe.gov.br",
+      "slug": "uab",
+      "ramal_principal": "838617",
+      "ramais": [
+        "838617"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8617",
+          "link": "tel:+558131838617",
+          "ramal_original": "838617"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANAIR"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 149,
+    "setor": {
+      "sigla": "UABP",
+      "nome": "UNIDADE DE ANALISE DE BENEFICIOS PREVIDENCIARIOS",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "uabp@adm.educacao.pe.gov.br",
+      "slug": "uabp",
+      "ramal_principal": "838813",
+      "ramais": [
+        "838813"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8813",
+          "link": "tel:+558131838813",
+          "ramal_original": "838813"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "MARCIA FERREIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 150,
+    "setor": {
+      "sigla": "UACP",
+      "nome": "UNIDADE DE ACOMPANHAMENTO A COORDENAÇÃO PEDAGOGICA",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "uacp@adm.educacao.pe.gov.br",
+      "slug": "uacp",
+      "ramal_principal": "838665",
+      "ramais": [
+        "838665"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8665",
+          "link": "tel:+558131838665",
+          "ramal_original": "838665"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ADRIANA LUCIA"
+      },
+      {
+        "nome": "AMORIM SANTIAGO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 151,
+    "setor": {
+      "sigla": "UADM-GACE",
+      "nome": "UNIDADE ADMONISTRATIVA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "uadmgace@adm.educacao.pe.gov.br",
+      "slug": "uadm-gace",
+      "ramal_principal": "838245",
+      "ramais": [
+        "838245",
+        "838247"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8245",
+          "link": "tel:+558131838245",
+          "ramal_original": "838245"
+        },
+        {
+          "numero": "(81) 3183-8247",
+          "link": "tel:+558131838247",
+          "ramal_original": "838247"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RODRIGO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 152,
+    "setor": {
+      "sigla": "UADO",
+      "nome": "UNIDADE ADMINISTRATIVA DE DOCUMENTOS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uado@adm.educacao.pe.gov.br",
+      "slug": "uado",
+      "ramal_principal": "838312",
+      "ramais": [
+        "838312"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8312",
+          "link": "tel:+558131838312",
+          "ramal_original": "838312"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 153,
+    "setor": {
+      "sigla": "UAEJA",
+      "nome": "UNIDADE DE ARTICULAÇÃO DA EJA",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uaeja@adm.educacao.pe.gov.br",
+      "slug": "uaeja",
+      "ramal_principal": "838756",
+      "ramais": [
+        "838756"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8756",
+          "link": "tel:+558131838756",
+          "ramal_original": "838756"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "VERÔNICA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 154,
+    "setor": {
+      "sigla": "UAFP",
+      "nome": "UNIDADE DE ASSUNTOS FINANCEIROS",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "uafp@adm.educacao.pe.gov.br",
+      "slug": "uafp",
+      "ramal_principal": "838846",
+      "ramais": [
+        "838846"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8846",
+          "link": "tel:+558131838846",
+          "ramal_original": "838846"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FRANCOASE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 155,
+    "setor": {
+      "sigla": "UAGC",
+      "nome": "UNIDADE DE ASSESSORAMENTO A GESTÃO DA CARREIRA PROFISSIONAL",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "uagc@adm.educacao.pe.gov.br",
+      "slug": "uagc",
+      "ramal_principal": "838927",
+      "ramais": [
+        "838927",
+        "838922",
+        "838920"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8927",
+          "link": "tel:+558131838927",
+          "ramal_original": "838927"
+        },
+        {
+          "numero": "(81) 3183-8922",
+          "link": "tel:+558131838922",
+          "ramal_original": "838922"
+        },
+        {
+          "numero": "(81) 3183-8920",
+          "link": "tel:+558131838920",
+          "ramal_original": "838920"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA CAROLINA FERREIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 156,
+    "setor": {
+      "sigla": "UAGP",
+      "nome": "UNIDADE ADMINISTRATIVA DE GSTÃO DE PESSOAS",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uagp@adm.educacao.pe.gov.br",
+      "slug": "uagp",
+      "ramal_principal": "838837",
+      "ramais": [
+        "838837"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8837",
+          "link": "tel:+558131838837",
+          "ramal_original": "838837"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ELINEIDE BATISTA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 157,
+    "setor": {
+      "sigla": "UATF",
+      "nome": "UNIDADE DE ATENDIMENTO FUNCIONAL",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "uatf@adm.educacao.pe.gov.br",
+      "slug": "uatf",
+      "ramal_principal": "838286",
+      "ramais": [
+        "838286",
+        "838206",
+        "839901",
+        "838284",
+        "838282"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8286",
+          "link": "tel:+558131838286",
+          "ramal_original": "838286"
+        },
+        {
+          "numero": "(81) 3183-8206",
+          "link": "tel:+558131838206",
+          "ramal_original": "838206"
+        },
+        {
+          "numero": "(81) 3183-9901",
+          "link": "tel:+558131839901",
+          "ramal_original": "839901"
+        },
+        {
+          "numero": "(81) 3183-8284",
+          "link": "tel:+558131838284",
+          "ramal_original": "838284"
+        },
+        {
+          "numero": "(81) 3183-8282",
+          "link": "tel:+558131838282",
+          "ramal_original": "838282"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RAQUEL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 158,
+    "setor": {
+      "sigla": "UATF",
+      "nome": "UNIDADE DE BENEFICIOS AO SERVIDOR",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "uatf@adm.educacao.pe.gov.br",
+      "slug": "uatf",
+      "ramal_principal": "838263",
+      "ramais": [
+        "838263",
+        "838264"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8263",
+          "link": "tel:+558131838263",
+          "ramal_original": "838263"
+        },
+        {
+          "numero": "(81) 3183-8264",
+          "link": "tel:+558131838264",
+          "ramal_original": "838264"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "TELMA LUCIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 159,
+    "setor": {
+      "sigla": "UCES",
+      "nome": "COORDENAÇÃO DE CESSÃO DE SERVIDORES",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "ENTRADA PRINCIPAL",
+      "email": "uces@adm.educacao.pe.gov.br",
+      "slug": "uces",
+      "ramal_principal": "838798",
+      "ramais": [
+        "838798"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8798",
+          "link": "tel:+558131838798",
+          "ramal_original": "838798"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GHITA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 160,
+    "setor": {
+      "sigla": "UCI",
+      "nome": "UNIDADE DE CONTROLE INTERNO",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uci@adm.educacao.pe.gov.br",
+      "slug": "uci",
+      "ramal_principal": "839023",
+      "ramais": [
+        "839023"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9023",
+          "link": "tel:+558131839023",
+          "ramal_original": "839023"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ITALO NEVES"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 161,
+    "setor": {
+      "sigla": "UEBLL",
+      "nome": "UNIDADE DE EDUCAÇÃO BIBLIOTECAS, LEITURAS E LINGUAGENS",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "uebll@adm.educacao.pe.gov.br",
+      "slug": "uebll",
+      "ramal_principal": "838202",
+      "ramais": [
+        "838202",
+        "838583"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8202",
+          "link": "tel:+558131838202",
+          "ramal_original": "838202"
+        },
+        {
+          "numero": "(81) 3183-8583",
+          "link": "tel:+558131838583",
+          "ramal_original": "838583"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ADRIANA LIMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 162,
+    "setor": {
+      "sigla": "UECE",
+      "nome": "UNIDADE DE EMISSÃO DE CERTIDÕES",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "uece@adm.educacao.pe.gov.br",
+      "slug": "uece",
+      "ramal_principal": "838653",
+      "ramais": [
+        "838653",
+        "838654"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8653",
+          "link": "tel:+558131838653",
+          "ramal_original": "838653"
+        },
+        {
+          "numero": "(81) 3183-8654",
+          "link": "tel:+558131838654",
+          "ramal_original": "838654"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RODRIGO OTAVIO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 163,
+    "setor": {
+      "sigla": "UEFAF",
+      "nome": "UEFAF",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "[Dentro da GEPAF]",
+      "email": "uefaf@adm.educacao.pe.gov.br",
+      "slug": "uefaf",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "[Dentro da GEPAF]"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 164,
+    "setor": {
+      "sigla": "UEJAI",
+      "nome": "UNIDADE DA EDUCAÇÃO DE JOVENS, ADULTOS E IDOSOS",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uejai@adm.educacao.pe.gov.br",
+      "slug": "uejai",
+      "ramal_principal": "838985",
+      "ramais": [
+        "838985"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8985",
+          "link": "tel:+558131838985",
+          "ramal_original": "838985"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SIMONE EUGENIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 165,
+    "setor": {
+      "sigla": "UELAP",
+      "nome": "UNIDADE DE EXONERAÇÃO, LICENÇAS E AFASTAMENTOS DE PESSOAL",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "uelap@adm.educacao.pe.gov.br",
+      "slug": "uelap",
+      "ramal_principal": "838814",
+      "ramais": [
+        "838814"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8814",
+          "link": "tel:+558131838814",
+          "ramal_original": "838814"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "GEOVANI MESQUITA"
+      },
+      {
+        "nome": "ELAINE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 166,
+    "setor": {
+      "sigla": "UEP",
+      "nome": "UNIDADE DE EDUCAÇÃO EM PRISÕES",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "uep@adm.educacao.pe.gov.br",
+      "slug": "uep",
+      "ramal_principal": "839408",
+      "ramais": [
+        "839408"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9408",
+          "link": "tel:+558131839408",
+          "ramal_original": "839408"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "SILVANA MARIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 167,
+    "setor": {
+      "sigla": "UFGC",
+      "nome": "UNIDADE DE FORMAÇÃO E GESTÃO DE CONHECIMENTO",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "WELLINGTON",
+      "email": "ufgc@adm.educacao.pe.gov.br",
+      "slug": "ufgc",
+      "ramal_principal": "838953",
+      "ramais": [
+        "838953"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8953",
+          "link": "tel:+558131838953",
+          "ramal_original": "838953"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "REINALDO RODRIGUE"
+      },
+      {
+        "nome": "BONFIM"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 168,
+    "setor": {
+      "sigla": "UMCT",
+      "nome": "UNIDDAE DE MONITORAMENTO DE CONTRATO TEMPORARIO",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "umct@adm.educacao.pe.gov.br",
+      "slug": "umct",
+      "ramal_principal": "838908",
+      "ramais": [
+        "838908"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8908",
+          "link": "tel:+558131838908",
+          "ramal_original": "838908"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANTONIO GALDINO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 169,
+    "setor": {
+      "sigla": "UMOP I",
+      "nome": "UNIDADE DE MOVIMENTAÇÃO DE PESSOAL 1",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "umopi@adm.educacao.pe.gov.br",
+      "slug": "umop-i",
+      "ramal_principal": "838886",
+      "ramais": [
+        "838886",
+        "838887"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8886",
+          "link": "tel:+558131838886",
+          "ramal_original": "838886"
+        },
+        {
+          "numero": "(81) 3183-8887",
+          "link": "tel:+558131838887",
+          "ramal_original": "838887"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "RITA DE CASSIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 170,
+    "setor": {
+      "sigla": "UMOP II",
+      "nome": "UNIDADE DE MOVIMENTAÇÃO DE PESSOAL 2",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "umopii@adm.educacao.pe.gov.br",
+      "slug": "umop-ii",
+      "ramal_principal": "838917",
+      "ramais": [
+        "838917"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8917",
+          "link": "tel:+558131838917",
+          "ramal_original": "838917"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "INAJA CORREIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 171,
+    "setor": {
+      "sigla": "UNAFI",
+      "nome": "UNIDADE ADMINISTRATIVA E FINANCEIRA DA SEDE",
+      "bloco": "BLOCO A",
+      "andar": "1º ANDAR",
+      "observacoes": "CONTATO: PALOMA",
+      "email": "unafi@adm.educacao.pe.gov.br",
+      "slug": "unafi",
+      "ramal_principal": "838713",
+      "ramais": [
+        "838713",
+        "838699",
+        "838606"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8713",
+          "link": "tel:+558131838713",
+          "ramal_original": "838713"
+        },
+        {
+          "numero": "(81) 3183-8699",
+          "link": "tel:+558131838699",
+          "ramal_original": "838699"
+        },
+        {
+          "numero": "(81) 3183-8606",
+          "link": "tel:+558131838606",
+          "ramal_original": "838606"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FRANCISCA SAMPAIO – GESTOR - ANDRÉ LUIZ"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 172,
+    "setor": {
+      "sigla": "UNDOLI",
+      "nome": "UNIDADE DE CADASTRO DE DOCUMENTO HABIL E LIQUIDAÇÃODE DESPESA",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "undoli@adm.educacao.pe.gov.br",
+      "slug": "undoli",
+      "ramal_principal": "839182",
+      "ramais": [
+        "839182"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9182",
+          "link": "tel:+558131839182",
+          "ramal_original": "839182"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DENISE JORGE"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 173,
+    "setor": {
+      "sigla": "UNERGS",
+      "nome": "UNIDADE DE EDUCAÇÃO RELAÇÕES GENEROS E SEXUALIDADE",
+      "bloco": "BLOCO A",
+      "andar": "TÉRREO",
+      "observacoes": "",
+      "email": "unergs@adm.educacao.pe.gov.br",
+      "slug": "unergs",
+      "ramal_principal": "",
+      "ramais": [],
+      "telefones": [],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 174,
+    "setor": {
+      "sigla": "UNPAG",
+      "nome": "UNIDADE DE PAGADORIA",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "unpag@adm.educacao.pe.gov.br",
+      "slug": "unpag",
+      "ramal_principal": "839174",
+      "ramais": [
+        "839174",
+        "839177",
+        "839188",
+        "839183"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9174",
+          "link": "tel:+558131839174",
+          "ramal_original": "839174"
+        },
+        {
+          "numero": "(81) 3183-9177",
+          "link": "tel:+558131839177",
+          "ramal_original": "839177"
+        },
+        {
+          "numero": "(81) 3183-9188",
+          "link": "tel:+558131839188",
+          "ramal_original": "839188"
+        },
+        {
+          "numero": "(81) 3183-9183",
+          "link": "tel:+558131839183",
+          "ramal_original": "839183"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANA LETICIA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 175,
+    "setor": {
+      "sigla": "UNVALID",
+      "nome": "UNIDADE DE VALIDAÇÃO DOCUMENTAL DE EXECUÇÃO DE DESPESA",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "unvalid@adm.educacao.pe.gov.br",
+      "slug": "unvalid",
+      "ramal_principal": "839108",
+      "ramais": [
+        "839108",
+        "839124"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9108",
+          "link": "tel:+558131839108",
+          "ramal_original": "839108"
+        },
+        {
+          "numero": "(81) 3183-9124",
+          "link": "tel:+558131839124",
+          "ramal_original": "839124"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ED WILLAMS"
+      },
+      {
+        "nome": "ALICE OLIVEIRA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 176,
+    "setor": {
+      "sigla": "UPCON",
+      "nome": "UNIDADE DE PRESTAÇÃO DE CONTAS",
+      "bloco": "BLOCO D",
+      "andar": "TÉRREO",
+      "observacoes": "2° ENTRADA",
+      "email": "upcon@adm.educacao.pe.gov.br",
+      "slug": "upcon",
+      "ramal_principal": "839136",
+      "ramais": [
+        "839136"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9136",
+          "link": "tel:+558131839136",
+          "ramal_original": "839136"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "LEO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 177,
+    "setor": {
+      "sigla": "UPCP",
+      "nome": "UNIDADE DE PRESTAÇÃO DE CONTAS 7DE PESSOAL",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "ADRIANA",
+      "email": "upcp@adm.educacao.pe.gov.br",
+      "slug": "upcp",
+      "ramal_principal": "838966",
+      "ramais": [
+        "838966"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8966",
+          "link": "tel:+558131838966",
+          "ramal_original": "838966"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "KEITY"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 178,
+    "setor": {
+      "sigla": "UPGPI",
+      "nome": "UNIDADE DE PAGAMENTO DE PESSOAL DO GRUPO 1",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "upgpi@adm.educacao.pe.gov.br",
+      "slug": "upgpi",
+      "ramal_principal": "838855",
+      "ramais": [
+        "838855"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8855",
+          "link": "tel:+558131838855",
+          "ramal_original": "838855"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JACIREMA"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 179,
+    "setor": {
+      "sigla": "UPGPII",
+      "nome": "UNIDADE DE PAGAMENTO DE PESSOAL DO GRUP 2",
+      "bloco": "BLOCO A",
+      "andar": "2º ANDAR",
+      "observacoes": "",
+      "email": "upgpii@adm.educacao.pe.gov.br",
+      "slug": "upgpii",
+      "ramal_principal": "838907",
+      "ramais": [
+        "838907"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8907",
+          "link": "tel:+558131838907",
+          "ramal_original": "838907"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "FÁBIO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 180,
+    "setor": {
+      "sigla": "UPGT",
+      "nome": "UNIDADE PATRIONIAL",
+      "bloco": "BLOCO L",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "upgt@adm.educacao.pe.gov.br",
+      "slug": "upgt",
+      "ramal_principal": "839877",
+      "ramais": [
+        "839877"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9877",
+          "link": "tel:+558131839877",
+          "ramal_original": "839877"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "N"
+      },
+      {
+        "nome": "A"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 181,
+    "setor": {
+      "sigla": "USEP",
+      "nome": "UNIDADE DE SELEÇÃO DE PESSOAS",
+      "bloco": "BLOCO A",
+      "andar": "3º ANDAR",
+      "observacoes": "",
+      "email": "usep@adm.educacao.pe.gov.br",
+      "slug": "usep",
+      "ramal_principal": "839448",
+      "ramais": [
+        "839448"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9448",
+          "link": "tel:+558131839448",
+          "ramal_original": "839448"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ANAHUR"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 182,
+    "setor": {
+      "sigla": "USG",
+      "nome": "SALA USG - (SERVIÇOS GERAIS)",
+      "bloco": "BLOCO J",
+      "andar": "N / A",
+      "observacoes": "",
+      "email": "usg@adm.educacao.pe.gov.br",
+      "slug": "usg",
+      "ramal_principal": "839247",
+      "ramais": [
+        "839247"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-9247",
+          "link": "tel:+558131839247",
+          "ramal_original": "839247"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "EDUARDO"
+      },
+      {
+        "nome": "RODRIGO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 183,
+    "setor": {
+      "sigla": "USGE",
+      "nome": "UNIDADE DE SERVIÇOS GERAIS",
+      "bloco": "BLOCO B",
+      "andar": "TÉRREO",
+      "observacoes": "PROTOCOLO GERAL",
+      "email": "usge@adm.educacao.pe.gov.br",
+      "slug": "usge",
+      "ramal_principal": "838219",
+      "ramais": [
+        "838219",
+        "838215",
+        "838221",
+        "838225"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8219",
+          "link": "tel:+558131838219",
+          "ramal_original": "838219"
+        },
+        {
+          "numero": "(81) 3183-8215",
+          "link": "tel:+558131838215",
+          "ramal_original": "838215"
+        },
+        {
+          "numero": "(81) 3183-8221",
+          "link": "tel:+558131838221",
+          "ramal_original": "838221"
+        },
+        {
+          "numero": "(81) 3183-8225",
+          "link": "tel:+558131838225",
+          "ramal_original": "838225"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "DIEGO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 184,
+    "setor": {
+      "sigla": "UTMR",
+      "nome": "UNIDADE TÉCNICA DE MANUTENÇÃO DA REDE",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "utmr@adm.educacao.pe.gov.br",
+      "slug": "utmr",
+      "ramal_principal": "838351",
+      "ramais": [
+        "838351",
+        "839286"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8351",
+          "link": "tel:+558131838351",
+          "ramal_original": "838351"
+        },
+        {
+          "numero": "(81) 3183-9286",
+          "link": "tel:+558131839286",
+          "ramal_original": "839286"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "ARTHUR"
+      },
+      {
+        "nome": "ROBERVAL"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  },
+  {
+    "id": 185,
+    "setor": {
+      "sigla": "UTOBR",
+      "nome": "UNIDADE TÉCNICA DE OBRAS",
+      "bloco": "BLOCO B",
+      "andar": "1º ANDAR",
+      "observacoes": "",
+      "email": "utobr@adm.educacao.pe.gov.br",
+      "slug": "utobr",
+      "ramal_principal": "838314",
+      "ramais": [
+        "838314"
+      ],
+      "telefones": [
+        {
+          "numero": "(81) 3183-8314",
+          "link": "tel:+558131838314",
+          "ramal_original": "838314"
+        }
+      ],
+      "telefones_externos": []
+    },
+    "responsaveis": [
+      {
+        "nome": "JULITA MULATINHO"
+      }
+    ],
+    "contatos": {
+      "celular": "",
+      "whatsapp": "",
+      "outros": []
+    },
+    "ultima_atualizacao": "2025-11-11T12:27:53-03:00"
+  }
+]
