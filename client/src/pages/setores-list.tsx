@@ -44,7 +44,7 @@ export default function SetoresList() {
   // Fetch filtered or all setores from backend (different query key)
   const { data: displaySetores, isLoading } = useQuery<Setor[]>({
     queryKey: hasFilters 
-      ? ["/api/setores", "search", queryParams] 
+      ? ["/api/setores", queryParams] 
       : ["/api/setores"],
   });
 

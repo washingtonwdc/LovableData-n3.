@@ -38,12 +38,24 @@ export class MemStorage implements IStorage {
 
       // Transform and store data
       jsonData.forEach((item: any) => {
+        // Normalize bloco: remove "BLOCO " prefix
+        let blocoNormalized = item.setor.bloco || "";
+        if (blocoNormalized.toUpperCase().startsWith("BLOCO ")) {
+          blocoNormalized = blocoNormalized.substring(6).trim();
+        }
+        
+        // Normalize andar: remove "º ANDAR" suffix and clean up
+        let andarNormalized = item.setor.andar || "";
+        if (andarNormalized.toUpperCase().includes(" ANDAR")) {
+          andarNormalized = andarNormalized.replace(/\s*º?\s*ANDAR/i, "").trim();
+        }
+        
         const setor: Setor = {
           id: item.id,
           sigla: item.setor.sigla,
           nome: item.setor.nome,
-          bloco: item.setor.bloco || "",
-          andar: item.setor.andar || "",
+          bloco: blocoNormalized,
+          andar: andarNormalized,
           observacoes: item.setor.observacoes || "",
           email: item.setor.email,
           slug: item.setor.slug,
