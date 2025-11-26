@@ -1,4 +1,5 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
+import { useState, useEffect, useMemo } from "react";
 import { useRoute, Link } from "wouter";
 import {
   Building2,
@@ -10,6 +11,8 @@ import {
   ArrowLeft,
   Calendar,
   MessageCircle,
+  Star,
+  Copy,
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -19,15 +22,167 @@ import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Skeleton } from "@/components/ui/skeleton";
 import type { Setor } from "@shared/schema";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { toast } from "@/hooks/use-toast";
+import { useAdmin } from "@/components/admin-provider";
 
 export default function SetorDetail() {
   const [, params] = useRoute("/setor/:slug");
   const slug = params?.slug;
+  const queryClient = useQueryClient();
+  const [isEditing, setIsEditing] = useState(false as boolean);
+  const [masterPassword, setMasterPassword] = useState("");
+  const [form, setForm] = useState<{ 
+    bloco: string;
+    andar: string;
+    email: string;
+    ramal_principal: string;
+    ramais: string[];
+    telefones: { numero: string; link?: string; ramal_original?: string }[];
+    telefones_externos: { numero: string; link?: string; ramal_original?: string }[];
+    celular: string;
+    whatsapp: string;
+    outros_contatos: string[];
+  }>({
+    bloco: "",
+    andar: "",
+    email: "",
+    ramal_principal: "",
+    ramais: [],
+    telefones: [],
+    telefones_externos: [],
+    celular: "",
+    whatsapp: "",
+    outros_contatos: [],
+  });
+
+  const { requireAdmin } = useAdmin();
 
   const { data: setor, isLoading } = useQuery<Setor>({
     queryKey: ["/api/setores", slug],
     enabled: !!slug,
   });
+
+  const { data: topRamais } = useQuery<{ numero: string; count: number }[]>({
+    queryKey: ["/api/setores", slug, "topRamais"],
+    enabled: !!slug,
+    queryFn: async () => {
+      const res = await fetch(`/api/setores/${slug}/ramais/top?limit=5`);
+      if (!res.ok) throw new Error("Falha ao obter top ramais");
+      return res.json();
+    },
+  });
+
+  // Sync local form when setor loads
+  useEffect(() => {
+    if (setor) {
+      setForm({
+        bloco: setor.bloco || "",
+        andar: setor.andar || "",
+        email: setor.email || "",
+        ramal_principal: setor.ramal_principal || "",
+        ramais: Array.isArray(setor.ramais) ? setor.ramais : [],
+        telefones: Array.isArray(setor.telefones) ? setor.telefones : [],
+        telefones_externos: Array.isArray(setor.telefones_externos) ? setor.telefones_externos : [],
+        celular: setor.celular || "",
+        whatsapp: setor.whatsapp || "",
+        outros_contatos: Array.isArray(setor.outros_contatos) ? setor.outros_contatos : [],
+      });
+    }
+  }, [setor]);
+
+  // Detect if any contact-related fields were changed compared to loaded setor
+  const contactsChanged = useMemo(() => {
+    if (!setor) return false;
+    try {
+      const a = JSON.stringify(form.telefones || []);
+      const b = JSON.stringify(setor.telefones || []);
+      const c = JSON.stringify(form.telefones_externos || []);
+      const d = JSON.stringify(setor.telefones_externos || []);
+      const e = JSON.stringify(form.ramais || []);
+      const f = JSON.stringify(setor.ramais || []);
+      const rpA = String(form.ramal_principal || "");
+      const rpB = String(setor.ramal_principal || "");
+      const celA = String(form.celular || "");
+      const celB = String(setor.celular || "");
+      const waA = String(form.whatsapp || "");
+      const waB = String(setor.whatsapp || "");
+      const ocA = JSON.stringify(form.outros_contatos || []);
+      const ocB = JSON.stringify(setor.outros_contatos || []);
+      return a !== b || c !== d || e !== f || rpA !== rpB || celA !== celB || waA !== waB || ocA !== ocB;
+    } catch {
+      return true;
+    }
+  }, [form, setor]);
+
+  const mutation = useMutation({
+    mutationFn: async (payload: typeof form) => {
+      const res = await fetch(`/api/setores/${slug}`, {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+        body: JSON.stringify({
+          ...payload,
+          ...(masterPassword ? { master_password: masterPassword } : {}),
+        }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    },
+    onSuccess: () => {
+      toast({ title: "Contatos atualizados", description: "Os contatos do setor foram salvos." });
+      queryClient.invalidateQueries({ queryKey: ["/api/setores", slug] });
+      setIsEditing(false);
+    },
+    onError: (err: any) => {
+      toast({ title: "Erro ao salvar", description: String(err?.message || err), variant: "destructive" });
+    },
+  });
+
+  // Mutations for ramais access history and favorites
+  const recordAccess = useMutation({
+    mutationFn: async (numero: string) => {
+      const res = await fetch(`/api/setores/${slug}/ramais/access`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+        body: JSON.stringify({ numero, ...(masterPassword ? { master_password: masterPassword } : {}) }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/setores", slug] });
+    },
+  });
+
+  const toggleFavorite = useMutation({
+    mutationFn: async ({ numero, favorite }: { numero: string; favorite: boolean }) => {
+      const res = await fetch(`/api/setores/${slug}/ramais/favorite`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+        body: JSON.stringify({ numero, favorite, ...(masterPassword ? { master_password: masterPassword } : {}) }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries({ queryKey: ["/api/setores", slug] });
+    },
+  });
+
+  // Simple validations
+  const [errors, setErrors] = useState<{ email?: string; whatsapp?: string } >({});
+  useEffect(() => {
+    const errs: typeof errors = {};
+    if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
+      errs.email = "E-mail inválido";
+    }
+    if (form.whatsapp && !/^https?:\/\//i.test(form.whatsapp)) {
+      errs.whatsapp = "Informe um link completo (ex: https://wa.me/5581...)";
+    }
+    setErrors(errs);
+  }, [form.email, form.whatsapp]);
 
   if (isLoading) {
     return (
@@ -235,8 +390,23 @@ export default function SetorDetail() {
           {/* Right Column - Contact Info */}
           <div className="space-y-6">
             <Card className="sticky top-6">
-              <CardHeader>
+              <CardHeader className="flex flex-row items-center justify-between">
                 <CardTitle className="text-lg">Contatos</CardTitle>
+                <div className="flex items-center gap-2">
+                  <Button variant="secondary" size="sm" onClick={() => {
+                    setIsEditing(true);
+                    // Add a blank telefone input if none is blank
+                    setForm((prev)=>{
+                      const hasBlank = prev.telefones.some(t => !t.numero);
+                      return hasBlank ? prev : { ...prev, telefones: [...prev.telefones, { numero: "", link: "", ramal_original: "" }] };
+                    });
+                  }} data-testid="button-criar-contato">
+                    Criar Contato
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={() => setIsEditing(true)} data-testid="button-editar-contatos">
+                    Editar
+                  </Button>
+                </div>
               </CardHeader>
               <CardContent className="space-y-4">
                 {/* Phone Numbers */}
@@ -257,6 +427,69 @@ export default function SetorDetail() {
                         </a>
                       </Button>
                     ))}
+                  </div>
+                )}
+
+                {/* Ramais */}
+                {setor.ramais && setor.ramais.length > 0 && (
+                  <div className="space-y-2">
+                    <Separator />
+                    <p className="text-sm font-medium text-muted-foreground">Ramais</p>
+                    <div className="space-y-2">
+                      {setor.ramais.map((r, idx) => {
+                        const isFav = (setor.favoritos_ramais || []).includes(r);
+                        const count = (setor.acessos_ramais || {})[r] || 0;
+                        return (
+                          <div key={idx} className="flex items-center gap-2">
+                            <Badge variant="outline" className="font-mono">{r}</Badge>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              onClick={async () => {
+                                try {
+                                  await navigator.clipboard.writeText(r);
+                                  const ok = await requireAdmin();
+                                  if (!ok) return;
+                                  recordAccess.mutate(r);
+                                  toast({ title: "Ramal copiado", description: r });
+                                } catch (e) {
+                                  toast({ title: "Falha ao copiar", variant: "destructive" });
+                                }
+                              }}
+                            >
+                              <Copy className="mr-1 h-4 w-4" /> Copiar
+                            </Button>
+                            <span className="text-xs text-muted-foreground">Acessos: {count}</span>
+                            <Button
+                              variant={isFav ? "default" : "outline"}
+                              size="sm"
+                              onClick={async () => {
+                                const ok = await requireAdmin();
+                                if (!ok) return;
+                                toggleFavorite.mutate({ numero: r, favorite: !isFav });
+                              }}
+                              aria-label={isFav ? "Remover favorito" : "Marcar favorito"}
+                            >
+                              <Star className="h-4 w-4" fill={isFav ? "currentColor" : "none"} />
+                            </Button>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </div>
+                )}
+
+                {topRamais && topRamais.length > 0 && (
+                  <div className="space-y-2">
+                    <Separator />
+                    <p className="text-sm font-medium text-muted-foreground">Mais acessados</p>
+                    <div className="flex flex-wrap gap-2">
+                      {topRamais.map((it, idx) => (
+                        <Badge key={idx} variant="secondary" className="font-mono">
+                          {it.numero} · {it.count}
+                        </Badge>
+                      ))}
+                    </div>
                   </div>
                 )}
 
@@ -328,11 +561,131 @@ export default function SetorDetail() {
                     </div>
                   </>
                 )}
+
+                {/* Outros Contatos */}
+                {setor.outros_contatos && setor.outros_contatos.length > 0 && (
+                  <div className="space-y-2">
+                    <Separator />
+                    <p className="text-sm font-medium text-muted-foreground">Outros Contatos</p>
+                    <div className="space-y-1">
+                      {setor.outros_contatos.map((c, idx) => (
+                        <div key={idx} className="text-sm text-muted-foreground break-all">{c}</div>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </CardContent>
             </Card>
+         </div>
+       </div>
+     </div>
+
+      {/* Edit Contacts Dialog */}
+      <Dialog open={isEditing} onOpenChange={setIsEditing}>
+        <DialogContent>
+          <DialogHeader>
+            <DialogTitle>Editar Contatos</DialogTitle>
+          </DialogHeader>
+          <div className="space-y-4">
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-bloco">Bloco</label>
+                <Input id="edit-bloco" value={form.bloco} onChange={(e) => setForm({ ...form, bloco: e.target.value })} />
+              </div>
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-andar">Andar</label>
+                <Input id="edit-andar" value={form.andar} onChange={(e) => setForm({ ...form, andar: e.target.value })} />
+              </div>
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="edit-email">E-mail</label>
+              <Input id="edit-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} />
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-ramal">Ramal principal</label>
+                <Input id="edit-ramal" value={form.ramal_principal} onChange={(e) => setForm({ ...form, ramal_principal: e.target.value })} />
+              </div>
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-celular">Celular</label>
+                <Input id="edit-celular" value={form.celular} onChange={(e) => setForm({ ...form, celular: e.target.value })} />
+              </div>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2">
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-whatsapp">WhatsApp (link)</label>
+                <Input id="edit-whatsapp" value={form.whatsapp} onChange={(e) => setForm({ ...form, whatsapp: e.target.value })} />
+                <p className="text-xs text-muted-foreground mt-1">Exemplo: https://wa.me/5581999999999</p>
+                {errors.whatsapp && (<p className="text-xs text-destructive mt-1">{errors.whatsapp}</p>)}
+              </div>
+              <div>
+                <label className="text-sm text-muted-foreground" htmlFor="edit-ramais">Ramais (um por linha)</label>
+                <Textarea id="edit-ramais" value={form.ramais.join("\n")} onChange={(e) => setForm({ ...form, ramais: e.target.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean) })} />
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-muted-foreground">Telefones</p>
+                <Button variant="ghost" size="sm" onClick={() => setForm({ ...form, telefones: [...form.telefones, { numero: "", link: "", ramal_original: "" }] })}>Adicionar</Button>
+              </div>
+              <div className="space-y-2">
+                {form.telefones.map((t, idx) => (
+                  <div key={idx} className="grid gap-2 sm:grid-cols-3">
+                    <Input placeholder="Número" value={t.numero} onChange={(e) => {
+                      const arr = [...form.telefones]; arr[idx] = { ...arr[idx], numero: e.target.value }; setForm({ ...form, telefones: arr });
+                    }} />
+                    <Input placeholder="Link" value={t.link || ""} onChange={(e) => {
+                      const arr = [...form.telefones]; arr[idx] = { ...arr[idx], link: e.target.value }; setForm({ ...form, telefones: arr });
+                    }} />
+                    <div className="flex gap-2">
+                      <Input className="flex-1" placeholder="Ramal original" value={t.ramal_original || ""} onChange={(e) => {
+                        const arr = [...form.telefones]; arr[idx] = { ...arr[idx], ramal_original: e.target.value }; setForm({ ...form, telefones: arr });
+                      }} />
+                      <Button variant="outline" onClick={() => {
+                        const arr = [...form.telefones]; arr.splice(idx, 1); setForm({ ...form, telefones: arr });
+                      }}>Remover</Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center justify-between">
+                <p className="text-sm font-medium text-muted-foreground">Telefones Externos</p>
+                <Button variant="ghost" size="sm" onClick={() => setForm({ ...form, telefones_externos: [...form.telefones_externos, { numero: "", link: "", ramal_original: "" }] })}>Adicionar</Button>
+              </div>
+              <div className="space-y-2">
+                {form.telefones_externos.map((t, idx) => (
+                  <div key={idx} className="grid gap-2 sm:grid-cols-3">
+                    <Input placeholder="Número" value={t.numero} onChange={(e) => {
+                      const arr = [...form.telefones_externos]; arr[idx] = { ...arr[idx], numero: e.target.value }; setForm({ ...form, telefones_externos: arr });
+                    }} />
+                    <Input placeholder="Link" value={t.link || ""} onChange={(e) => {
+                      const arr = [...form.telefones_externos]; arr[idx] = { ...arr[idx], link: e.target.value }; setForm({ ...form, telefones_externos: arr });
+                    }} />
+                    <div className="flex gap-2">
+                      <Input className="flex-1" placeholder="Ramal original" value={t.ramal_original || ""} onChange={(e) => {
+                        const arr = [...form.telefones_externos]; arr[idx] = { ...arr[idx], ramal_original: e.target.value }; setForm({ ...form, telefones_externos: arr });
+                      }} />
+                      <Button variant="outline" onClick={() => {
+                        const arr = [...form.telefones_externos]; arr.splice(idx, 1); setForm({ ...form, telefones_externos: arr });
+                      }}>Remover</Button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="edit-outros">Outros contatos (um por linha)</label>
+              <Textarea id="edit-outros" value={form.outros_contatos.join("\n")} onChange={(e) => setForm({ ...form, outros_contatos: e.target.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean) })} />
           </div>
-        </div>
-      </div>
+            <DialogFooter>
+              <Button variant="ghost" onClick={() => setIsEditing(false)}>Cancelar</Button>
+              <Button onClick={async () => { const ok = await requireAdmin(); if (!ok) return; mutation.mutate(form); }} disabled={mutation.isPending || !!errors.email || !!errors.whatsapp}>Salvar</Button>
+            </DialogFooter>
+          </div>
+        </DialogContent>
+      </Dialog>
     </div>
   );
 }

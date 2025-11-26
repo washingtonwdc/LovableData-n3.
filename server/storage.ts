@@ -1,4 +1,4 @@
-import { readFileSync } from "fs";
+import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
 import type { Setor, Statistics } from "@shared/schema";
 
@@ -22,10 +22,12 @@ export interface IStorage {
 export class MemStorage implements IStorage {
   private setores: Map<number, Setor>;
   private setoresBySlug: Map<string, Setor>;
+  private overridesPath: string;
 
   constructor() {
     this.setores = new Map();
     this.setoresBySlug = new Map();
+    this.overridesPath = join(process.cwd(), "attached_assets", "setores_overrides.json");
     this.loadData();
   }
 
@@ -75,9 +77,62 @@ export class MemStorage implements IStorage {
       });
 
       console.log(`✅ Loaded ${this.setores.size} setores from JSON file`);
+      // Apply persisted overrides if present
+      this.loadOverrides();
     } catch (error) {
       console.error("❌ Error loading data:", error);
     }
+  }
+
+  private loadOverrides() {
+    try {
+      if (!existsSync(this.overridesPath)) return;
+      const raw = readFileSync(this.overridesPath, "utf-8");
+      const overrides = JSON.parse(raw);
+      if (Array.isArray(overrides)) {
+        overrides.forEach((ov) => {
+          if (ov && typeof ov.slug === "string") {
+            const existing = this.setoresBySlug.get(ov.slug);
+            if (existing) {
+              this.updateSetorPartial(ov.slug, ov);
+            } else {
+              // create setor from override when missing
+              this.createSetor({
+                slug: ov.slug,
+                sigla: ov.sigla || ov.slug?.substring(0, 8) || "NOVO",
+                nome: ov.nome || ov.slug || "Novo Setor",
+                bloco: ov.bloco || "",
+                andar: ov.andar || "",
+                observacoes: ov.observacoes || "",
+                email: ov.email || "",
+                ramal_principal: ov.ramal_principal || "",
+                ramais: ov.ramais || [],
+                telefones: ov.telefones || [],
+                telefones_externos: ov.telefones_externos || [],
+                responsaveis: ov.responsaveis || [],
+                celular: ov.celular || "",
+                whatsapp: ov.whatsapp || "",
+                outros_contatos: ov.outros_contatos || [],
+                favoritos_ramais: ov.favoritos_ramais || [],
+                acessos_ramais: ov.acessos_ramais || {},
+              });
+            }
+          }
+        });
+        console.log(`🔧 Applied ${overrides.length} override(s)`);
+      }
+    } catch (err) {
+      console.warn("⚠️ Failed to load overrides:", err);
+    }
+  }
+
+  private normalize(text?: string): string {
+    if (!text) return "";
+    return text
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .trim();
   }
 
   async getAllSetores(): Promise<Setor[]> {
@@ -99,14 +154,14 @@ export class MemStorage implements IStorage {
 
     // Filter by query
     if (query) {
-      const searchLower = query.toLowerCase();
+      const searchNormalized = this.normalize(query);
       results = results.filter(setor =>
-        setor.nome.toLowerCase().includes(searchLower) ||
-        setor.sigla.toLowerCase().includes(searchLower) ||
-        (setor.bloco && setor.bloco.toLowerCase().includes(searchLower)) ||
-        (setor.andar && setor.andar.toLowerCase().includes(searchLower)) ||
-        setor.email.toLowerCase().includes(searchLower) ||
-        setor.responsaveis.some(r => r.nome.toLowerCase().includes(searchLower))
+        this.normalize(setor.nome).includes(searchNormalized) ||
+        this.normalize(setor.sigla).includes(searchNormalized) ||
+        this.normalize(setor.bloco).includes(searchNormalized) ||
+        this.normalize(setor.andar).includes(searchNormalized) ||
+        this.normalize(setor.email).includes(searchNormalized) ||
+        setor.responsaveis.some(r => this.normalize(r.nome).includes(searchNormalized))
       );
     }
 
@@ -143,6 +198,384 @@ export class MemStorage implements IStorage {
       totalAndares: andaresSet.size,
       totalRamais,
     };
+  }
+
+  private transformRawItemToSetor(item: any): Setor {
+    let blocoNormalized = item.setor?.bloco || "";
+    if (typeof blocoNormalized === "string" && blocoNormalized.toUpperCase().startsWith("BLOCO ")) {
+      blocoNormalized = blocoNormalized.substring(6).trim();
+    }
+
+    let andarNormalized = item.setor?.andar || "";
+    if (typeof andarNormalized === "string" && andarNormalized.toUpperCase().includes(" ANDAR")) {
+      andarNormalized = andarNormalized.replace(/\s*º?\s*ANDAR/i, "").trim();
+    }
+
+    return {
+      id: item.id,
+      sigla: item.setor?.sigla,
+      nome: item.setor?.nome,
+      bloco: blocoNormalized,
+      andar: andarNormalized,
+      observacoes: item.setor?.observacoes || "",
+      email: item.setor?.email,
+      slug: item.setor?.slug,
+      ramal_principal: item.setor?.ramal_principal || "",
+      ramais: item.setor?.ramais || [],
+      telefones: item.setor?.telefones || [],
+      telefones_externos: item.setor?.telefones_externos || [],
+      responsaveis: item.responsaveis || [],
+      celular: item.contatos?.celular || "",
+      whatsapp: item.contatos?.whatsapp || "",
+      outros_contatos: item.contatos?.outros || [],
+      ultima_atualizacao: item.ultima_atualizacao,
+    } as Setor;
+  }
+
+  private indexSetor(setor: Setor) {
+    this.setores.set(setor.id, setor);
+    this.setoresBySlug.set(setor.slug, setor);
+  }
+
+  replaceSetores(setores: Setor[]) {
+    this.setores.clear();
+    this.setoresBySlug.clear();
+    setores.forEach((s) => this.indexSetor(s));
+  }
+
+  mergeSetores(setores: Setor[]) {
+    setores.forEach((s) => {
+      // prefer slug as stable identifier; fallback to id
+      const existing = (s.slug && this.setoresBySlug.get(s.slug)) || this.setores.get(s.id);
+      if (existing) {
+        const merged: Setor = { ...existing, ...s };
+        this.indexSetor(merged);
+      } else {
+        this.indexSetor(s);
+      }
+    });
+  }
+
+  importFromRaw(rawItems: any[], mode: "replace" | "merge" = "replace") {
+    const setores = rawItems.map((it) => this.transformRawItemToSetor(it));
+    if (mode === "replace") this.replaceSetores(setores);
+    else this.mergeSetores(setores);
+  }
+
+  importFromNormalized(setores: Setor[], mode: "replace" | "merge" = "replace") {
+    if (mode === "replace") this.replaceSetores(setores);
+    else this.mergeSetores(setores);
+  }
+
+  createSetor(payload: Partial<Setor>) {
+    const all = Array.from(this.setores.keys());
+    const nextId = all.length > 0 ? Math.max(...all) + 1 : 1;
+    const baseNome = String(payload.nome || payload.sigla || "Novo Setor").trim();
+    const baseSigla = String(payload.sigla || (baseNome.split(" ")[0] || "NOVO")).trim();
+    const makeSlug = (txt: string) => txt
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/(^-|-$)/g, "");
+    let slug = String(payload.slug || makeSlug(baseNome)).trim();
+    if (this.setoresBySlug.has(slug)) {
+      slug = `${slug}-${Date.now().toString(36)}`;
+    }
+    const now = new Date().toISOString();
+    const setor: Setor = {
+      id: nextId,
+      sigla: baseSigla || "NOVO",
+      nome: baseNome || "Novo Setor",
+      bloco: String(payload.bloco || "").trim(),
+      andar: String(payload.andar || "").trim(),
+      observacoes: String(payload.observacoes || "").trim(),
+      email: String(payload.email || "").trim(),
+      slug,
+      ramal_principal: String(payload.ramal_principal || "").trim(),
+      ramais: Array.isArray(payload.ramais) ? payload.ramais : [],
+      telefones: Array.isArray(payload.telefones) ? payload.telefones : [],
+      telefones_externos: Array.isArray(payload.telefones_externos) ? payload.telefones_externos : [],
+      responsaveis: Array.isArray(payload.responsaveis) ? payload.responsaveis : [],
+      celular: String(payload.celular || "").trim(),
+      whatsapp: String(payload.whatsapp || "").trim(),
+      outros_contatos: Array.isArray(payload.outros_contatos) ? payload.outros_contatos : [],
+      favoritos_ramais: Array.isArray(payload.favoritos_ramais) ? payload.favoritos_ramais : [],
+      acessos_ramais: payload.acessos_ramais || {},
+      ultima_atualizacao: now,
+    };
+    this.indexSetor(setor);
+    // persist to overrides
+    try {
+      let overrides: any[] = [];
+      if (existsSync(this.overridesPath)) {
+        const raw = readFileSync(this.overridesPath, "utf-8");
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) overrides = parsed;
+      }
+      overrides.push({
+        slug: setor.slug,
+        sigla: setor.sigla,
+        nome: setor.nome,
+        bloco: setor.bloco,
+        andar: setor.andar,
+        observacoes: setor.observacoes,
+        email: setor.email,
+        ramal_principal: setor.ramal_principal,
+        ramais: setor.ramais,
+        telefones: setor.telefones,
+        telefones_externos: setor.telefones_externos,
+        responsaveis: setor.responsaveis,
+        celular: setor.celular,
+        whatsapp: setor.whatsapp,
+        outros_contatos: setor.outros_contatos,
+        favoritos_ramais: setor.favoritos_ramais,
+        acessos_ramais: setor.acessos_ramais,
+      });
+      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+    } catch (err) {
+      console.warn("⚠️ Failed to persist new setor:", err);
+    }
+    return setor;
+  }
+
+  toCSV(): string {
+    const headers = [
+      "id","sigla","nome","slug","bloco","andar","email","ramal_principal","responsaveis","ramais","telefones","telefones_externos","celular","whatsapp","observacoes","ultima_atualizacao"
+    ];
+    const rows = Array.from(this.setores.values()).sort((a,b)=>a.nome.localeCompare(b.nome)).map((s) => {
+      const responsaveis = (s.responsaveis || []).map(r => r.nome).join("; ");
+      const ramais = (s.ramais || []).join("; ");
+      const telefones = (s.telefones || []).join("; ");
+      const telefonesExternos = (s.telefones_externos || []).join("; ");
+      const values = [
+        s.id,
+        s.sigla,
+        s.nome,
+        s.slug,
+        s.bloco || "",
+        s.andar || "",
+        s.email || "",
+        s.ramal_principal || "",
+        responsaveis,
+        ramais,
+        telefones,
+        telefonesExternos,
+        s.celular || "",
+        s.whatsapp || "",
+        s.observacoes || "",
+        s.ultima_atualizacao || "",
+      ];
+      return values.map(v => {
+        const str = String(v ?? "");
+        if (str.includes(";") || str.includes(",") || str.includes("\n") || str.includes('"')) {
+          return '"' + str.replace(/"/g, '""') + '"';
+        }
+        return str;
+      }).join(",");
+    });
+    return [headers.join(","), ...rows].join("\n");
+  }
+
+  /**
+   * Atualiza campos de contato de um setor pelo slug.
+   */
+  updateSetorContacts(
+    slug: string,
+    payload: Partial<{
+      email: string;
+      ramal_principal: string;
+      ramais: string[];
+      telefones: { numero: string; link?: string; ramal_original?: string }[];
+      telefones_externos: { numero: string; link?: string; ramal_original?: string }[];
+      celular: string;
+      whatsapp: string;
+      outros_contatos: string[];
+    }>
+  ) {
+    const existing = this.setoresBySlug.get(slug);
+    if (!existing) return undefined;
+
+    const normalizePhones = (
+      arr?: { numero: string; link?: string; ramal_original?: string }[]
+    ) =>
+      Array.isArray(arr)
+        ? arr
+            .filter((t) => t && String(t.numero || "").trim() !== "")
+            .map((t) => ({
+              numero: String(t.numero).trim(),
+              link: t.link ? String(t.link).trim() : "",
+              ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
+            }))
+        : undefined;
+
+    const updated = {
+      ...existing,
+      email: payload.email ?? existing.email,
+      ramal_principal: payload.ramal_principal ?? existing.ramal_principal,
+      ramais: Array.isArray(payload.ramais)
+        ? payload.ramais.map((r) => String(r).trim()).filter((r) => r !== "")
+        : existing.ramais,
+      telefones: normalizePhones(payload.telefones) ?? existing.telefones,
+      telefones_externos:
+        normalizePhones(payload.telefones_externos) ?? existing.telefones_externos,
+      celular: payload.celular ?? existing.celular,
+      whatsapp: payload.whatsapp ?? existing.whatsapp,
+      outros_contatos: Array.isArray(payload.outros_contatos)
+        ? payload.outros_contatos
+            .map((c) => String(c).trim())
+            .filter((c) => c !== "")
+        : existing.outros_contatos,
+      ultima_atualizacao: new Date().toISOString(),
+    };
+
+    this.setores.set(updated.id, updated);
+    this.setoresBySlug.set(updated.slug, updated);
+    // persist overrides file
+    try {
+      let overrides: any[] = [];
+      if (existsSync(this.overridesPath)) {
+        const raw = readFileSync(this.overridesPath, "utf-8");
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) overrides = parsed;
+      }
+      const idx = overrides.findIndex((o) => o && o.slug === slug);
+      const toStore = {
+        slug,
+        email: updated.email,
+        ramal_principal: updated.ramal_principal,
+        ramais: updated.ramais,
+        telefones: updated.telefones,
+        telefones_externos: updated.telefones_externos,
+        celular: updated.celular,
+        whatsapp: updated.whatsapp,
+        outros_contatos: updated.outros_contatos,
+      };
+      if (idx >= 0) overrides[idx] = toStore; else overrides.push(toStore);
+      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+    } catch (err) {
+      console.warn("⚠️ Failed to persist overrides:", err);
+    }
+    return updated;
+  }
+
+  /**
+   * Atualiza campos gerais (inclui bloco/andar e contatos) de um setor pelo slug.
+   */
+  updateSetorPartial(
+    slug: string,
+    payload: Partial<{
+      bloco: string;
+      andar: string;
+      observacoes: string;
+      email: string;
+      ramal_principal: string;
+      ramais: string[];
+      telefones: { numero: string; link?: string; ramal_original?: string }[];
+      telefones_externos: { numero: string; link?: string; ramal_original?: string }[];
+      celular: string;
+      whatsapp: string;
+      outros_contatos: string[];
+      favoritos_ramais: string[];
+      acessos_ramais: Record<string, number>;
+    }>
+  ) {
+    const existing = this.setoresBySlug.get(slug);
+    if (!existing) return undefined;
+
+    const normalizePhones = (
+      arr?: { numero: string; link?: string; ramal_original?: string }[]
+    ) =>
+      Array.isArray(arr)
+        ? arr
+            .filter((t) => t && String(t.numero || "").trim() !== "")
+            .map((t) => ({
+              numero: String(t.numero).trim(),
+              link: t.link ? String(t.link).trim() : "",
+              ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
+            }))
+        : undefined;
+
+    const updated = {
+      ...existing,
+      bloco: payload.bloco ?? existing.bloco,
+      andar: payload.andar ?? existing.andar,
+      observacoes: payload.observacoes ?? existing.observacoes,
+      email: payload.email ?? existing.email,
+      ramal_principal: payload.ramal_principal ?? existing.ramal_principal,
+      ramais: Array.isArray(payload.ramais)
+        ? payload.ramais.map((r) => String(r).trim()).filter((r) => r !== "")
+        : existing.ramais,
+      telefones: normalizePhones(payload.telefones) ?? existing.telefones,
+      telefones_externos:
+        normalizePhones(payload.telefones_externos) ?? existing.telefones_externos,
+      celular: payload.celular ?? existing.celular,
+      whatsapp: payload.whatsapp ?? existing.whatsapp,
+      outros_contatos: Array.isArray(payload.outros_contatos)
+        ? payload.outros_contatos
+            .map((c) => String(c).trim())
+            .filter((c) => c !== "")
+        : existing.outros_contatos,
+      favoritos_ramais: Array.isArray(payload.favoritos_ramais)
+        ? payload.favoritos_ramais.map((r) => String(r).trim()).filter(Boolean)
+        : existing.favoritos_ramais,
+      acessos_ramais: payload.acessos_ramais ?? existing.acessos_ramais,
+      ultima_atualizacao: new Date().toISOString(),
+    };
+
+    this.setores.set(updated.id, updated);
+    this.setoresBySlug.set(updated.slug, updated);
+    // persist overrides file (including bloco/andar when present)
+    try {
+      let overrides: any[] = [];
+      if (existsSync(this.overridesPath)) {
+        const raw = readFileSync(this.overridesPath, "utf-8");
+        const parsed = JSON.parse(raw);
+        if (Array.isArray(parsed)) overrides = parsed;
+      }
+      const idx = overrides.findIndex((o) => o && o.slug === slug);
+      const toStore: any = {
+        slug,
+        bloco: updated.bloco,
+        andar: updated.andar,
+        observacoes: updated.observacoes,
+        email: updated.email,
+        ramal_principal: updated.ramal_principal,
+        ramais: updated.ramais,
+        telefones: updated.telefones,
+        telefones_externos: updated.telefones_externos,
+        celular: updated.celular,
+        whatsapp: updated.whatsapp,
+        outros_contatos: updated.outros_contatos,
+        favoritos_ramais: updated.favoritos_ramais,
+        acessos_ramais: updated.acessos_ramais,
+      };
+      if (idx >= 0) overrides[idx] = { ...overrides[idx], ...toStore }; else overrides.push(toStore);
+      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+    } catch (err) {
+      console.warn("⚠️ Failed to persist overrides:", err);
+    }
+    return updated;
+  }
+
+  incrementRamalAccess(slug: string, numero: string) {
+    const s = this.setoresBySlug.get(slug);
+    if (!s) return undefined;
+    const key = String(numero).trim();
+    const map = { ...(s.acessos_ramais || {}) };
+    map[key] = (map[key] || 0) + 1;
+    return this.updateSetorPartial(slug, { acessos_ramais: map });
+  }
+
+  setFavoriteRamal(slug: string, numero: string, favorite: boolean) {
+    const s = this.setoresBySlug.get(slug);
+    if (!s) return undefined;
+    const key = String(numero).trim();
+    let favs = Array.isArray(s.favoritos_ramais) ? [...s.favoritos_ramais] : [];
+    const has = favs.includes(key);
+    if (favorite && !has) favs.push(key);
+    if (!favorite && has) favs = favs.filter((r) => r !== key);
+    return this.updateSetorPartial(slug, { favoritos_ramais: favs });
   }
 }
 

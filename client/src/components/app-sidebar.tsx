@@ -1,5 +1,6 @@
-import { Home, Search, Phone, Info, Building2 } from "lucide-react";
+import { Home, Search, Phone, Info, Building2, CalendarDays } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import { useAdmin } from "@/components/admin-provider";
 import {
   Sidebar,
   SidebarContent,
@@ -32,6 +33,12 @@ const menuItems = [
     testId: "link-lista-telefonica",
   },
   {
+    title: "Agenda",
+    url: "/agenda",
+    icon: CalendarDays,
+    testId: "link-agenda",
+  },
+  {
     title: "Sobre",
     url: "/sobre",
     icon: Info,
@@ -41,6 +48,8 @@ const menuItems = [
 
 export function AppSidebar() {
   const [location] = useLocation();
+  const { adminOpen } = useAdmin();
+  const safeItems = adminOpen ? menuItems : menuItems.filter((i) => i.url !== "/agenda" && i.url !== "/lista-telefonica");
 
   return (
     <Sidebar>
@@ -58,7 +67,7 @@ export function AppSidebar() {
           <SidebarGroupLabel>Navegação</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {menuItems.map((item) => (
+              {safeItems.map((item) => (
                 <SidebarMenuItem key={item.url}>
                   <SidebarMenuButton
                     asChild

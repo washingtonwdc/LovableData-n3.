@@ -52,6 +52,8 @@ export interface Setor {
   celular: string;
   whatsapp: string;
   outros_contatos: string[];
+  favoritos_ramais?: string[];
+  acessos_ramais?: Record<string, number>;
   ultima_atualizacao: string;
 }
 

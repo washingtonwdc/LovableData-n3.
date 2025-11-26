@@ -1,0 +1,194 @@
+import { useState, useEffect } from "react";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
+import { Calendar as CalendarIcon } from "lucide-react";
+import { Calendar } from "@/components/ui/calendar";
+import { Popover, PopoverTrigger, PopoverContent } from "@/components/ui/popover";
+import { Select, SelectTrigger, SelectContent, SelectItem, SelectValue } from "@/components/ui/select";
+import { AgendaItem } from "@/hooks/use-agenda";
+
+interface EditAgendaDialogProps {
+    item: AgendaItem | null;
+    open: boolean;
+    onOpenChange: (open: boolean) => void;
+    onSave: (item: AgendaItem) => void;
+}
+
+export function EditAgendaDialog({ item, open, onOpenChange, onSave }: EditAgendaDialogProps) {
+    const [titulo, setTitulo] = useState("");
+    const [data, setData] = useState("");
+    const [hora, setHora] = useState("");
+    const [notas, setNotas] = useState("");
+    const [categoria, setCategoria] = useState<string>("");
+    const [duracao, setDuracao] = useState<number>(60);
+
+    // Populate form when item changes
+    useEffect(() => {
+        if (item) {
+            setTitulo(item.titulo || "");
+            setData(item.data || "");
+            setHora(item.hora || "");
+            setNotas(item.notas || "");
+            setCategoria(item.categoria || "");
+            setDuracao(item.duracao || 60);
+        }
+    }, [item]);
+
+    const handleSave = () => {
+        if (!item || !titulo.trim() || !data) return;
+
+        const updatedItem: AgendaItem = {
+            ...item,
+            titulo: titulo.trim(),
+            data,
+            hora: hora || undefined,
+            notas: notas?.trim() || undefined,
+            duracao: duracao || undefined,
+            categoria: categoria || undefined,
+        };
+
+        onSave(updatedItem);
+        onOpenChange(false);
+    };
+
+    const setPreset = (minutesFromNow: number, hourOfDay?: number) => {
+        const now = new Date();
+        let d = new Date(now);
+        if (hourOfDay != null) {
+            d.setDate(d.getDate() + 1);
+            d.setHours(hourOfDay, 0, 0, 0);
+        } else {
+            d = new Date(now.getTime() + minutesFromNow * 60_000);
+        }
+        const y = d.getFullYear();
+        const m = String(d.getMonth() + 1).padStart(2, "0");
+        const day = String(d.getDate()).padStart(2, "0");
+        const hh = String(d.getHours()).padStart(2, "0");
+        const mm = String(d.getMinutes()).padStart(2, "0");
+        setData(`${y}-${m}-${day}`);
+        setHora(`${hh}:${mm}`);
+    };
+
+    return (
+        <Dialog open={open} onOpenChange={onOpenChange}>
+            <DialogContent className="sm:max-w-[600px] max-h-[90vh] overflow-y-auto">
+                <DialogHeader>
+                    <DialogTitle>Editar Compromisso</DialogTitle>
+                </DialogHeader>
+                <div className="grid gap-4 py-4">
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium" htmlFor="edit-titulo">Título</label>
+                        <Input
+                            id="edit-titulo"
+                            value={titulo}
+                            onChange={(e) => setTitulo(e.target.value)}
+                            placeholder="Reunião, visita técnica, etc."
+                        />
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium">Data e hora</label>
+                        <Popover>
+                            <PopoverTrigger asChild>
+                                <Button variant="outline" className="justify-start w-full font-normal">
+                                    <CalendarIcon className="mr-2 h-4 w-4" />
+                                    {data ? (
+                                        <span>
+                                            {data}{hora ? ` às ${hora}` : ""}
+                                        </span>
+                                    ) : (
+                                        <span>Escolher data e hora</span>
+                                    )}
+                                </Button>
+                            </PopoverTrigger>
+                            <PopoverContent className="w-auto p-0" align="start">
+                                <div className="p-3 space-y-3">
+                                    <Calendar
+                                        mode="single"
+                                        selected={data ? new Date(`${data}T${hora || "00:00"}:00`) : undefined}
+                                        onSelect={(d) => {
+                                            if (!d) return;
+                                            const y = d.getFullYear();
+                                            const m = String(d.getMonth() + 1).padStart(2, "0");
+                                            const day = String(d.getDate()).padStart(2, "0");
+                                            setData(`${y}-${m}-${day}`);
+                                        }}
+                                    />
+                                    <div className="space-y-2">
+                                        <label className="text-sm font-medium" htmlFor="edit-hora">Hora</label>
+                                        <Input
+                                            id="edit-hora"
+                                            type="time"
+                                            value={hora}
+                                            onChange={(e) => setHora(e.target.value)}
+                                        />
+                                    </div>
+                                    <div className="flex flex-wrap gap-2 pt-1">
+                                        <Button variant="secondary" size="sm" onClick={() => setPreset(0)}>Agora</Button>
+                                        <Button variant="secondary" size="sm" onClick={() => setPreset(30)}>+30 min</Button>
+                                        <Button variant="secondary" size="sm" onClick={() => setPreset(60)}>+1h</Button>
+                                        <Button variant="secondary" size="sm" onClick={() => setPreset(0, 9)}>Amanhã 09:00</Button>
+                                        <Button variant="secondary" size="sm" onClick={() => setPreset(0, 14)}>Amanhã 14:00</Button>
+                                    </div>
+                                </div>
+                            </PopoverContent>
+                        </Popover>
+                    </div>
+
+                    <div className="grid grid-cols-2 gap-4">
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium" htmlFor="edit-categoria">Categoria</label>
+                            <Select value={categoria} onValueChange={(v) => setCategoria(v)}>
+                                <SelectTrigger id="edit-categoria">
+                                    <SelectValue placeholder="Escolher categoria" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="Reunião">Reunião</SelectItem>
+                                    <SelectItem value="Visita">Visita</SelectItem>
+                                    <SelectItem value="Interno">Interno</SelectItem>
+                                    <SelectItem value="Outro">Outro</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+
+                        <div className="space-y-2">
+                            <label className="text-sm font-medium" htmlFor="edit-duracao">Duração</label>
+                            <Select value={String(duracao)} onValueChange={(v) => setDuracao(Number(v))}>
+                                <SelectTrigger id="edit-duracao">
+                                    <SelectValue placeholder="Selecionar duração" />
+                                </SelectTrigger>
+                                <SelectContent>
+                                    <SelectItem value="30">30 minutos</SelectItem>
+                                    <SelectItem value="60">60 minutos</SelectItem>
+                                    <SelectItem value="90">90 minutos</SelectItem>
+                                    <SelectItem value="120">120 minutos</SelectItem>
+                                </SelectContent>
+                            </Select>
+                        </div>
+                    </div>
+
+                    <div className="space-y-2">
+                        <label className="text-sm font-medium" htmlFor="edit-notas">Notas</label>
+                        <Textarea
+                            id="edit-notas"
+                            value={notas}
+                            onChange={(e) => setNotas(e.target.value)}
+                            placeholder="Detalhes, participantes, local, etc."
+                            rows={4}
+                        />
+                    </div>
+                </div>
+                <DialogFooter>
+                    <Button variant="outline" onClick={() => onOpenChange(false)}>
+                        Cancelar
+                    </Button>
+                    <Button onClick={handleSave} disabled={!titulo.trim() || !data}>
+                        Salvar alterações
+                    </Button>
+                </DialogFooter>
+            </DialogContent>
+        </Dialog>
+    );
+}

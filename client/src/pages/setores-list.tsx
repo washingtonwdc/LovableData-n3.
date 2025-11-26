@@ -1,11 +1,15 @@
 import { useState, useMemo } from "react";
+import { useLocation } from "wouter";
 import { useQuery } from "@tanstack/react-query";
-import { Filter } from "lucide-react";
+import { Filter, AlertCircle } from "lucide-react";
 import { SearchBar } from "@/components/search-bar";
 import { SetorCard } from "@/components/setor-card";
 import { EmptyState } from "@/components/empty-state";
 import { LoadingState } from "@/components/loading-state";
 import { Button } from "@/components/ui/button";
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter } from "@/components/ui/dialog";
+import { Input } from "@/components/ui/input";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 import {
   Select,
   SelectContent,
@@ -16,17 +20,37 @@ import {
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import type { Setor } from "@shared/schema";
+import { toast } from "@/hooks/use-toast";
+import { useAdmin } from "@/components/admin-provider";
 
 export default function SetoresList() {
+  const { adminOpen, requireAdmin } = useAdmin();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedBloco, setSelectedBloco] = useState<string>("all");
   const [selectedAndar, setSelectedAndar] = useState<string>("all");
   const [showFilters, setShowFilters] = useState(false);
-
-  // Fetch ALL setores (no filters) - used ONLY for building filter options
-  const { data: allSetores } = useQuery<Setor[]>({
-    queryKey: ["/api/setores", "base"],
+  const [isCreating, setIsCreating] = useState(false);
+  const [createForm, setCreateForm] = useState<{ nome: string; sigla: string; bloco: string; andar: string; email: string; observacoes: string; ramal_principal: string }>({
+    nome: "",
+    sigla: "",
+    bloco: "",
+    andar: "",
+    email: "",
+    observacoes: "",
+    ramal_principal: "",
   });
+  const queryClient = useQueryClient();
+  const [, navigate] = useLocation();
+
+  // Fetch filter options from dedicated endpoints
+  const { data: blocosList, isLoading: blocosLoading, isError: blocosError } = useQuery<string[]>({
+    queryKey: ["/api/blocos"],
+  });
+  const { data: andaresList, isLoading: andaresLoading, isError: andaresError } = useQuery<string[]>({
+    queryKey: ["/api/andares"],
+  });
+  const filtersLoading = blocosLoading || andaresLoading;
+  const filtersError = blocosError || andaresError;
 
   // Build query parameters for backend search
   const hasFilters = searchQuery || selectedBloco !== "all" || selectedAndar !== "all";
@@ -48,31 +72,20 @@ export default function SetoresList() {
       : ["/api/setores"],
   });
 
-  // Extract unique blocos and andares from ALL setores (not filtered)
-  const { blocos, andares } = useMemo(() => {
-    if (!allSetores) return { blocos: [], andares: [] };
-    
-    const blocosSet = new Set(
-      allSetores
-        .map(s => s.bloco)
-        .filter(b => b && b.trim() !== "")
-    );
-    const andaresSet = new Set(
-      allSetores
-        .map(s => s.andar)
-        .filter(a => a && a.trim() !== "")
-    );
-    
-    return {
-      blocos: Array.from(blocosSet).sort(),
-      andares: Array.from(andaresSet).sort(),
-    };
-  }, [allSetores]);
+  // Use backend-provided filter lists, fallback to empty arrays
+  const blocos = useMemo(() => {
+    return Array.isArray(blocosList) ? blocosList : [];
+  }, [blocosList]);
+  const andares = useMemo(() => {
+    return Array.isArray(andaresList) ? andaresList : [];
+  }, [andaresList]);
 
   const activeFiltersCount = [
     selectedBloco !== "all",
     selectedAndar !== "all",
   ].filter(Boolean).length;
+
+  const [masterPassword, setMasterPassword] = useState("");
 
   const clearFilters = () => {
     setSearchQuery("");
@@ -80,7 +93,120 @@ export default function SetoresList() {
     setSelectedAndar("all");
   };
 
+  const handleImportJSON = async () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".json,application/json";
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      try {
+        const text = await file.text();
+        const data = JSON.parse(text);
+        if (!Array.isArray(data)) throw new Error("JSON deve conter um array");
+        const resp = await fetch(`/api/setores/import?mode=replace`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+          body: JSON.stringify(data),
+        });
+        if (!resp.ok) throw new Error(await resp.text());
+        toast({ title: "Setores importados", description: "Dados carregados com sucesso" });
+        // Force refetch
+        window.location.reload();
+      } catch (e: any) {
+        toast({ title: "Falha ao importar JSON", description: e?.message || String(e), variant: "destructive" });
+      }
+    };
+    input.click();
+  };
+
+  const handleImportCSV = async () => {
+    const input = document.createElement("input");
+    input.type = "file";
+    input.accept = ".csv,text/csv";
+    input.onchange = async () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      try {
+        const text = await file.text();
+        const resp = await fetch(`/api/setores/import-csv?mode=replace`, {
+          method: "POST",
+          headers: { "Content-Type": "text/csv", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+          body: text,
+        });
+        if (!resp.ok) throw new Error(await resp.text());
+        toast({ title: "Setores importados", description: "CSV carregado com sucesso" });
+        window.location.reload();
+      } catch (e: any) {
+        toast({ title: "Falha ao importar CSV", description: e?.message || String(e), variant: "destructive" });
+      }
+    };
+    input.click();
+  };
+
+  const downloadFile = (blob: Blob, filename: string) => {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(url);
+  };
+
+  const handleExportJSON = async () => {
+    try {
+      const resp = await fetch(`/api/setores/export?format=json`, { headers: { ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) } });
+      if (!resp.ok) throw new Error(await resp.text());
+      const data = await resp.json();
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      const filename = `setores_${new Date().toISOString().replace(/[:.]/g, "-")}.json`;
+      downloadFile(blob, filename);
+      toast({ title: "Exportado", description: "JSON baixado" });
+    } catch (e: any) {
+      toast({ title: "Falha ao exportar JSON", description: e?.message || String(e), variant: "destructive" });
+    }
+  };
+
+  const handleExportCSV = async () => {
+    try {
+      const resp = await fetch(`/api/setores/export?format=csv`, { headers: { ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) } });
+      if (!resp.ok) throw new Error(await resp.text());
+      const text = await resp.text();
+      const blob = new Blob([text], { type: "text/csv" });
+      const filename = `setores_${new Date().toISOString().replace(/[:.]/g, "-")}.csv`;
+      downloadFile(blob, filename);
+      toast({ title: "Exportado", description: "CSV baixado" });
+    } catch (e: any) {
+      toast({ title: "Falha ao exportar CSV", description: e?.message || String(e), variant: "destructive" });
+    }
+  };
+
+  const createMutation = useMutation({
+    mutationFn: async () => {
+      const res = await fetch(`/api/setores`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) },
+        body: JSON.stringify({ ...createForm, ...(masterPassword ? { master_password: masterPassword } : {}) }),
+      });
+      if (!res.ok) throw new Error(await res.text());
+      return res.json();
+    },
+    onSuccess: (newSetor) => {
+      toast({ title: "Setor criado", description: `\"${newSetor.nome}\" foi adicionado.` });
+      setIsCreating(false);
+      // refresh lists
+      queryClient.invalidateQueries({ queryKey: ["/api/setores"] });
+      navigate(`/setor/${newSetor.slug}`);
+    },
+    onError: (e: any) => {
+      toast({ title: "Falha ao criar setor", description: e?.message || String(e), variant: "destructive" });
+    },
+  });
+
   return (
+    <>
     <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-7xl">
         {/* Header */}
@@ -126,12 +252,18 @@ export default function SetoresList() {
           {showFilters && (
             <Card>
               <CardContent className="p-6">
+                {filtersError && (
+                  <div className="mb-4 flex items-center gap-2 text-sm text-destructive" data-testid="text-filters-error">
+                    <AlertCircle className="h-4 w-4" />
+                    Falha ao carregar opções de filtros. Tente novamente mais tarde.
+                  </div>
+                )}
                 <div className="grid gap-4 sm:grid-cols-2">
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Bloco</label>
                     <Select value={selectedBloco} onValueChange={setSelectedBloco}>
-                      <SelectTrigger data-testid="select-bloco">
-                        <SelectValue placeholder="Todos os blocos" />
+                      <SelectTrigger data-testid="select-bloco" disabled={filtersLoading || filtersError}>
+                        <SelectValue placeholder={blocosLoading ? "Carregando..." : "Todos os blocos"} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Todos os blocos</SelectItem>
@@ -147,8 +279,8 @@ export default function SetoresList() {
                   <div className="space-y-2">
                     <label className="text-sm font-medium">Andar</label>
                     <Select value={selectedAndar} onValueChange={setSelectedAndar}>
-                      <SelectTrigger data-testid="select-andar">
-                        <SelectValue placeholder="Todos os andares" />
+                      <SelectTrigger data-testid="select-andar" disabled={filtersLoading || filtersError}>
+                        <SelectValue placeholder={andaresLoading ? "Carregando..." : "Todos os andares"} />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="all">Todos os andares</SelectItem>
@@ -171,6 +303,15 @@ export default function SetoresList() {
           <LoadingState />
         ) : displaySetores && displaySetores.length > 0 ? (
           <>
+            {adminOpen && (
+              <div className="mb-4 flex items-center gap-2 flex-wrap">
+                <Button variant="secondary" size="sm" onClick={async ()=>{ const ok = await requireAdmin(); if (!ok) return; await handleImportJSON(); }}>Importar JSON</Button>
+                <Button variant="secondary" size="sm" onClick={async ()=>{ const ok = await requireAdmin(); if (!ok) return; await handleImportCSV(); }}>Importar CSV</Button>
+                <Button variant="outline" size="sm" onClick={async ()=>{ const ok = await requireAdmin(); if (!ok) return; await handleExportJSON(); }}>Exportar JSON</Button>
+                <Button variant="outline" size="sm" onClick={async ()=>{ const ok = await requireAdmin(); if (!ok) return; await handleExportCSV(); }}>Exportar CSV</Button>
+                <Button variant="default" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; setIsCreating(true); }}>Novo Setor</Button>
+              </div>
+            )}
             <div className="mb-4">
               <p className="text-sm text-muted-foreground" data-testid="text-results-count">
                 {displaySetores.length} {displaySetores.length === 1 ? 'setor encontrado' : 'setores encontrados'}
@@ -193,5 +334,53 @@ export default function SetoresList() {
         )}
       </div>
     </div>
+
+    {/* Create Setor Dialog */}
+    <Dialog open={isCreating} onOpenChange={setIsCreating}>
+      <DialogContent>
+        <DialogHeader>
+          <DialogTitle>Novo Setor</DialogTitle>
+        </DialogHeader>
+        <div className="space-y-3">
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="novo-nome">Nome</label>
+              <Input id="novo-nome" value={createForm.nome} onChange={(e)=>setCreateForm({ ...createForm, nome: e.target.value })} />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="novo-sigla">Sigla</label>
+              <Input id="novo-sigla" value={createForm.sigla} onChange={(e)=>setCreateForm({ ...createForm, sigla: e.target.value })} />
+            </div>
+          </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="novo-bloco">Bloco</label>
+              <Input id="novo-bloco" value={createForm.bloco} onChange={(e)=>setCreateForm({ ...createForm, bloco: e.target.value })} />
+            </div>
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="novo-andar">Andar</label>
+              <Input id="novo-andar" value={createForm.andar} onChange={(e)=>setCreateForm({ ...createForm, andar: e.target.value })} />
+            </div>
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground" htmlFor="novo-email">E-mail</label>
+            <Input id="novo-email" type="email" value={createForm.email} onChange={(e)=>setCreateForm({ ...createForm, email: e.target.value })} />
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground" htmlFor="novo-observacoes">Observações</label>
+            <Input id="novo-observacoes" value={createForm.observacoes} onChange={(e)=>setCreateForm({ ...createForm, observacoes: e.target.value })} />
+          </div>
+          <div>
+            <label className="text-sm text-muted-foreground" htmlFor="novo-ramal">Ramal principal</label>
+            <Input id="novo-ramal" value={createForm.ramal_principal} onChange={(e)=>setCreateForm({ ...createForm, ramal_principal: e.target.value })} />
+          </div>
+        </div>
+        <DialogFooter>
+          <Button variant="ghost" onClick={()=>setIsCreating(false)}>Cancelar</Button>
+          <Button onClick={async ()=>{ const ok = await requireAdmin(); if (!ok) return; createMutation.mutate(); }} disabled={createMutation.isPending || !createForm.nome || !createForm.sigla}>Criar</Button>
+        </DialogFooter>
+      </DialogContent>
+    </Dialog>
+    </>
   );
 }
