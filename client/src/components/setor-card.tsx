@@ -12,7 +12,7 @@ interface SetorCardProps {
 export function SetorCard({ setor }: SetorCardProps) {
   return (
     <Card className="hover-elevate h-full flex flex-col min-h-[280px]" data-testid={`card-setor-${setor.id}`}>
-      <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0 pb-4">
+      <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0 p-4 pb-2">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
             <Badge variant="secondary" className="font-mono text-xs" data-testid={`badge-sigla-${setor.id}`}>
@@ -31,7 +31,7 @@ export function SetorCard({ setor }: SetorCardProps) {
         <Building2 className="h-5 w-5 text-muted-foreground flex-shrink-0" />
       </CardHeader>
 
-      <CardContent className="flex-1 space-y-3 pb-4">
+      <CardContent className="flex-1 space-y-3 p-4 pt-2">
         <div className="space-y-2 text-sm">
           {setor.bloco && setor.andar && (
             <div className="flex items-center gap-2 text-muted-foreground">

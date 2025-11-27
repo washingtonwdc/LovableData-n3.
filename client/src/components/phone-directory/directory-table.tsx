@@ -228,7 +228,7 @@ export function DirectoryTable({
                                 className={entry.isFav ? "bg-primary/5 hover:bg-primary/10 transition-colors" : "odd:bg-muted/20 hover:bg-muted/40 transition-colors"}
                                 style={{ height: rowHeight }}
                             >
-                                <TableCell className="font-medium align-top">
+                                <TableCell className="font-medium align-top p-3">
                                     <div className="max-w-[300px] break-words">
                                         <div className="flex items-center gap-2 mb-1">
                                             <Badge variant="secondary" className="font-mono text-xs">
@@ -238,7 +238,7 @@ export function DirectoryTable({
                                         <div className="text-sm">{highlight(entry.setor)}</div>
                                     </div>
                                 </TableCell>
-                                <TableCell className="align-top">
+                                <TableCell className="align-top p-3">
                                     <div className="text-sm">
                                         <div className="font-medium">{highlight(entry.bloco)}</div>
                                         {entry.andar && (
@@ -246,7 +246,7 @@ export function DirectoryTable({
                                         )}
                                     </div>
                                 </TableCell>
-                                <TableCell>
+                                <TableCell className="p-3">
                                     <div className="flex items-center gap-2">
                                         <Badge variant="outline" className="font-mono">
                                             {highlight(entry.ramal)}
@@ -271,7 +271,7 @@ export function DirectoryTable({
                                         </TooltipProvider>
                                     </div>
                                 </TableCell>
-                                <TableCell>
+                                <TableCell className="p-3">
                                     {entry.telefone && (
                                         <div className="flex items-center gap-2 text-sm">
                                             <Phone className="h-3 w-3 text-muted-foreground" />
@@ -279,7 +279,7 @@ export function DirectoryTable({
                                         </div>
                                     )}
                                 </TableCell>
-                                <TableCell>
+                                <TableCell className="p-3">
                                     {entry.email && (
                                         <div className="flex items-center gap-2 text-sm">
                                             <Mail className="h-3 w-3 text-muted-foreground" />
@@ -289,7 +289,7 @@ export function DirectoryTable({
                                         </div>
                                     )}
                                 </TableCell>
-                                <TableCell className="text-right">
+                                <TableCell className="text-right p-3">
                                     <div className="flex items-center justify-end gap-1">
                                         <Button
                                             variant="ghost"
