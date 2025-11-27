@@ -49,22 +49,6 @@ export function AgendaFilters({
             </Tabs>
             <Toggle pressed={hideCompleted} onPressedChange={onHideCompletedChange} aria-label="Ocultar concluídos" variant="outline">
                 Ocultar concluídos
-            </Toggle>
-            <Select value={categoriaFiltro} onValueChange={onCategoriaFiltroChange}>
-                <SelectTrigger className="w-[180px]">
-                    <SelectValue placeholder="Filtrar categoria" />
-                </SelectTrigger>
-                <SelectContent>
-                    <SelectItem value="__all__">Todas</SelectItem>
-                    <SelectItem value="Reunião">Reunião</SelectItem>
-                    <SelectItem value="Visita">Visita</SelectItem>
-                    <SelectItem value="Interno">Interno</SelectItem>
-                    <SelectItem value="Outro">Outro</SelectItem>
-                </SelectContent>
-            </Select>
-            <Popover>
-                <PopoverTrigger asChild>
-                    <Button variant="outline">
                         {selectedDateFilter ? `${selectedDateFilter}${showWeekFromSelected ? " (semana)" : ""}` : "Filtrar por data"}
                     </Button>
                 </PopoverTrigger>
@@ -93,7 +77,7 @@ export function AgendaFilters({
                         </div>
                     </div>
                 </PopoverContent>
-            </Popover>
-        </div>
+            </Popover >
+        </div >
     );
 }

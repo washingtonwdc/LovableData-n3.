@@ -13,6 +13,8 @@ import {
   MessageCircle,
   Star,
   Copy,
+  Home,
+  ChevronRight,
 } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -34,7 +36,7 @@ export default function SetorDetail() {
   const queryClient = useQueryClient();
   const [isEditing, setIsEditing] = useState(false as boolean);
   const [masterPassword, setMasterPassword] = useState("");
-  const [form, setForm] = useState<{ 
+  const [form, setForm] = useState<{
     bloco: string;
     andar: string;
     email: string;
@@ -172,7 +174,7 @@ export default function SetorDetail() {
   });
 
   // Simple validations
-  const [errors, setErrors] = useState<{ email?: string; whatsapp?: string } >({});
+  const [errors, setErrors] = useState<{ email?: string; whatsapp?: string }>({});
   useEffect(() => {
     const errs: typeof errors = {};
     if (form.email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
@@ -239,11 +241,36 @@ export default function SetorDetail() {
   return (
     <div className="min-h-screen py-8 px-4 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-5xl">
+        {/* Breadcrumb Navigation */}
+        <nav className="flex items-center gap-2 text-sm text-muted-foreground mb-6" aria-label="Breadcrumb">
+          <Link href="/" className="hover:text-foreground transition-colors">
+            <Home className="h-4 w-4" />
+          </Link>
+          <ChevronRight className="h-4 w-4" />
+          <Link href="/setores" className="hover:text-foreground transition-colors">
+            Setores
+          </Link>
+          {setor?.bloco && (
+            <>
+              <ChevronRight className="h-4 w-4" />
+              <span className="hover:text-foreground transition-colors">{setor.bloco}</span>
+            </>
+          )}
+          {setor?.andar && (
+            <>
+              <ChevronRight className="h-4 w-4" />
+              <span className="hover:text-foreground transition-colors">{setor.andar}</span>
+            </>
+          )}
+          <ChevronRight className="h-4 w-4" />
+          <span className="text-foreground font-medium">{setor?.sigla || 'Carregando...'}</span>
+        </nav>
+
         {/* Back Button */}
         <Button
           asChild
           variant="ghost"
-          className="mb-6"
+          className="mb-4"
           data-testid="button-back"
         >
           <Link href="/setores">
@@ -396,7 +423,7 @@ export default function SetorDetail() {
                   <Button variant="secondary" size="sm" onClick={() => {
                     setIsEditing(true);
                     // Add a blank telefone input if none is blank
-                    setForm((prev)=>{
+                    setForm((prev) => {
                       const hasBlank = prev.telefones.some(t => !t.numero);
                       return hasBlank ? prev : { ...prev, telefones: [...prev.telefones, { numero: "", link: "", ramal_original: "" }] };
                     });
@@ -576,9 +603,9 @@ export default function SetorDetail() {
                 )}
               </CardContent>
             </Card>
-         </div>
-       </div>
-     </div>
+          </div>
+        </div>
+      </div>
 
       {/* Edit Contacts Dialog */}
       <Dialog open={isEditing} onOpenChange={setIsEditing}>
@@ -620,7 +647,7 @@ export default function SetorDetail() {
               </div>
               <div>
                 <label className="text-sm text-muted-foreground" htmlFor="edit-ramais">Ramais (um por linha)</label>
-                <Textarea id="edit-ramais" value={form.ramais.join("\n")} onChange={(e) => setForm({ ...form, ramais: e.target.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean) })} />
+                <Textarea id="edit-ramais" value={form.ramais.join("\n")} onChange={(e) => setForm({ ...form, ramais: e.target.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean) })} />
               </div>
             </div>
             <div>
@@ -677,8 +704,8 @@ export default function SetorDetail() {
             </div>
             <div>
               <label className="text-sm text-muted-foreground" htmlFor="edit-outros">Outros contatos (um por linha)</label>
-              <Textarea id="edit-outros" value={form.outros_contatos.join("\n")} onChange={(e) => setForm({ ...form, outros_contatos: e.target.value.split(/\r?\n/).map(s=>s.trim()).filter(Boolean) })} />
-          </div>
+              <Textarea id="edit-outros" value={form.outros_contatos.join("\n")} onChange={(e) => setForm({ ...form, outros_contatos: e.target.value.split(/\r?\n/).map(s => s.trim()).filter(Boolean) })} />
+            </div>
             <DialogFooter>
               <Button variant="ghost" onClick={() => setIsEditing(false)}>Cancelar</Button>
               <Button onClick={async () => { const ok = await requireAdmin(); if (!ok) return; mutation.mutate(form); }} disabled={mutation.isPending || !!errors.email || !!errors.whatsapp}>Salvar</Button>

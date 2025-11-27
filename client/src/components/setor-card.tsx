@@ -1,9 +1,11 @@
-import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card";
+```typescript
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Building2, MapPin, Mail, Phone, ChevronRight, Users } from "lucide-react";
 import { Link } from "wouter";
 import type { Setor } from "@shared/schema";
+import { RecentlyUpdatedBadge } from "@/components/recently-updated-badge";
 
 interface SetorCardProps {
   setor: Setor;
@@ -11,11 +13,11 @@ interface SetorCardProps {
 
 export function SetorCard({ setor }: SetorCardProps) {
   return (
-    <Card className="hover-elevate h-full flex flex-col min-h-[280px]" data-testid={`card-setor-${setor.id}`}>
-      <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0 p-4 pb-2">
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-1">
-            <Badge variant="secondary" className="font-mono text-xs" data-testid={`badge-sigla-${setor.id}`}>
+    <Card className="hover:shadow-lg transition-all duration-200 flex flex-col min-h-[280px]" data-testid={`card - setor - ${ setor.id } `}>
+      <CardHeader className="p-4 pb-2">
+        <div className="flex items-start justify-between gap-2 mb-2">
+          <div className="flex flex-wrap gap-2">
+            <Badge variant="secondary" className="font-mono text-xs" data-testid={`badge - sigla - ${ setor.id } `}>
               {setor.sigla}
             </Badge>
             {setor.bloco && (
@@ -24,7 +26,7 @@ export function SetorCard({ setor }: SetorCardProps) {
               </Badge>
             )}
           </div>
-          <h3 className="font-semibold text-base leading-tight line-clamp-2 break-words min-h-[3rem]" data-testid={`text-nome-${setor.id}`}>
+          <h3 className="font-semibold text-base leading-tight line-clamp-2 break-words min-h-[3rem]" data-testid={`text - nome - ${ setor.id } `}>
             {setor.nome}
           </h3>
         </div>
@@ -60,7 +62,7 @@ export function SetorCard({ setor }: SetorCardProps) {
             <Users className="h-4 w-4 flex-shrink-0 text-muted-foreground mt-0.5" />
             <div className="flex-1 min-w-0">
               <p className="text-xs text-muted-foreground mb-1">Responsável:</p>
-              <p className="text-sm font-medium line-clamp-1" data-testid={`text-responsavel-${setor.id}`}>
+              <p className="text-sm font-medium line-clamp-1" data-testid={`text - responsavel - ${ setor.id } `}>
                 {setor.responsaveis[0].nome}
               </p>
               {setor.responsaveis.length > 1 && (
@@ -78,9 +80,9 @@ export function SetorCard({ setor }: SetorCardProps) {
           asChild
           variant="ghost"
           className="w-full justify-between"
-          data-testid={`button-ver-detalhes-${setor.id}`}
+          data-testid={`button - ver - detalhes - ${ setor.id } `}
         >
-          <Link href={`/setor/${setor.slug}`}>
+          <Link href={`/ setor / ${ setor.slug } `}>
             Ver detalhes
             <ChevronRight className="h-4 w-4" />
           </Link>

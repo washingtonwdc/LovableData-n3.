@@ -30,13 +30,17 @@ export function formatEndTime(item: AgendaItem) {
 export function categoriaBadgeClass(cat?: string) {
     switch (cat) {
         case "Reunião":
-            return "border-blue-200 text-blue-700";
+            return "bg-blue-100 border-blue-300 text-blue-800 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800";
         case "Visita":
-            return "border-green-200 text-green-700";
+            return "bg-green-100 border-green-300 text-green-800 dark:bg-green-950 dark:text-green-300 dark:border-green-800";
         case "Interno":
-            return "border-purple-200 text-purple-700";
+            return "bg-purple-100 border-purple-300 text-purple-800 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800";
+        case "Urgente":
+            return "bg-red-100 border-red-300 text-red-800 dark:bg-red-950 dark:text-red-300 dark:border-red-800";
+        case "Pessoal":
+            return "bg-amber-100 border-amber-300 text-amber-800 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800";
         default:
-            return "";
+            return "bg-gray-100 border-gray-300 text-gray-800 dark:bg-gray-800 dark:text-gray-300 dark:border-gray-700";
     }
 }
 

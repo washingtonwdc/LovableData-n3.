@@ -113,35 +113,17 @@ export function AgendaForm({ onAdd }: AgendaFormProps) {
                                 </div>
                             </div>
                         </PopoverContent>
-                    </Popover>
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-medium" htmlFor="categoria">Categoria</label>
-                    <Select value={categoria} onValueChange={(v) => setCategoria(v)}>
-                        <SelectTrigger id="categoria">
-                            <SelectValue placeholder="Escolher categoria" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="Reunião">Reunião</SelectItem>
-                            <SelectItem value="Visita">Visita</SelectItem>
-                            <SelectItem value="Interno">Interno</SelectItem>
-                            <SelectItem value="Outro">Outro</SelectItem>
-                        </SelectContent>
-                    </Select>
-                </div>
-                <div className="space-y-2">
-                    <label className="text-sm font-medium" htmlFor="duracao">Duração</label>
-                    <Select value={String(duracao)} onValueChange={(v) => setDuracao(Number(v))}>
-                        <SelectTrigger id="duracao">
-                            <SelectValue placeholder="Selecionar duração" />
-                        </SelectTrigger>
-                        <SelectContent>
-                            <SelectItem value="30">30 minutos</SelectItem>
-                            <SelectItem value="60">60 minutos</SelectItem>
-                            <SelectItem value="90">90 minutos</SelectItem>
-                            <SelectItem value="120">120 minutos</SelectItem>
-                        </SelectContent>
-                    </Select>
+                        <Select value={String(duracao)} onValueChange={(v) => setDuracao(Number(v))}>
+                            <SelectTrigger id="duracao">
+                                <SelectValue placeholder="Selecionar duração" />
+                            </SelectTrigger>
+                            <SelectContent>
+                                <SelectItem value="30">30 minutos</SelectItem>
+                                <SelectItem value="60">60 minutos</SelectItem>
+                                <SelectItem value="90">90 minutos</SelectItem>
+                                <SelectItem value="120">120 minutos</SelectItem>
+                            </SelectContent>
+                        </Select>
                 </div>
                 <div className="space-y-2">
                     <label className="text-sm font-medium" htmlFor="notas">Notas</label>
