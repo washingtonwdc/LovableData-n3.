@@ -228,8 +228,8 @@ export function DirectoryTable({
                                 className={entry.isFav ? "bg-primary/5 hover:bg-primary/10 transition-colors" : "odd:bg-muted/20 hover:bg-muted/40 transition-colors"}
                                 style={{ height: rowHeight }}
                             >
-                                <TableCell className="font-medium">
-                                    <div>
+                                <TableCell className="font-medium align-top">
+                                    <div className="max-w-[300px] break-words">
                                         <div className="flex items-center gap-2 mb-1">
                                             <Badge variant="secondary" className="font-mono text-xs">
                                                 {highlight(entry.sigla)}
@@ -238,7 +238,7 @@ export function DirectoryTable({
                                         <div className="text-sm">{highlight(entry.setor)}</div>
                                     </div>
                                 </TableCell>
-                                <TableCell>
+                                <TableCell className="align-top">
                                     <div className="text-sm">
                                         <div className="font-medium">{highlight(entry.bloco)}</div>
                                         {entry.andar && (
@@ -283,7 +283,7 @@ export function DirectoryTable({
                                     {entry.email && (
                                         <div className="flex items-center gap-2 text-sm">
                                             <Mail className="h-3 w-3 text-muted-foreground" />
-                                            <a href={`mailto:${entry.email}`} className="hover:underline truncate max-w-[150px] block">
+                                            <a href={`mailto:${entry.email}`} className="hover:underline truncate max-w-[200px] block">
                                                 {entry.email}
                                             </a>
                                         </div>

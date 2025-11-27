@@ -11,7 +11,7 @@ interface SetorCardProps {
 
 export function SetorCard({ setor }: SetorCardProps) {
   return (
-    <Card className="hover-elevate h-full flex flex-col" data-testid={`card-setor-${setor.id}`}>
+    <Card className="hover-elevate h-full flex flex-col min-h-[280px]" data-testid={`card-setor-${setor.id}`}>
       <CardHeader className="flex flex-row items-start justify-between gap-4 space-y-0 pb-4">
         <div className="flex-1 min-w-0">
           <div className="flex items-center gap-2 mb-1">
@@ -24,13 +24,13 @@ export function SetorCard({ setor }: SetorCardProps) {
               </Badge>
             )}
           </div>
-          <h3 className="font-semibold text-base leading-tight line-clamp-2" data-testid={`text-nome-${setor.id}`}>
+          <h3 className="font-semibold text-base leading-tight line-clamp-2 break-words min-h-[3rem]" data-testid={`text-nome-${setor.id}`}>
             {setor.nome}
           </h3>
         </div>
         <Building2 className="h-5 w-5 text-muted-foreground flex-shrink-0" />
       </CardHeader>
-      
+
       <CardContent className="flex-1 space-y-3 pb-4">
         <div className="space-y-2 text-sm">
           {setor.bloco && setor.andar && (
@@ -39,14 +39,14 @@ export function SetorCard({ setor }: SetorCardProps) {
               <span className="truncate">{setor.bloco} - {setor.andar}</span>
             </div>
           )}
-          
+
           {setor.email && (
             <div className="flex items-center gap-2 text-muted-foreground">
               <Mail className="h-4 w-4 flex-shrink-0" />
               <span className="truncate text-xs">{setor.email}</span>
             </div>
           )}
-          
+
           {setor.ramal_principal && (
             <div className="flex items-center gap-2 text-muted-foreground">
               <Phone className="h-4 w-4 flex-shrink-0" />
@@ -72,7 +72,7 @@ export function SetorCard({ setor }: SetorCardProps) {
           </div>
         )}
       </CardContent>
-      
+
       <CardFooter className="pt-0">
         <Button
           asChild
