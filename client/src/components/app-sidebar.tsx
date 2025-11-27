@@ -49,7 +49,8 @@ const menuItems = [
 export function AppSidebar() {
   const [location] = useLocation();
   const { adminOpen } = useAdmin();
-  const safeItems = adminOpen ? menuItems : menuItems.filter((i) => i.url !== "/agenda" && i.url !== "/lista-telefonica");
+
+  const safeItems = menuItems;
 
   return (
     <Sidebar>

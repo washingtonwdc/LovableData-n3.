@@ -41,7 +41,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
   app.get("/api/setores", async (req, res) => {
     try {
       const { query, bloco, andar } = req.query;
-      
+
       if (query || bloco || andar) {
         // Search with filters
         const results = await storage.searchSetores(
@@ -109,12 +109,36 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  // GET /api/setores/export - Export setores as JSON or CSV
+  app.get("/api/setores/export", async (req: Request, res: Response) => {
+    try {
+      if (!isMasterAllowed(req)) {
+        return res.status(403).json({ error: "Senha mestra inválida" });
+      }
+      const format = ((req.query.format as string) || "json").toLowerCase();
+      const filename = `setores_${new Date().toISOString().replace(/[:.]/g, "-")}.${format === "csv" ? "csv" : "json"}`;
+      if (format === "csv") {
+        const csv = storage.toCSV();
+        res.setHeader("Content-Type", "text/csv; charset=utf-8");
+        res.setHeader("Content-Disposition", `attachment; filename=\"${filename}\"`);
+        return res.send(csv);
+      }
+      const setores = await storage.getAllSetores();
+      res.setHeader("Content-Type", "application/json; charset=utf-8");
+      res.setHeader("Content-Disposition", `attachment; filename=\"${filename}\"`);
+      return res.json(setores);
+    } catch (error) {
+      console.error("Error exporting setores:", error);
+      res.status(500).json({ error: "Failed to export setores" });
+    }
+  });
+
   // GET /api/setores/:slug - Get setor by slug
   app.get("/api/setores/:slug", async (req, res) => {
     try {
       const { slug } = req.params;
       const setor = await storage.getSetorBySlug(slug);
-      
+
       if (!setor) {
         return res.status(404).json({ error: "Setor not found" });
       }
@@ -326,7 +350,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
           const ch = line[i];
           if (inQuotes) {
             if (ch === '"') {
-              if (line[i+1] === '"') { cur += '"'; i++; } else { inQuotes = false; }
+              if (line[i + 1] === '"') { cur += '"'; i++; } else { inQuotes = false; }
             } else { cur += ch; }
           } else {
             if (ch === ',') { values.push(cur); cur = ""; }
@@ -341,7 +365,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         };
         const parseList = (name: string) => get(name).split(/;\s*/).filter(Boolean);
         const idStr = get("id");
-        const id = idStr ? Number(idStr) : Math.floor(Math.random()*1e9);
+        const id = idStr ? Number(idStr) : Math.floor(Math.random() * 1e9);
         const setor = {
           id,
           sigla: get("sigla"),
@@ -368,30 +392,6 @@ export async function registerRoutes(app: Express): Promise<Server> {
     } catch (error) {
       console.error("Error importing setores CSV:", error);
       res.status(500).json({ error: "Failed to import setores CSV" });
-    }
-  });
-
-  // GET /api/setores/export - Export setores as JSON or CSV
-  app.get("/api/setores/export", async (req: Request, res: Response) => {
-    try {
-      if (!isMasterAllowed(req)) {
-        return res.status(403).json({ error: "Senha mestra inválida" });
-      }
-      const format = ((req.query.format as string) || "json").toLowerCase();
-      const filename = `setores_${new Date().toISOString().replace(/[:.]/g, "-")}.${format === "csv" ? "csv" : "json"}`;
-      if (format === "csv") {
-        const csv = storage.toCSV();
-        res.setHeader("Content-Type", "text/csv; charset=utf-8");
-        res.setHeader("Content-Disposition", `attachment; filename=\"${filename}\"`);
-        return res.send(csv);
-      }
-      const setores = await storage.getAllSetores();
-      res.setHeader("Content-Type", "application/json; charset=utf-8");
-      res.setHeader("Content-Disposition", `attachment; filename=\"${filename}\"`);
-      return res.json(setores);
-    } catch (error) {
-      console.error("Error exporting setores:", error);
-      res.status(500).json({ error: "Failed to export setores" });
     }
   });
 

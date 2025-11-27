@@ -148,6 +148,36 @@ export default function Sobre() {
             </CardContent>
           </Card>
 
+          <Card>
+            <CardHeader>
+              <CardTitle>Créditos e Desenvolvimento</CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <h4 className="font-semibold mb-2">Desenvolvedor</h4>
+                  <p className="text-muted-foreground">Washington Dias</p>
+                  <div className="mt-2 space-y-1 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2">
+                      <Mail className="h-4 w-4" />
+                      washingtonwdc@gmail.com
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <Phone className="h-4 w-4" />
+                      (81) 98558-7970
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <h4 className="font-semibold mb-2">Sobre o Projeto</h4>
+                  <p className="text-muted-foreground">
+                    Criado com ajuda de agentes de IA para modernizar e facilitar o acesso às informações da SEE-PE.
+                  </p>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+
           <Card className="border-primary/20 bg-primary/5">
             <CardContent className="p-6">
               <div className="flex items-start gap-4">

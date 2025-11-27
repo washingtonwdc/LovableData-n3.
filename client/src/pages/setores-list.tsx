@@ -156,8 +156,11 @@ export default function SetoresList() {
     URL.revokeObjectURL(url);
   };
 
+  const [isExporting, setIsExporting] = useState(false);
+
   const handleExportJSON = async () => {
     try {
+      setIsExporting(true);
       const resp = await fetch(`/api/setores/export?format=json`, { headers: { ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) } });
       if (!resp.ok) throw new Error(await resp.text());
       const data = await resp.json();
@@ -167,11 +170,14 @@ export default function SetoresList() {
       toast({ title: "Exportado", description: "JSON baixado" });
     } catch (e: unknown) {
       toast({ title: "Falha ao exportar JSON", description: e instanceof Error ? e.message : String(e), variant: "destructive" });
+    } finally {
+      setIsExporting(false);
     }
   };
 
   const handleExportCSV = async () => {
     try {
+      setIsExporting(true);
       const resp = await fetch(`/api/setores/export?format=csv`, { headers: { ...(masterPassword ? { "X-Master-Password": masterPassword } : {}) } });
       if (!resp.ok) throw new Error(await resp.text());
       const text = await resp.text();
@@ -181,6 +187,8 @@ export default function SetoresList() {
       toast({ title: "Exportado", description: "CSV baixado" });
     } catch (e: unknown) {
       toast({ title: "Falha ao exportar CSV", description: e instanceof Error ? e.message : String(e), variant: "destructive" });
+    } finally {
+      setIsExporting(false);
     }
   };
 
@@ -308,8 +316,12 @@ export default function SetoresList() {
                 <div className="mb-4 flex items-center gap-2 flex-wrap">
                   <Button variant="secondary" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleImportJSON(); }}>Importar JSON</Button>
                   <Button variant="secondary" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleImportCSV(); }}>Importar CSV</Button>
-                  <Button variant="outline" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleExportJSON(); }}>Exportar JSON</Button>
-                  <Button variant="outline" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleExportCSV(); }}>Exportar CSV</Button>
+                  <Button variant="outline" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleExportJSON(); }} disabled={isExporting}>
+                    {isExporting ? "Exportando..." : "Exportar JSON"}
+                  </Button>
+                  <Button variant="outline" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; await handleExportCSV(); }} disabled={isExporting}>
+                    {isExporting ? "Exportando..." : "Exportar CSV"}
+                  </Button>
                   <Button variant="default" size="sm" onClick={async () => { const ok = await requireAdmin(); if (!ok) return; setIsCreating(true); }}>Novo Setor</Button>
                 </div>
               )}
@@ -333,11 +345,11 @@ export default function SetoresList() {
               onAction={activeFiltersCount > 0 || searchQuery ? clearFilters : undefined}
             />
           )}
-        </div>
-      </div>
+        </div >
+      </div >
 
       {/* Create Setor Dialog */}
-      <Dialog open={isCreating} onOpenChange={setIsCreating}>
+      < Dialog open={isCreating} onOpenChange={setIsCreating} >
         <DialogContent>
           <DialogHeader>
             <DialogTitle>Novo Setor</DialogTitle>
@@ -381,7 +393,7 @@ export default function SetoresList() {
             <Button onClick={async () => { const ok = await requireAdmin(); if (!ok) return; createMutation.mutate(); }} disabled={createMutation.isPending || !createForm.nome || !createForm.sigla}>Criar</Button>
           </DialogFooter>
         </DialogContent>
-      </Dialog>
+      </Dialog >
       <Footer />
     </>
   );

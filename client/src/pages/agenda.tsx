@@ -5,7 +5,7 @@ import { AgendaFilters } from "@/components/agenda/agenda-filters";
 import { AgendaExport } from "@/components/agenda/agenda-export";
 import { EditAgendaDialog } from "@/components/agenda/edit-agenda-dialog";
 import { useAgenda, AgendaItem } from "@/hooks/use-agenda";
-import { Footer } from "@/components/footer";
+
 
 export default function AgendaPage() {
   const {
@@ -174,7 +174,6 @@ export default function AgendaPage() {
           onSave={updateItem}
         />
       </div>
-      <Footer />
     </div>
   );
 }

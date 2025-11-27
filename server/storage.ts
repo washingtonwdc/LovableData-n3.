@@ -5,16 +5,16 @@ import type { Setor, Statistics } from "@shared/schema";
 export interface IStorage {
   // Get all setores
   getAllSetores(): Promise<Setor[]>;
-  
+
   // Get setor by ID
   getSetorById(id: number): Promise<Setor | undefined>;
-  
+
   // Get setor by slug
   getSetorBySlug(slug: string): Promise<Setor | undefined>;
-  
+
   // Search setores with filters
   searchSetores(query?: string, bloco?: string, andar?: string): Promise<Setor[]>;
-  
+
   // Get statistics
   getStatistics(): Promise<Statistics>;
 }
@@ -45,13 +45,13 @@ export class MemStorage implements IStorage {
         if (blocoNormalized.toUpperCase().startsWith("BLOCO ")) {
           blocoNormalized = blocoNormalized.substring(6).trim();
         }
-        
+
         // Normalize andar: remove "º ANDAR" suffix and clean up
         let andarNormalized = item.setor.andar || "";
         if (andarNormalized.toUpperCase().includes(" ANDAR")) {
           andarNormalized = andarNormalized.replace(/\s*º?\s*ANDAR/i, "").trim();
         }
-        
+
         const setor: Setor = {
           id: item.id,
           sigla: item.setor.sigla,
@@ -136,7 +136,7 @@ export class MemStorage implements IStorage {
   }
 
   async getAllSetores(): Promise<Setor[]> {
-    return Array.from(this.setores.values()).sort((a, b) => 
+    return Array.from(this.setores.values()).sort((a, b) =>
       a.nome.localeCompare(b.nome)
     );
   }
@@ -155,14 +155,27 @@ export class MemStorage implements IStorage {
     // Filter by query
     if (query) {
       const searchNormalized = this.normalize(query);
-      results = results.filter(setor =>
-        this.normalize(setor.nome).includes(searchNormalized) ||
-        this.normalize(setor.sigla).includes(searchNormalized) ||
-        this.normalize(setor.bloco).includes(searchNormalized) ||
-        this.normalize(setor.andar).includes(searchNormalized) ||
-        this.normalize(setor.email).includes(searchNormalized) ||
-        setor.responsaveis.some(r => this.normalize(r.nome).includes(searchNormalized))
-      );
+
+      // Check if query looks like "bloco X"
+      let blocoSearch = "";
+      if (searchNormalized.startsWith("bloco ")) {
+        blocoSearch = searchNormalized.substring(6).trim();
+      }
+
+      results = results.filter(setor => {
+        const matchGeneral =
+          this.normalize(setor.nome).includes(searchNormalized) ||
+          this.normalize(setor.sigla).includes(searchNormalized) ||
+          this.normalize(setor.bloco).includes(searchNormalized) ||
+          this.normalize(setor.andar).includes(searchNormalized) ||
+          this.normalize(setor.email).includes(searchNormalized) ||
+          setor.responsaveis.some(r => this.normalize(r.nome).includes(searchNormalized));
+
+        if (blocoSearch) {
+          return matchGeneral || this.normalize(setor.bloco) === blocoSearch;
+        }
+        return matchGeneral;
+      });
     }
 
     // Filter by bloco (only if bloco is not empty string)
@@ -180,13 +193,13 @@ export class MemStorage implements IStorage {
 
   async getStatistics(): Promise<Statistics> {
     const setores = Array.from(this.setores.values());
-    
+
     // Count unique blocos
     const blocosSet = new Set(setores.map(s => s.bloco).filter(Boolean));
-    
+
     // Count unique andares
     const andaresSet = new Set(setores.map(s => s.andar).filter(Boolean));
-    
+
     // Count total ramais
     const totalRamais = setores.reduce((acc, setor) => {
       return acc + (setor.ramais?.length || 0);
@@ -341,9 +354,9 @@ export class MemStorage implements IStorage {
 
   toCSV(): string {
     const headers = [
-      "id","sigla","nome","slug","bloco","andar","email","ramal_principal","responsaveis","ramais","telefones","telefones_externos","celular","whatsapp","observacoes","ultima_atualizacao"
+      "id", "sigla", "nome", "slug", "bloco", "andar", "email", "ramal_principal", "responsaveis", "ramais", "telefones", "telefones_externos", "celular", "whatsapp", "observacoes", "ultima_atualizacao"
     ];
-    const rows = Array.from(this.setores.values()).sort((a,b)=>a.nome.localeCompare(b.nome)).map((s) => {
+    const rows = Array.from(this.setores.values()).sort((a, b) => a.nome.localeCompare(b.nome)).map((s) => {
       const responsaveis = (s.responsaveis || []).map(r => r.nome).join("; ");
       const ramais = (s.ramais || []).join("; ");
       const telefones = (s.telefones || []).join("; ");
@@ -401,12 +414,12 @@ export class MemStorage implements IStorage {
     ) =>
       Array.isArray(arr)
         ? arr
-            .filter((t) => t && String(t.numero || "").trim() !== "")
-            .map((t) => ({
-              numero: String(t.numero).trim(),
-              link: t.link ? String(t.link).trim() : "",
-              ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
-            }))
+          .filter((t) => t && String(t.numero || "").trim() !== "")
+          .map((t) => ({
+            numero: String(t.numero).trim(),
+            link: t.link ? String(t.link).trim() : "",
+            ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
+          }))
         : undefined;
 
     const updated = {
@@ -423,8 +436,8 @@ export class MemStorage implements IStorage {
       whatsapp: payload.whatsapp ?? existing.whatsapp,
       outros_contatos: Array.isArray(payload.outros_contatos)
         ? payload.outros_contatos
-            .map((c) => String(c).trim())
-            .filter((c) => c !== "")
+          .map((c) => String(c).trim())
+          .filter((c) => c !== "")
         : existing.outros_contatos,
       ultima_atualizacao: new Date().toISOString(),
     };
@@ -488,12 +501,12 @@ export class MemStorage implements IStorage {
     ) =>
       Array.isArray(arr)
         ? arr
-            .filter((t) => t && String(t.numero || "").trim() !== "")
-            .map((t) => ({
-              numero: String(t.numero).trim(),
-              link: t.link ? String(t.link).trim() : "",
-              ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
-            }))
+          .filter((t) => t && String(t.numero || "").trim() !== "")
+          .map((t) => ({
+            numero: String(t.numero).trim(),
+            link: t.link ? String(t.link).trim() : "",
+            ramal_original: t.ramal_original ? String(t.ramal_original).trim() : "",
+          }))
         : undefined;
 
     const updated = {
@@ -513,8 +526,8 @@ export class MemStorage implements IStorage {
       whatsapp: payload.whatsapp ?? existing.whatsapp,
       outros_contatos: Array.isArray(payload.outros_contatos)
         ? payload.outros_contatos
-            .map((c) => String(c).trim())
-            .filter((c) => c !== "")
+          .map((c) => String(c).trim())
+          .filter((c) => c !== "")
         : existing.outros_contatos,
       favoritos_ramais: Array.isArray(payload.favoritos_ramais)
         ? payload.favoritos_ramais.map((r) => String(r).trim()).filter(Boolean)
