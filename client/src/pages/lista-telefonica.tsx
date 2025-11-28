@@ -118,7 +118,7 @@ export default function ListaTelefonica() {
       ...data.map(e => {
         const setor = setores?.find(s => s.slug === e.slug);
         return [
-          `"${e.setor}"`,
+          `"${adminOpen ? e.setor : "Somente Admin"}"`,
           `"${setor?.nome || ""}"`,
           `"${e.sigla}"`,
           `"${e.bloco}"`,
@@ -142,7 +142,7 @@ export default function ListaTelefonica() {
       const isMobile = isMobilePhoneBR(e.telefone || "");
       const telefone = (!adminOpen && isMobile) ? "Somente Admin" : e.telefone;
       return {
-        setor: e.setor,
+        setor: adminOpen ? e.setor : "Somente Admin",
         sigla: e.sigla,
         bloco: e.bloco,
         andar: e.andar,

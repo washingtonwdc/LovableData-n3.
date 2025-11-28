@@ -38,6 +38,7 @@ export default function SetorDetail() {
   const [isEditing, setIsEditing] = useState(false as boolean);
   const [masterPassword, setMasterPassword] = useState("");
   const [form, setForm] = useState<{
+    nome: string;
     bloco: string;
     andar: string;
     email: string;
@@ -49,6 +50,7 @@ export default function SetorDetail() {
     whatsapp: string;
     outros_contatos: string[];
   }>({
+    nome: "",
     bloco: "",
     andar: "",
     email: "",
@@ -68,6 +70,12 @@ export default function SetorDetail() {
     enabled: !!idOrSlug,
   });
 
+  useEffect(() => {
+    if (idOrSlug) {
+      queryClient.invalidateQueries({ queryKey: ["/api/setores", idOrSlug] });
+    }
+  }, [adminOpen, idOrSlug]);
+
   const { data: topRamais } = useQuery<{ numero: string; count: number }[]>({
     queryKey: ["/api/setores", idOrSlug, "topRamais"],
     enabled: !!idOrSlug,
@@ -82,6 +90,7 @@ export default function SetorDetail() {
   useEffect(() => {
     if (setor) {
       setForm({
+        nome: setor.nome || "",
         bloco: setor.bloco || "",
         andar: setor.andar || "",
         email: setor.email || "",
@@ -649,9 +658,13 @@ export default function SetorDetail() {
       <Dialog open={isEditing} onOpenChange={setIsEditing}>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>Editar Contatos</DialogTitle>
+            <DialogTitle>Editar Setor</DialogTitle>
           </DialogHeader>
           <div className="space-y-4">
+            <div>
+              <label className="text-sm text-muted-foreground" htmlFor="edit-nome">Nome do Setor</label>
+              <Input id="edit-nome" value={form.nome} onChange={(e) => setForm({ ...form, nome: e.target.value })} />
+            </div>
             <div className="grid gap-4 sm:grid-cols-2">
               <div>
                 <label className="text-sm text-muted-foreground" htmlFor="edit-bloco">Bloco</label>

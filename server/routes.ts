@@ -274,6 +274,7 @@ export async function registerRoutes(app: Express): Promise<Server> {
         return res.status(403).json({ error: "Senha mestra inválida" });
       }
       const allowedKeys = new Set([
+        "nome",
         "bloco",
         "andar",
         "observacoes",

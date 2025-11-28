@@ -269,7 +269,16 @@ export function DirectoryTable({
                                                 {highlight(entry.sigla)}
                                             </Badge>
                                         </div>
-                                        <div className="text-sm">{highlight(entry.setor)}</div>
+                                        <div className="text-sm">
+                                            {adminOpen ? (
+                                                highlight(entry.setor)
+                                            ) : (
+                                                <span className="inline-flex items-center gap-1 text-muted-foreground">
+                                                    Somente Admin
+                                                    <Button variant="ghost" size="sm" className="h-6" onClick={() => onRequireAdmin?.()}>Desbloquear</Button>
+                                                </span>
+                                            )}
+                                        </div>
                                     </div>
                                 </TableCell>
                                 <TableCell className="align-top p-3">

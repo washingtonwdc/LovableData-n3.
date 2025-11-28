@@ -48,6 +48,10 @@ export function usePhoneDirectory() {
         queryKey: ["/api/setores"],
     });
 
+    useEffect(() => {
+        queryClient.invalidateQueries({ queryKey: ["/api/setores"] });
+    }, [adminOpen]);
+
     const { data: blocos } = useQuery<string[]>({
         queryKey: ["/api/blocos"],
     });

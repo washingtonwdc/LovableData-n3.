@@ -478,6 +478,7 @@ export class MemStorage implements IStorage {
   updateSetorPartial(
     slug: string,
     payload: Partial<{
+      nome: string;
       bloco: string;
       andar: string;
       observacoes: string;
@@ -511,6 +512,7 @@ export class MemStorage implements IStorage {
 
     const updated = {
       ...existing,
+      nome: payload.nome ?? existing.nome,
       bloco: payload.bloco ?? existing.bloco,
       andar: payload.andar ?? existing.andar,
       observacoes: payload.observacoes ?? existing.observacoes,
@@ -549,6 +551,7 @@ export class MemStorage implements IStorage {
       const idx = overrides.findIndex((o) => o && o.slug === slug);
       const toStore: any = {
         slug,
+        nome: updated.nome,
         bloco: updated.bloco,
         andar: updated.andar,
         observacoes: updated.observacoes,
