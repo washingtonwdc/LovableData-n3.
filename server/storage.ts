@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
 import { join } from "path";
 import type { Setor, Statistics } from "@shared/schema";
 
@@ -27,7 +27,13 @@ export class MemStorage implements IStorage {
   constructor() {
     this.setores = new Map();
     this.setoresBySlug = new Map();
-    this.overridesPath = join(process.cwd(), "attached_assets", "setores_overrides.json");
+    const assetsDir = join(process.cwd(), "attached_assets");
+    try {
+      if (!existsSync(assetsDir)) {
+        mkdirSync(assetsDir, { recursive: true });
+      }
+    } catch {}
+    this.overridesPath = join(assetsDir, "setores_overrides.json");
     this.loadData();
   }
 
