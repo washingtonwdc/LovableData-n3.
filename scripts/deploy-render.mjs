@@ -19,8 +19,7 @@ async function resolveServiceId() {
   return match.service?.id || match.id;
 }
 
-async function main() {
-  const serviceId = await resolveServiceId();
+async function triggerDeploy(serviceId) {
   const url = `https://api.render.com/v1/services/${serviceId}/deploys`;
   const res = await fetch(url, {
     method: "POST",
@@ -32,11 +31,38 @@ async function main() {
   });
   if (!res.ok) {
     const txt = await res.text();
-    console.error("Render deploy failed", txt);
-    process.exit(1);
+    throw new Error(`Render deploy failed ${res.status}: ${txt}`);
   }
   const data = await res.json();
   console.log("Render deploy triggered", JSON.stringify(data));
+}
+
+async function enableAutoDeploy(serviceId) {
+  const url = `https://api.render.com/v1/services/${serviceId}`;
+  const res = await fetch(url, {
+    method: "PATCH",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ autoDeployTrigger: "commit" }),
+  });
+  if (!res.ok) {
+    const txt = await res.text();
+    throw new Error(`Enable autoDeploy failed ${res.status}: ${txt}`);
+  }
+  const data = await res.json();
+  console.log("AutoDeploy enabled", JSON.stringify(data));
+}
+
+async function main() {
+  const serviceId = await resolveServiceId();
+  const mode = (process.argv[2] || "").toLowerCase();
+  if (mode === "autodeploy") {
+    await enableAutoDeploy(serviceId);
+    return;
+  }
+  await triggerDeploy(serviceId);
 }
 
 main().catch((e) => {
