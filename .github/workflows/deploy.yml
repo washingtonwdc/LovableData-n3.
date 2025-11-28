@@ -3,6 +3,19 @@ on:
   push:
     branches:
       - main
+    paths:
+      - 'client/**'
+      - 'server/**'
+      - 'shared/**'
+      - 'package.json'
+      - 'render.yaml'
+      - '.github/workflows/deploy.yml'
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: 'Motivo do deploy'
+        required: false
+        default: 'manual'
 jobs:
   ci:
     runs-on: ubuntu-latest
@@ -21,6 +34,7 @@ jobs:
     env:
       RENDER_SERVICE_ID: ${{ secrets.RENDER_SERVICE_ID }}
       RENDER_API_KEY: ${{ secrets.RENDER_API_KEY }}
+      RENDER_SERVICE_NAME: ${{ secrets.RENDER_SERVICE_NAME }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -28,5 +42,7 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
-      - if: env.RENDER_SERVICE_ID != '' && env.RENDER_API_KEY != ''
+      - if: env.RENDER_API_KEY != ''
         run: npm run deploy:render
+      - if: env.RENDER_API_KEY == ''
+        run: echo "RENDER_API_KEY não configurado nos Secrets" && exit 1
