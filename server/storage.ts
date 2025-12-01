@@ -161,6 +161,22 @@ export class MemStorage implements IStorage {
             }
           });
           console.log(`🔧 Applied ${overrides.length} override(s)`);
+          if (this.hasSupabase()) {
+            const f: any = (globalThis as any).fetch;
+            if (f) {
+              (async () => {
+                const prefix = this.supaPrefix ? this.supaPrefix + "/" : "";
+                const remotePath = `${prefix}setores_overrides.json`;
+                const existingRemote = await this.supaDownload(remotePath);
+                if (!existingRemote) {
+                  const ts = new Date().toISOString().replace(/[:.]/g, "-");
+                  await this.supaUpload(remotePath, raw);
+                  const backupRemote = `${prefix}setores_overrides.backups/setores_overrides-${ts}.json`;
+                  await this.supaUpload(backupRemote, raw);
+                }
+              })().catch(() => {});
+            }
+          }
         }
         return;
       }
