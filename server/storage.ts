@@ -25,6 +25,10 @@ export class MemStorage implements IStorage {
   private overridesPath: string;
   private assetsDir: string;
   private backupsDir: string;
+  private supaUrl?: string;
+  private supaKey?: string;
+  private supaBucket?: string;
+  private supaPrefix?: string;
 
   constructor() {
     this.setores = new Map();
@@ -43,6 +47,10 @@ export class MemStorage implements IStorage {
       }
     } catch {}
     this.overridesPath = join(assetsDir, "setores_overrides.json");
+    this.supaUrl = String(process.env.SUPABASE_URL || "").trim() || undefined;
+    this.supaKey = String(process.env.SUPABASE_SERVICE_KEY || "").trim() || undefined;
+    this.supaBucket = String(process.env.SUPABASE_BUCKET || "").trim() || undefined;
+    this.supaPrefix = String(process.env.SUPABASE_PREFIX || "").trim() || undefined;
     this.loadData();
   }
 
@@ -120,40 +128,85 @@ export class MemStorage implements IStorage {
 
   private loadOverrides() {
     try {
-      if (!existsSync(this.overridesPath)) return;
-      const raw = readFileSync(this.overridesPath, "utf-8");
-      const overrides = JSON.parse(raw);
-      if (Array.isArray(overrides)) {
-        overrides.forEach((ov) => {
-          if (ov && typeof ov.slug === "string") {
-            const existing = this.setoresBySlug.get(ov.slug);
-            if (existing) {
-              this.updateSetorPartial(ov.slug, ov);
-            } else {
-              // create setor from override when missing
-              this.createSetor({
-                slug: ov.slug,
-                sigla: ov.sigla || ov.slug?.substring(0, 8) || "NOVO",
-                nome: ov.nome || ov.slug || "Novo Setor",
-                bloco: ov.bloco || "",
-                andar: ov.andar || "",
-                observacoes: ov.observacoes || "",
-                email: ov.email || "",
-                ramal_principal: ov.ramal_principal || "",
-                ramais: ov.ramais || [],
-                telefones: ov.telefones || [],
-                telefones_externos: ov.telefones_externos || [],
-                responsaveis: ov.responsaveis || [],
-                celular: ov.celular || "",
-                whatsapp: ov.whatsapp || "",
-                outros_contatos: ov.outros_contatos || [],
-                favoritos_ramais: ov.favoritos_ramais || [],
-                acessos_ramais: ov.acessos_ramais || {},
-              });
+      if (existsSync(this.overridesPath)) {
+        const raw = readFileSync(this.overridesPath, "utf-8");
+        const overrides = JSON.parse(raw);
+        if (Array.isArray(overrides)) {
+          overrides.forEach((ov) => {
+            if (ov && typeof ov.slug === "string") {
+              const existing = this.setoresBySlug.get(ov.slug);
+              if (existing) {
+                this.updateSetorPartial(ov.slug, ov);
+              } else {
+                this.createSetor({
+                  slug: ov.slug,
+                  sigla: ov.sigla || ov.slug?.substring(0, 8) || "NOVO",
+                  nome: ov.nome || ov.slug || "Novo Setor",
+                  bloco: ov.bloco || "",
+                  andar: ov.andar || "",
+                  observacoes: ov.observacoes || "",
+                  email: ov.email || "",
+                  ramal_principal: ov.ramal_principal || "",
+                  ramais: ov.ramais || [],
+                  telefones: ov.telefones || [],
+                  telefones_externos: ov.telefones_externos || [],
+                  responsaveis: ov.responsaveis || [],
+                  celular: ov.celular || "",
+                  whatsapp: ov.whatsapp || "",
+                  outros_contatos: ov.outros_contatos || [],
+                  favoritos_ramais: ov.favoritos_ramais || [],
+                  acessos_ramais: ov.acessos_ramais || {},
+                });
+              }
             }
-          }
-        });
-        console.log(`🔧 Applied ${overrides.length} override(s)`);
+          });
+          console.log(`🔧 Applied ${overrides.length} override(s)`);
+        }
+        return;
+      }
+      if (this.hasSupabase()) {
+        const f: any = (globalThis as any).fetch;
+        if (f) {
+          (async () => {
+            const prefix = this.supaPrefix ? this.supaPrefix + "/" : "";
+            const remotePath = `${prefix}setores_overrides.json`;
+            const txt = await this.supaDownload(remotePath);
+            if (!txt) return;
+            let overrides: any;
+            try { overrides = JSON.parse(txt); } catch { overrides = undefined; }
+            if (Array.isArray(overrides)) {
+              overrides.forEach((ov) => {
+                if (ov && typeof ov.slug === "string") {
+                  const existing = this.setoresBySlug.get(ov.slug);
+                  if (existing) {
+                    this.updateSetorPartial(ov.slug, ov);
+                  } else {
+                    this.createSetor({
+                      slug: ov.slug,
+                      sigla: ov.sigla || ov.slug?.substring(0, 8) || "NOVO",
+                      nome: ov.nome || ov.slug || "Novo Setor",
+                      bloco: ov.bloco || "",
+                      andar: ov.andar || "",
+                      observacoes: ov.observacoes || "",
+                      email: ov.email || "",
+                      ramal_principal: ov.ramal_principal || "",
+                      ramais: ov.ramais || [],
+                      telefones: ov.telefones || [],
+                      telefones_externos: ov.telefones_externos || [],
+                      responsaveis: ov.responsaveis || [],
+                      celular: ov.celular || "",
+                      whatsapp: ov.whatsapp || "",
+                      outros_contatos: ov.outros_contatos || [],
+                      favoritos_ramais: ov.favoritos_ramais || [],
+                      acessos_ramais: ov.acessos_ramais || {},
+                    });
+                  }
+                }
+              });
+              console.log(`🔧 Applied ${overrides.length} override(s) from Supabase`);
+            }
+          })().catch(() => {});
+        }
       }
     } catch (err) {
       console.warn("⚠️ Failed to load overrides:", err);
@@ -625,6 +678,13 @@ export class MemStorage implements IStorage {
       const ts = new Date().toISOString().replace(/[:.]/g, "-");
       const backupName = join(this.backupsDir, `setores_overrides-${ts}.json`);
       writeFileSync(backupName, payload, "utf-8");
+      if (this.hasSupabase()) {
+        const prefix = this.supaPrefix ? this.supaPrefix + "/" : "";
+        const remoteMain = `${prefix}setores_overrides.json`;
+        const remoteBackup = `${prefix}setores_overrides.backups/setores_overrides-${ts}.json`;
+        this.supaUpload(remoteMain, payload).catch(() => {});
+        this.supaUpload(remoteBackup, payload).catch(() => {});
+      }
       try {
         const maxCount = Math.max(1, Number(process.env.SETORES_BACKUPS_MAX || "20"));
         const retentionDays = Math.max(0, Number(process.env.SETORES_BACKUPS_RETENTION_DAYS || "0"));
@@ -650,6 +710,63 @@ export class MemStorage implements IStorage {
       } catch {}
     } catch (e) {
       console.warn("⚠️ Failed to write overrides/backup:", e);
+    }
+  }
+
+  private hasSupabase(): boolean {
+    return !!(this.supaUrl && this.supaKey && this.supaBucket);
+  }
+
+  private async supaUpload(objectPath: string, payload: string): Promise<void> {
+    try {
+      if (!this.hasSupabase()) return;
+      const f: any = (globalThis as any).fetch;
+      if (!f) return;
+      const url = `${this.supaUrl}/storage/v1/object/${encodeURIComponent(this.supaBucket!)}/${objectPath}`;
+      await f(url, {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${this.supaKey}`,
+          "Content-Type": "application/octet-stream",
+          "x-upsert": "true",
+        },
+        body: payload,
+      });
+    } catch {}
+  }
+
+  private async supaDownload(objectPath: string): Promise<string | undefined> {
+    try {
+      if (!this.hasSupabase()) return undefined;
+      const f: any = (globalThis as any).fetch;
+      if (!f) return undefined;
+      const url = `${this.supaUrl}/storage/v1/object/${encodeURIComponent(this.supaBucket!)}/${objectPath}`;
+      const resp = await f(url, { method: "GET", headers: { Authorization: `Bearer ${this.supaKey}` } });
+      if (!resp || !resp.ok) return undefined;
+      const txt = await resp.text();
+      return txt;
+    } catch {
+      return undefined;
+    }
+  }
+
+  private async supaList(prefix: string): Promise<any[]> {
+    try {
+      if (!this.hasSupabase()) return [];
+      const f: any = (globalThis as any).fetch;
+      if (!f) return [];
+      const url = `${this.supaUrl}/storage/v1/object/list/${encodeURIComponent(this.supaBucket!)}`;
+      const resp = await f(url, {
+        method: "POST",
+        headers: { Authorization: `Bearer ${this.supaKey}`, "Content-Type": "application/json" },
+        body: JSON.stringify({ prefix }),
+      });
+      if (!resp || !resp.ok) return [];
+      const data = await resp.json();
+      const list = Array.isArray(data) ? data : (Array.isArray((data as any)?.list) ? (data as any).list : []);
+      return list;
+    } catch {
+      return [];
     }
   }
 
