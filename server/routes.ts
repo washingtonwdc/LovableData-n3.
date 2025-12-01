@@ -196,7 +196,47 @@ export async function registerRoutes(app: Express): Promise<Server> {
         fs.rmSync(testPath, { force: true });
         writable = true;
       } catch {}
-      res.json({ assetsDir, overridesPath, exists, sizeBytes: stat?.size || 0, backupsCount, writable });
+      const supaUrl = String(process.env.SUPABASE_URL || "").trim();
+      const supaKey = String(process.env.SUPABASE_SERVICE_KEY || "").trim();
+      const supaBucket = String(process.env.SUPABASE_BUCKET || "").trim();
+      const supaPrefix = String(process.env.SUPABASE_PREFIX || "").trim();
+      const remoteEnabled = !!(supaUrl && supaKey && supaBucket);
+      let remoteExists = false;
+      let remoteSizeBytes = 0;
+      let remoteBackupsCount = 0;
+      let remoteWritable = false;
+      if (remoteEnabled) {
+        remoteWritable = true;
+        const f: any = (globalThis as any).fetch;
+        if (f) {
+          try {
+            const prefix = supaPrefix ? supaPrefix + "/" : "";
+            const mainPath = `${prefix}setores_overrides.json`;
+            const urlMain = `${supaUrl}/storage/v1/object/${encodeURIComponent(supaBucket)}/${mainPath}`;
+            const resp = await f(urlMain, { method: "GET", headers: { Authorization: `Bearer ${supaKey}` } });
+            if (resp && resp.ok) {
+              const buf = Buffer.from(await resp.arrayBuffer());
+              remoteSizeBytes = buf.length;
+              remoteExists = true;
+            }
+          } catch {}
+          try {
+            const listUrl = `${supaUrl}/storage/v1/object/list/${encodeURIComponent(supaBucket)}`;
+            const prefix = supaPrefix ? supaPrefix + "/" : "";
+            const resp = await f(listUrl, {
+              method: "POST",
+              headers: { Authorization: `Bearer ${supaKey}`, "Content-Type": "application/json" },
+              body: JSON.stringify({ prefix: `${prefix}setores_overrides.backups/` }),
+            });
+            if (resp && resp.ok) {
+              const data = await resp.json();
+              const list = Array.isArray(data) ? data : (Array.isArray((data as any)?.list) ? (data as any).list : []);
+              remoteBackupsCount = Array.isArray(list) ? list.filter((it: any) => String(it?.name || "").endsWith(".json")).length : 0;
+            }
+          } catch {}
+        }
+      }
+      res.json({ assetsDir, overridesPath, exists, sizeBytes: stat?.size || 0, backupsCount, writable, remoteEnabled, supaBucket, supaPrefix, remoteExists, remoteSizeBytes, remoteBackupsCount, remoteWritable });
     } catch (error) {
       res.status(500).json({ error: "Falha ao obter status de persistência" });
     }
