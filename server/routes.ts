@@ -127,6 +127,31 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.get("/api/persist/status", async (_req: Request, res: Response) => {
+    try {
+      const assetsDir = String(process.env.ASSETS_DIR || path.join(process.cwd(), "attached_assets"));
+      const overridesPath = path.join(assetsDir, "setores_overrides.json");
+      const backupsDir = path.join(assetsDir, "setores_overrides.backups");
+      const exists = fs.existsSync(overridesPath);
+      const stat = exists ? fs.statSync(overridesPath) : null;
+      let backupsCount = 0;
+      try {
+        backupsCount = fs.existsSync(backupsDir) ? fs.readdirSync(backupsDir).filter(f => f.endsWith(".json")).length : 0;
+      } catch {}
+      let writable = false;
+      try {
+        if (!fs.existsSync(assetsDir)) fs.mkdirSync(assetsDir, { recursive: true });
+        const testPath = path.join(assetsDir, ".__write_test");
+        fs.writeFileSync(testPath, "ok", "utf-8");
+        fs.rmSync(testPath, { force: true });
+        writable = true;
+      } catch {}
+      res.json({ assetsDir, overridesPath, exists, sizeBytes: stat?.size || 0, backupsCount, writable });
+    } catch (error) {
+      res.status(500).json({ error: "Falha ao obter status de persistência" });
+    }
+  });
+
   // POST /api/setores - Create a new setor
   app.post("/api/setores", async (req: Request, res: Response) => {
     try {

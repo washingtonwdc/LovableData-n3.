@@ -1,4 +1,4 @@
-import { readFileSync, writeFileSync, existsSync, mkdirSync } from "fs";
+import { readFileSync, writeFileSync, existsSync, mkdirSync, readdirSync, statSync } from "fs";
 import { join } from "path";
 import type { Setor, Statistics } from "@shared/schema";
 
@@ -23,14 +23,23 @@ export class MemStorage implements IStorage {
   private setores: Map<number, Setor>;
   private setoresBySlug: Map<string, Setor>;
   private overridesPath: string;
+  private assetsDir: string;
+  private backupsDir: string;
 
   constructor() {
     this.setores = new Map();
     this.setoresBySlug = new Map();
-    const assetsDir = join(process.cwd(), "attached_assets");
+    this.assetsDir = String(process.env.ASSETS_DIR || join(process.cwd(), "attached_assets"));
+    const assetsDir = this.assetsDir;
     try {
       if (!existsSync(assetsDir)) {
         mkdirSync(assetsDir, { recursive: true });
+      }
+    } catch {}
+    this.backupsDir = join(assetsDir, "setores_overrides.backups");
+    try {
+      if (!existsSync(this.backupsDir)) {
+        mkdirSync(this.backupsDir, { recursive: true });
       }
     } catch {}
     this.overridesPath = join(assetsDir, "setores_overrides.json");
@@ -39,8 +48,27 @@ export class MemStorage implements IStorage {
 
   private loadData() {
     try {
-      // Load data from JSON file
-      const dataPath = join(process.cwd(), "attached_assets", "dados estruturados normalizado_1763396739562.json");
+      // Resolve data file path
+      let dataPath = String(process.env.DATA_FILE || "").trim();
+      if (dataPath) {
+        if (!dataPath.includes("/") && !dataPath.includes("\\")) {
+          dataPath = join(this.assetsDir, dataPath);
+        }
+      } else {
+        const files = readdirSync(this.assetsDir).filter(f => f.toLowerCase().endsWith(".json"));
+        const candidates = files.filter(f => {
+          const lower = f.toLowerCase();
+          return lower.includes("dados") && lower.includes("normalizado");
+        });
+        const pick = (list: string[]) => {
+          if (list.length === 0) return undefined;
+          return list
+            .map(f => ({ f, s: statSync(join(this.assetsDir, f)).mtimeMs }))
+            .sort((a, b) => b.s - a.s)[0].f;
+        };
+        const chosen = pick(candidates) || pick(files);
+        dataPath = chosen ? join(this.assetsDir, chosen) : join(this.assetsDir, "dados estruturados normalizado_1763396739562.json");
+      }
       const rawData = readFileSync(dataPath, "utf-8");
       const jsonData = JSON.parse(rawData);
 
@@ -351,7 +379,7 @@ export class MemStorage implements IStorage {
         favoritos_ramais: setor.favoritos_ramais,
         acessos_ramais: setor.acessos_ramais,
       });
-      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+      this.persistOverrides(overrides);
     } catch (err) {
       console.warn("⚠️ Failed to persist new setor:", err);
     }
@@ -471,7 +499,7 @@ export class MemStorage implements IStorage {
         outros_contatos: updated.outros_contatos,
       };
       if (idx >= 0) overrides[idx] = toStore; else overrides.push(toStore);
-      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+      this.persistOverrides(overrides);
     } catch (err) {
       console.warn("⚠️ Failed to persist overrides:", err);
     }
@@ -573,11 +601,23 @@ export class MemStorage implements IStorage {
         acessos_ramais: updated.acessos_ramais,
       };
       if (idx >= 0) overrides[idx] = { ...overrides[idx], ...toStore }; else overrides.push(toStore);
-      writeFileSync(this.overridesPath, JSON.stringify(overrides, null, 2), "utf-8");
+      this.persistOverrides(overrides);
     } catch (err) {
       console.warn("⚠️ Failed to persist overrides:", err);
     }
     return updated;
+  }
+
+  private persistOverrides(overrides: any[]) {
+    try {
+      const payload = JSON.stringify(overrides, null, 2);
+      writeFileSync(this.overridesPath, payload, "utf-8");
+      const ts = new Date().toISOString().replace(/[:.]/g, "-");
+      const backupName = join(this.backupsDir, `setores_overrides-${ts}.json`);
+      writeFileSync(backupName, payload, "utf-8");
+    } catch (e) {
+      console.warn("⚠️ Failed to write overrides/backup:", e);
+    }
   }
 
   incrementRamalAccess(slug: string, numero: string) {
